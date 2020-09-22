@@ -7,17 +7,17 @@ export const useGlobalSettings = false;
 
 const providerId = 'LumAppsLAB';
 
-const bundleName = 'SampleWidgetTest152';
+const bundleName = 'SampleWidget';
 
 const description = {
-  en: 'SampleWidgetTest152',
+  en: 'SampleWidget',
 };
 
 const name = {
-  en: 'SampleWidgetTest152',
+  en: 'SampleWidget',
 };
 
-const icon = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/237/airplane_2708.png'; // a working link to your widget icon
+const icon = 'https://lh3.googleusercontent.com/-6F_iwel8KGY/WD8MdGS0PkI/AAAAAAAAGDI/KaqvKtZCK_AsdK6BcKp6Cy1MpwoEWCUvgCKgB/s400/logo.png'; // a working link to your widget icon
 
 // do not change the following unless you know what you are doing
 const config = {

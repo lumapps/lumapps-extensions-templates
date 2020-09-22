@@ -16,7 +16,6 @@
     "@babel/node": "^7.4.5",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@lumapps-extensions-playground/devenv": "^0.1.6",
-    "@rollup/plugin-image": "^2.0.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -27,24 +26,10 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "find-root": "^1.1.0",
-    "inquirer": "^7.1.0",
-    "react-scripts": "3.4.3",
-    "rollup": "^1.25.2",
-    "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-filesize": "^9.0.2",
-    "rollup-plugin-json": "^4.0.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-postcss": "^2.0.3"
+    "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "widget:build": "yarn run rollup -c rollup.config.js",
-    "widget:deploy": "gsutil cp SampleWidgetTest152.mdr gs://lumapps-lab-marketplace/"
+    "start": "react-scripts start"
   },
   "eslintConfig": {
     "extends": "react-app"
