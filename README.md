@@ -1,7 +1,7 @@
 # lumapps-extensions-templates
 A set of templates to kickstart your LumApps extensions development
 
-To create a widget from a template
+To create an extension from a template
 
 ```bash
   npm init lumapps-extension <project-name>
