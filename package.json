@@ -18,11 +18,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/auredentan/create-lumapps-extensions-templates.git"
+    "url": "git+https://github.com/lumapps/create-lumapps-extensions-templates.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/auredentan/create-lumapps-extensions-templates/issues"
+    "url": "https://github.com/lumapps/create-lumapps-extensions-templates/issues"
   },
   "dependencies": {
     "chalk": "^4.1.0",
@@ -30,5 +30,5 @@
     "inquirer": "^7.3.3",
     "minimist": "^1.2.5""
   },
-  "homepage": "https://github.com/auredentan/create-lumapps-extensions-templates#readme"
+  "homepage": "https://github.com/lumapps/create-lumapps-extensions-templates#readme"
 }
