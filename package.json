@@ -1,11 +1,11 @@
 {
-  "name": "create-lumapps-extensions",
+  "name": "create-lumapps-extension",
   "version": "1.0.0",
   "description": "",
   "author": "lab@lumapps.com",
   "main": "index.js",
   "bin": {
-    "create-lumapps-extensions": "index.js",
+    "create-lumapps-extension": "index.js",
     "cha": "index.js"
   },
   "files": [
