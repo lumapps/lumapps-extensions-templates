@@ -4,7 +4,7 @@ A set of templates to kickstart your LumApps extensions development
 To create a widget from a template
 
 ```bash
-  npm init vite-app <project-name>
+  npm init lumapps-extension <project-name>
   cd <project-name>
   npm install
   npm run start
@@ -13,7 +13,7 @@ To create a widget from a template
 If using Yarn:
 
 ```bash
-  yarn create vite-app <project-name>
+  yarn create lumapps-extension <project-name>
   cd <project-name>
   yarn
   yarn dev
