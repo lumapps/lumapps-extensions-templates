@@ -2,7 +2,21 @@
 const path = require('path')
 const fs = require('fs-extra')
 const argv = require('minimist')(process.argv.slice(2))
+const inquirer = require('inquirer');
+const chalk = require('chalk')
 
+function logHelp() {
+	console.log(`
+  Usage: create-lumapps-extension [folder] [--options]
+
+  Options:
+	--help, -h                 [boolean] show help
+	--version, -v              [boolean] show version
+	--template, -t             [string]  use specified template (react)
+ `)
+}
+
+console.log(chalk.cyan(`create-lumapps-extension v${require('./package.json').version}`))
 async function init() {
 	const targetDir = argv._[0] || '.'
 	const cwd = process.cwd()
@@ -10,18 +24,47 @@ async function init() {
 	const renameFiles = {
 		_gitignore: '.gitignore'
 	}
-	console.log(`Scaffolding project in ${root}...`)
+
+	const { help, h, template, t, version, v } = argv
+
+	if(help || h) {
+		logHelp()
+		return
+	} else if (version || v) {
+		// noop, already logged
+		return
+	}
+
+	// Template prompt
+	let choosedTemplate = t || template
+	if(!choosedTemplate) {
+		const choices = [
+			{key: 1, name: 'React', value: 'react'},
+			{key: 2, name: 'React Typescript', value: 'react-ts'}
+		]
+		choice = await inquirer.prompt({
+			type: 'list',
+			message: 'Choose a template',
+			name: 'template',
+			choices
+		})
+		choosedTemplate = choice.template
+	}
+
+	console.log("\n--------------------")
+	console.log(`\nScaffolding project in ${root}...`)
 
 	await fs.ensureDir(root)
 	const existing = await fs.readdir(root)
 	if (existing.length) {
-		console.error(`Error: target directory is not empty.`)
+		console.error(chalk.red(`Error: target directory ${chalk.green(root)} is not empty.`))
 		process.exit(1)
 	}
 
+
 	const templateDir = path.join(
 		__dirname,
-		`template-${argv.t || argv.template || 'react'}`
+		`template-${choosedTemplate}`
 	)
 	const write = async (file, content) => {
 		const targetPath = renameFiles[file]
@@ -34,9 +77,6 @@ async function init() {
 		}
 	}
 
-	const srcDir = path.join(__dirname, 'src')
-	await fs.copy(srcDir, root)
-
 
 	const files = await fs.readdir(templateDir)
 	for (const file of files.filter((f) => f !== 'package.json')) {
@@ -47,12 +87,12 @@ async function init() {
 	pkg.name = path.basename(root)
 	await write('package.json', JSON.stringify(pkg, null, 2))
 
-	console.log(`\nDone. Now run:\n`)
-	if (root !== cwd) {
-		console.log(`  cd ${path.relative(cwd, root)}`)
-	}
-	console.log(`  npm install (or \`yarn\`)`)
-	console.log(`  npm run start (or \`yarn start\`)`)
+	console.log(`\n${chalk.green('Done')}. Now run:\n`)
+	console.log(chalk.cyan(` 
+	${root !== cwd && `cd ${path.relative(cwd, root)}`}
+	npm install (or \`yarn\`)
+	npm run start (or \`yarn start\`)
+	`))
 	console.log()
 }
 
