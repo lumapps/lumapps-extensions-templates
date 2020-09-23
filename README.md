@@ -22,7 +22,7 @@ If using Yarn:
 ## Templates
 Available templates:
 
-- `vue`
+- `react`
 
 
 To scaffold with specific template:
