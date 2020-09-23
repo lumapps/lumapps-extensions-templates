@@ -40,7 +40,6 @@ async function init() {
 	if(!choosedTemplate) {
 		const choices = [
 			{key: 1, name: 'React', value: 'react'},
-			{key: 2, name: 'React Typescript', value: 'react-ts'}
 		]
 		choice = await inquirer.prompt({
 			type: 'list',
