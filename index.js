@@ -53,7 +53,7 @@ async function init() {
 
 	console.log("\n--------------------")
 	console.log(`\nScaffolding project in ${root}...`)
-
+	
 	await fs.ensureDir(root)
 	const existing = await fs.readdir(root)
 	if (existing.length) {

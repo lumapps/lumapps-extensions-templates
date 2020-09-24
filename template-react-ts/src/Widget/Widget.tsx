@@ -18,8 +18,7 @@ import {
 
 import {
 	FormattedMessage,
-	IntlProvider,
-	useIntl
+	IntlProvider
 } from '@lumapps-extensions-playground/translations'
 import {
 	PredefinedErrorBoundary,
@@ -47,8 +46,6 @@ const Widget: React.FC<WidgetProps> = ({ value = {}, globalValue = {} }) => {
 
 	const { imageId, useGreyScale, useBlur, blur } = value
 	const { baseUrl = defaultGlobalSettings.baseUrl } = globalValue
-
-	const intl = useIntl()
 
 	useEffect(() => {
 		const fetch = async () => {
@@ -105,63 +102,59 @@ const Widget: React.FC<WidgetProps> = ({ value = {}, globalValue = {} }) => {
 	}, [])
 
 	return (
-		<PredefinedErrorBoundary>
-			<>
-				<div className='widget-picsum'>
-					{!error && user && (
-						<>
-							<Toolbar
-								label={
-									<span>
-										<FormattedMessage id='title' />
-									</span>
-								}
-								after={
-									<UserBlock
-										theme={theme}
-										name={user.fullName}
-										fields={[user.email]}
-										avatar={getProfilePicture(user.apiProfile)}
-										size={Size.m}
-									/>
-								}
-							/>
-							<Divider />
-						</>
-					)}
-					{error && (
-						<Notification
-							type={NotificationType.error}
-							content={<FormattedMessage id='errors.retrieve_user' />}
-							isOpen
-							actionLabel='Dismiss'
-							actionCallback={setError as any}
-						/>
-					)}
-					<ImageBlock
-						aspectRatio={AspectRatio.horizontal}
-						captionPosition={ImageBlockCaptionPosition.over}
-						description={(<FormattedMessage id='description' />) as any}
-						tags={
-							<ChipGroup>
-								<Chip size={Size.s} theme={theme}>
-									Marketplace
-								</Chip>
-								<Chip size={Size.s} theme={theme}>
-									Widgets
-								</Chip>
-								<Chip size={Size.s} theme={theme}>
-									LumApps
-								</Chip>
-							</ChipGroup>
+		<div className='widget-picsum'>
+			{!error && user && (
+				<>
+					<Toolbar
+						label={
+							<span>
+								<FormattedMessage id='title' />
+							</span>
 						}
-						theme={theme}
-						title={(<FormattedMessage id='sub_title' />) as any}
-						image={(url as string)}
+						after={
+							<UserBlock
+								theme={theme}
+								name={user.fullName}
+								fields={[user.email]}
+								avatar={getProfilePicture(user.apiProfile)}
+								size={Size.m}
+							/>
+						}
 					/>
-				</div>
-			</>
-		</PredefinedErrorBoundary>
+					<Divider />
+				</>
+			)}
+			{error && (
+				<Notification
+					type={NotificationType.error}
+					content={<FormattedMessage id='errors.retrieve_user' />}
+					isOpen
+					actionLabel='Dismiss'
+					actionCallback={setError as any}
+				/>
+			)}
+			<ImageBlock
+				aspectRatio={AspectRatio.horizontal}
+				captionPosition={ImageBlockCaptionPosition.over}
+				description={(<FormattedMessage id='description' />) as any}
+				tags={
+					<ChipGroup>
+						<Chip size={Size.s} theme={theme}>
+							Marketplace
+						</Chip>
+						<Chip size={Size.s} theme={theme}>
+							Widgets
+						</Chip>
+						<Chip size={Size.s} theme={theme}>
+							LumApps
+						</Chip>
+					</ChipGroup>
+				}
+				theme={theme}
+				title={(<FormattedMessage id='sub_title' />) as any}
+				image={url as string}
+			/>
+		</div>
 	)
 }
 
@@ -178,7 +171,9 @@ const NotificationAwareWidget = (props: any) => {
 	return (
 		<IntlProvider messages={messages[lang]} locale={lang}>
 			<NotificationsProvider>
-				<Widget {...props} />
+				<PredefinedErrorBoundary>
+					<Widget {...props} />
+				</PredefinedErrorBoundary>
 			</NotificationsProvider>
 		</IntlProvider>
 	)
