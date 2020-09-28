@@ -17,7 +17,7 @@
     "run": "node index.js",
     "version:patch": "yarn version --patch",
     "version:minor": "yarn version --minor",
-    "postversion": "node updateVersion.js"
+    "postversion": "node updateVersions.js"
   },
   "repository": {
     "type": "git",
