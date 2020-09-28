@@ -16,10 +16,11 @@ If using Yarn:
   yarn create lumapps-extension <project-name>
   cd <project-name>
   yarn
-  yarn dev
+  yarn start  
 ```
 
 ## Templates
+
 Available templates:
 
 - `react`
