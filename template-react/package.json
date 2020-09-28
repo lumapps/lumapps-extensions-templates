@@ -1,6 +1,5 @@
 {
   "name": "template-react",
-  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@lumapps-extensions-playground/common": "^0.1.6",
@@ -45,5 +44,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "version": "0.0.5"
 }

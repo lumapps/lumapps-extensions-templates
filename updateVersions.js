@@ -56,7 +56,7 @@ async function init() {
 				'@lumapps-extensions-playground/translations'
 			] = `^${updatePlaygroundDepsToVersion}`
 			pkg.devDependencies[
-				'@lumapps-extensions-playground/dev-env'
+				'@lumapps-extensions-playground/devenv'
 			] = `^${updatePlaygroundDepsToVersion}`
 		}
 

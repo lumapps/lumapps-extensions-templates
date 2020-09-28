@@ -5,7 +5,7 @@
  *     (config.extensionComponents[N].componentName)
  */
 
-import { Widget, WidgetSettings, WidgetGlobalSettings } from "./Widget";
+import { Widget, WidgetGlobalSettings, WidgetSettings } from "./widget";
 
 
 export default { Widget, WidgetSettings, WidgetGlobalSettings };
