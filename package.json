@@ -15,8 +15,8 @@
   ],
   "scripts": {
     "run": "node index.js",
-    "version:patch": "yarn version --patch",
-    "version:minor": "yarn version --minor",
+    "version:patch": "yarn version --patch --no-git-tag-version",
+    "version:minor": "yarn version --minor --no-git-tag-version",
     "postversion": "node updateVersions.js"
   },
   "repository": {
