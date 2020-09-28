@@ -1,6 +1,6 @@
 {
   "name": "create-lumapps-extension",
-  "version": "1.1.0",
+  "version": "1.0.1",
   "description": "",
   "author": "lab@lumapps.com",
   "main": "index.js",
@@ -16,6 +16,7 @@
   "scripts": {
     "run": "node index.js",
     "postversion": "node updateVersion.js",
+    "publish:patch": "yarn version --patch",
     "publish:minor": "yarn version --minor"
   },
   "repository": {
