@@ -16,8 +16,8 @@
   "scripts": {
     "run": "node index.js",
     "postversion": "node updateVersion.js",
-    "publish:patch": "yarn version --patch && npm publish",
-    "publish:minor": "yarn version --minor && npm publish"
+    "publish:patch": "yarn version --patch",
+    "publish:minor": "yarn version --minor && npm publish --access public"
   },
   "repository": {
     "type": "git",
