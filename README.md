@@ -24,6 +24,7 @@ If using Yarn:
 Available templates:
 
 - `react`
+- `react-ts`
 
 
 To scaffold with specific template:
