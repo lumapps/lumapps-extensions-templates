@@ -1,16 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom";
-
-import { Playground } from '@lumapps-extensions-playground/devenv'
-
-import config from './config.js';
-import { Widget, WidgetSettings, WidgetGlobalSettings } from "./Widget";
-
+import { Playground } from '@lumapps-extensions-playground/devenv';
 import '@lumapps-extensions-playground/devenv/devenv.esm.css';
+import '@lumx/core/lumx-theme-lumapps.min.css';
 // We only import both themes for the theme switch
 // The order of import is important
 import '@lumx/core/lumx-theme-material.min.css';
-import '@lumx/core/lumx-theme-lumapps.min.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import config from './config.js';
+import { Widget, WidgetGlobalSettings, WidgetSettings } from "./widget";
+
+
+
 
 ReactDOM.render(
   <React.StrictMode>
