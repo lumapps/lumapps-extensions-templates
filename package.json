@@ -15,9 +15,10 @@
   ],
   "scripts": {
     "run": "node index.js",
-    "postversion": "node updateVersion.js",
-    "publish:patch": "yarn version --patch",
-    "publish:minor": "yarn version --minor && npm publish --access public"
+    "prepublishOnly": "rm -f template-*/yarn.lock && rm -rf template-*/node_modules",
+    "version:patch": "yarn version --patch --no-git-tag-version",
+    "version:minor": "yarn version --minor --no-git-tag-version",
+    "postversion": "node updateVersions.js"
   },
   "repository": {
     "type": "git",
