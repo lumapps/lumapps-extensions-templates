@@ -1,6 +1,6 @@
 node_modules
 .DS_Store
 dist
-yarn.lock
+template-*/yarn.lock
 *.mdr
 template-react/build

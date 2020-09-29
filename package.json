@@ -1,6 +1,6 @@
 {
   "name": "create-lumapps-extension",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "author": "lab@lumapps.com",
   "main": "index.js",
@@ -15,6 +15,7 @@
   ],
   "scripts": {
     "run": "node index.js",
+    "prepublishOnly": "rm -f template-*/yarn.lock && rm -rf template-*/node_modules",
     "version:patch": "yarn version --patch --no-git-tag-version",
     "version:minor": "yarn version --minor --no-git-tag-version",
     "postversion": "node updateVersions.js"
