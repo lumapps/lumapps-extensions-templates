@@ -43,7 +43,7 @@ const WithIntlSettings: React.FC<WithIntlSettingsProps> = ({
 		<>
 			<TextField
 				className='mt0 ml lumx-spacing-margin-vertical-big'
-				label={(<FormattedMessage id='settings.image_id' /> as any)}
+				label={(<FormattedMessage id='settings.image_id' />) as any}
 				value={imageId}
 				onChange={setImageId}
 			/>
@@ -65,8 +65,8 @@ const WithIntlSettings: React.FC<WithIntlSettingsProps> = ({
 
 			{useBlur && (
 				<Slider
-					label={(<FormattedMessage id='settings.blur_value_title' /> as any)}
-					helper={(<FormattedMessage id='settings.blur_value_desc' /> as any)}
+					label={(<FormattedMessage id='settings.blur_value_title' />) as any}
+					helper={(<FormattedMessage id='settings.blur_value_desc' />) as any}
 					max={10}
 					min={1}
 					value={blur}
