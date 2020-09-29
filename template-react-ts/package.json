@@ -1,6 +1,6 @@
 {
   "name": "template-react-ts",
-  "version": "0.1.0",
+  "version": "0.0.6",
   "private": true,
   "dependencies": {
     "@lumapps-extensions-playground/common": "^0.1.6",
