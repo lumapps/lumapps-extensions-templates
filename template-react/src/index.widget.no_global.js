@@ -4,6 +4,6 @@
  *  exported component must reflect the values in config.js
  *     (config.extensionComponents[N].componentName)
  */
-import { Widget, WidgetSettings } from "./Widget";
+import { Widget, WidgetSettings } from "./widget";
 
 export default { Widget, WidgetSettings };
