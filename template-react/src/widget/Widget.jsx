@@ -6,7 +6,6 @@ import React, { useEffect, useState } from 'react'
 import { Lumapps } from 'lumapps-sdk-js'
 import {
 	AspectRatio,
-	Button,
 	Chip,
 	ChipGroup,
 	Divider,
