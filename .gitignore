@@ -3,4 +3,5 @@ node_modules
 dist
 template-*/yarn.lock
 *.mdr
-template-react/build
+build
+rollup.config.js

@@ -40,6 +40,7 @@ async function init() {
 	if(!choosedTemplate) {
 		const choices = [
 			{key: 1, name: 'React', value: 'react'},
+			{key: 2, name: 'React Typescript', value: 'react-ts'}
 		]
 		choice = await inquirer.prompt({
 			type: 'list',
@@ -52,7 +53,7 @@ async function init() {
 
 	console.log("\n--------------------")
 	console.log(`\nScaffolding project in ${root}...`)
-
+	
 	await fs.ensureDir(root)
 	const existing = await fs.readdir(root)
 	if (existing.length) {
