@@ -55,12 +55,6 @@ async function init() {
 	console.log(`\nScaffolding project in ${root}...`)
 	
 	await fs.ensureDir(root)
-	const existing = await fs.readdir(root)
-	if (existing.length) {
-		console.error(chalk.red(`Error: target directory ${chalk.green(root)} is not empty.`))
-		process.exit(1)
-	}
-
 
 	const templateDir = path.join(
 		__dirname,
