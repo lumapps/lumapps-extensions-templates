@@ -18,7 +18,12 @@ function logHelp() {
 
 console.log(chalk.cyan(`create-lumapps-extension v${require('./package.json').version}`))
 async function init() {
-	const targetDir = argv._[0] || '.'
+	const targetDir = argv._[0]
+	if(!targetDir) {
+		console.error(chalk.red('Please provide a target folder !'))
+		logHelp()
+		process.exit(1)
+	}
 	const cwd = process.cwd()
 	const root = path.join(cwd, targetDir)
 	const renameFiles = {
@@ -55,6 +60,8 @@ async function init() {
 	console.log(`\nScaffolding project in ${root}...`)
 	
 	await fs.ensureDir(root)
+
+
 
 	const templateDir = path.join(
 		__dirname,
