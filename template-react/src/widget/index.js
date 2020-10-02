@@ -1,4 +1,4 @@
-import Widget from "./widget";
+import Widget from "./Widget";
 import WidgetGlobalSettings from "./WidgetGlobalSettings";
 import WidgetSettings from "./WidgetSettings";
 
