@@ -11,3 +11,5 @@ include:
     - register-extension.md
     - SDK.md
     - submit-extension.md
+
+theme: jekyll-theme-cayman
