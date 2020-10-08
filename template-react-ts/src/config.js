@@ -1,9 +1,9 @@
-  
 /**
  *  Create-LumApps-Widget config file
  *  update the following to fit your needs
- */
-export const useGlobalSettings = false;
+*/
+
+ export const useGlobalSettings = true;
 
 const providerId = 'LumAppsLAB';
 
