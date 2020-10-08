@@ -1,14 +1,16 @@
 plugins:
     - jekyll-relative-links
+
 relative_links:
     enabled: true
     collections: true
+
 include:
+    - index.md
     - playground.md
     - getting-started.md
     - faq.md
     - build-extension.md
-    - register-extension.md
     - SDK.md
     - submit-extension.md
 
