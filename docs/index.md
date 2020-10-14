@@ -1,10 +1,14 @@
+---
+layout: page
+---
+
 # Getting started
 
 We provide a development playground for developer to let them build and test their extension.
 
 ## Initiate a new extension
 
-See the [Readme](../README.md)
+See the [Readme](https://github.com/lumapps/lumapps-extensions-templates/blob/master/README.md)
 
 ## Start the playground with your extension
 To start the web server with your extension just run the following commands :
