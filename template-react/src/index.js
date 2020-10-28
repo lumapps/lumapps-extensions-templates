@@ -9,7 +9,8 @@ import '@lumx/core/lumx-theme-lumapps.min.css';
 
 import React from "react";
 import ReactDOM from "react-dom";
-import config from './config.js';
+
+import config from './config';
 import { Widget, WidgetGlobalSettings, WidgetSettings } from "./widget";
 
 

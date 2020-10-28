@@ -1,7 +1,7 @@
 /**
  *  Create-LumApps-Widget entry point for widget with global settings
  *  Do not modify unless you know what you are doing
- *  exported component must reflect the values in config.js
+ *  exported component must reflect the values in config.ts
  *     (config.extensionComponents[N].componentName)
  */
 

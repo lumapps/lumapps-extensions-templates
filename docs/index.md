@@ -32,7 +32,7 @@ Each component should be written in :
 
 
 ## Edit configuration file
-You can edit the configuration file `<your_folder>/src/config.js` according to your need.
+You can edit the configuration file `<your_folder>/src/config.ts` according to your need.
 
 Available properties :
 
