@@ -4,8 +4,9 @@
   "dependencies": {
     "@lumapps-extensions-playground/common": "^0.3.0",
     "@lumapps-extensions-playground/translations": "^0.3.0",
-    "@lumx/icons": "^0.24.10",
-    "@lumx/react": "^0.24.10",
+    "@lumx/core": "^0.26.2",
+    "@lumx/icons": "^0.26.2",
+    "@lumx/react": "^0.26.2",
     "lumapps-sdk-js": "^0.0.22",
     "react": "^16.8.5",
     "react-dom": "^16.8.5"
