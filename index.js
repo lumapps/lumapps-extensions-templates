@@ -41,19 +41,21 @@ async function init() {
     }
 
     // Template prompt
-    let choosedTemplate = t || template;
-    if (!choosedTemplate) {
+    let chosenTemplate = t || template;
+
+    if (!chosenTemplate) {
         const choices = [
             { key: 1, name: 'React', value: 'react' },
             { key: 2, name: 'React Typescript', value: 'react-ts' },
         ];
-        choice = await inquirer.prompt({
+
+        const choice = await inquirer.prompt({
             type: 'list',
             message: 'Choose a template',
             name: 'template',
             choices,
         });
-        choosedTemplate = choice.template;
+        chosenTemplate = choice.template;
     }
 
     console.log('\n--------------------');
@@ -61,7 +63,7 @@ async function init() {
 
     await fs.ensureDir(root);
 
-    const templateDir = path.join(__dirname, `template-${choosedTemplate}`);
+    const templateDir = path.join(__dirname, `template-${chosenTemplate}`);
     const write = async (file, content) => {
         const targetPath = renameFiles[file] ? path.join(root, renameFiles[file]) : path.join(root, file);
         if (content) {
