@@ -1,3 +1,3 @@
-const { createServer } = require('@lumapps-extensions-playground/playground-server')
+import { createServer } from '@lumapps-extensions-playground/playground-server';
 
-createServer()
+createServer();

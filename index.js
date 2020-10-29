@@ -1,13 +1,18 @@
 #!/usr/bin/env node
-import path from 'path';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
 import fs from 'fs-extra';
 import minimist from 'minimist';
 import inquirer from 'inquirer';
 import chalk from 'chalk';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const argv = minimist(process.argv.slice(2));
 
-function logHelp() {
+const { version: packageVersion } = fs.readJsonSync(path.join(__dirname, './package.json'));
+
+const logHelp = () => {
     console.log(`
   Usage: create-lumapps-extension [folder] [--options]
 
@@ -16,11 +21,13 @@ function logHelp() {
 	--version, -v              [boolean] show version
 	--template, -t             [string]  use specified template (react)
  `);
-}
+};
 
-console.log(chalk.cyan(`create-lumapps-extension v${require('./package.json').version}`));
-async function init() {
+console.log(chalk.cyan(`create-lumapps-extension v${packageVersion}`));
+
+const init = async () => {
     const targetDir = argv._[0];
+
     if (!targetDir) {
         console.error(chalk.red('Please provide a target folder !'));
         logHelp();
@@ -80,7 +87,7 @@ async function init() {
         await write(file);
     }
 
-    const pkg = require(path.join(templateDir, `package.json`));
+    const pkg = fs.readJsonSync(path.join(templateDir, `package.json`));
     pkg.name = path.basename(root);
     await write('package.json', JSON.stringify(pkg, null, 2));
 
@@ -93,7 +100,7 @@ async function init() {
 	`),
     );
     console.log();
-}
+};
 
 init().catch((e) => {
     console.error(e);
