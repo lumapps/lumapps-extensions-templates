@@ -1,9 +1,11 @@
 #!/usr/bin/env node
-const path = require('path');
-const fs = require('fs-extra');
-const argv = require('minimist')(process.argv.slice(2));
-const inquirer = require('inquirer');
-const chalk = require('chalk');
+import path from 'path';
+import fs from 'fs-extra';
+import minimist from 'minimist';
+import inquirer from 'inquirer';
+import chalk from 'chalk';
+
+const argv = minimist(process.argv.slice(2));
 
 function logHelp() {
     console.log(`
