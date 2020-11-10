@@ -15,7 +15,7 @@ version:minor
 ```
 
 Then make a PR to master. 
-Once merged on master you can publish it via the lumapps npm profile by going to the master branch and runnign
+Once merged on master you can publish it via the lumapps npm profile by going to the master branch and running
 
 ```
 npm publish
@@ -31,6 +31,5 @@ The navigation is setup in the `_sidebar.md` file.
 ```
 yarn serve:doc
 ```
-
 
 
