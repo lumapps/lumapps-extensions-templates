@@ -5,3 +5,5 @@ template-*/yarn.lock
 *.mdr
 build
 rollup.config.js
+_site
+.jekyll-cache
