@@ -8,7 +8,7 @@ export const useGlobalSettings = true;
 /**
  * The ids of your provider and extension
  */
-const providerId = 'LumAppsLAB';
+const providerId = '';
 const extensionId = '';
 
 
