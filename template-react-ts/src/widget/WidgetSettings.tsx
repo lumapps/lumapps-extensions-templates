@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Slider, Switch, TextField } from '@lumx/react'
+
+import { Lumapps } from 'lumapps-sdk-js';
 
 import {
 	FormattedMessage,
@@ -8,7 +10,6 @@ import {
 } from '@lumapps-extensions-playground/translations'
 import {
 	PredefinedErrorBoundary,
-	withLumappsContext,
 	useDebounce,
 	useExportProps
 } from '@lumapps-extensions-playground/common'
@@ -83,13 +84,25 @@ const WidgetSettings = ({ properties = {}, exportProp = undefined }) => {
 		fr: messagesFr
 	}
 
-	const {
-		LUMAPPS_WIDGETS_SETTINGS: { userLang }
-	}: any = window
-	const lang = Object.keys(messages).includes(userLang) ? userLang : 'en'
+	const [lang, setLang] = useState<string>('en');
+	useEffect(() => {
+		const getContext = async () => {
+		const lumapps = new Lumapps();
+		const {
+			userLang: userLangPromise,
+		} = lumapps.context;
+
+		const userLang = await userLangPromise;
+		if (Object.keys(messages).includes(userLang)) {
+			setLang(userLang);
+		}
+		};
+		getContext();
+	}, []);
+
 
 	return (
-		<PredefinedErrorBoundary lang={userLang}>
+		<PredefinedErrorBoundary lang={lang}>
 			<IntlProvider locale={lang} messages={messages[lang]}>
 				<WithIntlSettings properties={properties} exportProp={exportProp} />
 			</IntlProvider>
@@ -97,4 +110,4 @@ const WidgetSettings = ({ properties = {}, exportProp = undefined }) => {
 	)
 }
 
-export default withLumappsContext(WidgetSettings)
+export default WidgetSettings

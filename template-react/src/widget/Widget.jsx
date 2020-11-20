@@ -23,11 +23,8 @@ import { FormattedMessage, IntlProvider } from "@lumapps-extensions-playground/t
 import {
 	PredefinedErrorBoundary,
 	useNotifications,
-	withLumappsContext,
 	NotificationsProvider
 } from '@lumapps-extensions-playground/common'
-
-
 
 import messagesEn from '../translations/en.json'
 import messagesFr from '../translations/fr.json'
@@ -44,26 +41,10 @@ const theme = Theme.light
 
 const Widget = ({ value = {}, globalValue = {} }) => {
 	   const [url, setUrl] = useState();
-	   const [user, setUser] = useState();
 	   const [error, setError] = useState();
 
 	   const { imageId, useGreyScale, useBlur, blur } = value;
 	   const { baseUrl = defaultGlobalSettings.baseUrl } = globalValue;
-
-	   useEffect(() => {
-	     const fetch = async () => {
-	       try {
-	         const lumapps = new Lumapps();
-	         const res = await lumapps.getConnectedUser();
-	         setUser(res);
-	       } catch (exception) {
-	         console.error(exception);
-	         setError(exception);
-	       }
-	     };
-
-	     fetch();
-	   }, []);
 
 	   useEffect(() => {
 	     const size = 1200;
@@ -86,22 +67,6 @@ const Widget = ({ value = {}, globalValue = {} }) => {
 	     setUrl(link);
 	   }, [blur, imageId, useBlur, useGreyScale, url, baseUrl]);
 
-	   const getProfilePicture = (apiProfile) => {
-	     if (
-	       apiProfile.thumbnail &&
-	       apiProfile.thumbnail.mimeType &&
-	       apiProfile.thumbnail.photoData
-	     ) {
-	       return `data:${
-	         apiProfile.thumbnail.mimeType
-	       };base64,${apiProfile.thumbnail.photoData
-	         .replace(/_/g, "/")
-	         .replace(/-/g, "+")}`;
-	     }
-
-	     return apiProfile.profilePicture;
-	   };
-
 	const { notifySuccess } = useNotifications()
 
 	useEffect(() => {
@@ -112,27 +77,6 @@ const Widget = ({ value = {}, globalValue = {} }) => {
 		<PredefinedErrorBoundary>
 		<>
 	         <div className="widget-picsum">
-		       {!error && user && (
-		         <>
-		           <Toolbar
-		             label={
-		               <span>
-		                 <FormattedMessage id="title" />
-		               </span>
-		             }
-		             after={
-		               <UserBlock
-		                 theme={theme}
-		                 name={user.fullName}
-		                 fields={[user.email]}
-		                 avatar={getProfilePicture(user.apiProfile)}
-		                 size={Size.m}
-		               />
-		             }
-		           />
-		           <Divider />
-		         </>
-		       )}
 		       {error && (
 		         <Notification
 		           type={NotificationType.error}
@@ -174,12 +118,21 @@ const NotificationAwareWidget = (props) => {
 		en: messagesEn,
 		fr: messagesFr
 	}
-	const {
-		LUMAPPS_WIDGETS_SETTINGS: {
-		  userLang,
-		},
-	  } = window;
-	  const lang = Object.keys(messages).includes(userLang) ? userLang : 'en';
+	const [lang, setLang] = useState('en');
+	useEffect(() => {
+		const getContext = async () => {
+		const lumapps = new Lumapps();
+		const {
+			userLang: userLangPromise,
+		} = lumapps.context;
+
+		const userLang = await userLangPromise;
+		if (Object.keys(messages).includes(userLang)) {
+			setLang(userLang);
+		}
+		};
+		getContext();
+	}, []);
 	
 	return (
 		<IntlProvider messages={messages[lang]} lang={lang}>
@@ -190,4 +143,4 @@ const NotificationAwareWidget = (props) => {
 	)
 }
 
-export default withLumappsContext(NotificationAwareWidget)
+export default NotificationAwareWidget
