@@ -2,8 +2,8 @@
   "name": "template-react",
   "private": true,
   "dependencies": {
-    "@lumapps-extensions-playground/common": "^0.6.3",
-    "@lumapps-extensions-playground/translations": "^0.6.3",
+    "@lumapps-extensions-playground/common": "^0.6.4",
+    "@lumapps-extensions-playground/translations": "^0.6.4",
     "@lumx/icons": "^0.24.10",
     "@lumx/react": "^0.24.10",
     "lumapps-sdk-js": "^0.0.30",
@@ -14,7 +14,7 @@
     "@babel/core": "^7.4.5",
     "@babel/node": "^7.4.5",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@lumapps-extensions-playground/devenv": "^0.6.3",
+    "@lumapps-extensions-playground/devenv": "^0.6.4",
     "@lumapps-extensions-playground/playground-server": "0.2.4-alpha.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -49,5 +49,5 @@
       "last 1 safari version"
     ]
   },
-  "version": "0.1.0"
+  "version": "0.1.2"
 }
