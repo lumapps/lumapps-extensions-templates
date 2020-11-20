@@ -9,7 +9,7 @@ Choose one above (if applicable)
 - [ ] Patch
 
 <!--- If your extension is private add customer names and ids above -->
-## Whitelisted custmers
+## Whitelisted customers
 | Customer name | Customer id |
 |---------------|-------------|
 | *name*        | *id*        |
