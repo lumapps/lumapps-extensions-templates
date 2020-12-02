@@ -29,7 +29,7 @@ Available templates:
 To scaffold with specific template:
 
 ```bash
-$ npm init lumapps-extension my-lumapps-extension-project --template react-ts
+$ yarn create lumapps-extension my-lumapps-extension-project --template react-ts
 ```
 
 ## Documentation
