@@ -23,12 +23,15 @@ If using Yarn:
 
 Available templates:
 
-- `react`
 - `react-ts`
 
 
 To scaffold with specific template:
 
 ```bash
-$ npm init lumapps-extension my-lumapps-extension-project --template react
+$ yarn create lumapps-extension my-lumapps-extension-project --template react-ts
 ```
+
+## Documentation
+
+The documentation of the templates and widget is available [here](https://lumapps.github.io/lumapps-extensions-templates/)
