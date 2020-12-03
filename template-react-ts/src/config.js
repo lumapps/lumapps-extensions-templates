@@ -11,7 +11,6 @@ export const useGlobalSettings = true;
 const providerId = '';
 const extensionId = '';
 
-
 const description = {
     en: 'SampleWidgetTypescript',
 };
@@ -21,7 +20,8 @@ const name = {
 };
 
 const icon = {
-    en: 'https://lh3.googleusercontent.com/-6F_iwel8KGY/WD8MdGS0PkI/AAAAAAAAGDI/KaqvKtZCK_AsdK6BcKp6Cy1MpwoEWCUvgCKgB/s400/logo.png', // a working link to your widget icon
+    en:
+        'https://lh3.googleusercontent.com/-6F_iwel8KGY/WD8MdGS0PkI/AAAAAAAAGDI/KaqvKtZCK_AsdK6BcKp6Cy1MpwoEWCUvgCKgB/s400/logo.png', // a working link to your widget icon
 };
 
 /**
@@ -37,8 +37,8 @@ const isPublic = true;
 
 /**
  * The list of authorized customer ids.
- * 
- * If your extension is not public only these customers will see and 
+ *
+ * If your extension is not public only these customers will see and
  * will be able to install this extensions.
  */
 const whitelist = [''];

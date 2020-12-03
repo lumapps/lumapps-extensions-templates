@@ -11,18 +11,13 @@ import defaultGlobalSettings from './defaultGlobalSettings';
  * @param {Object} props The settings component properties.
  */
 const WidgetGlobalSettings = ({ properties = {}, exportProp }: any) => {
-  const [baseUrl, setBaseUrl] = useState(properties.baseUrl || defaultGlobalSettings.baseUrl);
-  const debouncedBaseUrl = useDebounce(baseUrl, 800);
-  useExportProps(debouncedBaseUrl, 'baseUrl', properties, exportProp);
-  return (
-    <div>
-      <TextField
-        className="mt0 ml"
-        label="URL"
-        value={baseUrl}
-        onChange={setBaseUrl}
-      />
-    </div>
-  );
+    const [baseUrl, setBaseUrl] = useState(properties.baseUrl || defaultGlobalSettings.baseUrl);
+    const debouncedBaseUrl = useDebounce(baseUrl, 800);
+    useExportProps(debouncedBaseUrl, 'baseUrl', properties, exportProp);
+    return (
+        <div>
+            <TextField className="mt0 ml" label="URL" value={baseUrl} onChange={setBaseUrl} />
+        </div>
+    );
 };
 export default WidgetGlobalSettings;
