@@ -11,7 +11,8 @@ function logHelp() {
 	--help, -h                                       [boolean] show help
 	--version, -v                                    [boolean] show version
 	--updateLumappsPlaygroundDeps, -ulpd             [string]  update @lumapps-extensions-playground deps to specified version
- `)
+	--updateLumx, -ulumx   							 [string]  update @lumx/react, @lumx/icons and @lumx/core
+	`)
 }
 
 async function init() {
@@ -20,7 +21,7 @@ async function init() {
 	)
 	const currentPkg = require(path.join(__dirname, `package.json`))
 
-	const { help, h, version, v, updateLumappsPlaygroundDeps, ulpd } = argv
+	const { help, h, version, v, updateLumappsPlaygroundDeps, ulpd, updateLumx, ulumx } = argv
 
 	if (help || h) {
 		logHelp()
@@ -30,13 +31,17 @@ async function init() {
 		return
 	}
 
-	let updatePlaygroundDepsToVersion
-	if (updateLumappsPlaygroundDeps || ulpd) {
-		updatePlaygroundDepsToVersion = updateLumappsPlaygroundDeps || ulpd
+	let updatePlaygroundDepsToVersion = updateLumappsPlaygroundDeps || ulpd
+	if (updatePlaygroundDepsToVersion) {
 		console.log(
 			'Updating @lumapps-extensions-playground deps to version ' +
 				updatePlaygroundDepsToVersion
 		)
+	}
+
+	let updateLumxToVersion = updateLumx || ulumx
+	if (updateLumxToVersion) {
+		console.log('Updating @Lumx deps to version ' + updateLumxToVersion)
 	}
 
 	console.log('Updating package versions to ' + currentPkg.version)
@@ -58,6 +63,12 @@ async function init() {
 			pkg.devDependencies[
 				'@lumapps-extensions-playground/devenv'
 			] = `^${updatePlaygroundDepsToVersion}`
+		}
+
+		if (updateLumxToVersion) {
+			pkg.dependencies["@lumx/core"] = `^${updateLumxToVersion}`
+			pkg.dependencies["@lumx/icons"] = `^${updateLumxToVersion}`
+			pkg.dependencies["@lumx/react"] = `^${updateLumxToVersion}`
 		}
 
 		await fs.writeFile(pkgPath, JSON.stringify(pkg, null, 2))
