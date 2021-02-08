@@ -18,8 +18,8 @@ const WithIntlSettings: React.FC<WithIntlSettingsProps> = ({ properties = {}, ex
     const intl = useIntl();
 
     const [imageId, setImageId] = useState(properties.imageId);
-    const [useGreyScale, setUseGreyScale] = useState<boolean>(properties.useGreyScale);
-    const [useBlur, setUseBlur] = useState<boolean>(properties.useBlur);
+    const [useGreyScale, setUseGreyScale] = useState<boolean>(!!properties.useGreyScale);
+    const [useBlur, setUseBlur] = useState<boolean>(!!properties.useBlur);
     const [blur, setBlur] = useState(properties.blur);
 
     const debouncedImageId = useDebounce(imageId, 800);
@@ -37,7 +37,7 @@ const WithIntlSettings: React.FC<WithIntlSettingsProps> = ({ properties = {}, ex
                 value={imageId}
                 onChange={setImageId}
             />
-            <Switch className="mt+ ml" isChecked={useGreyScale} onToggle={() => setUseGreyScale(!useGreyScale)}>
+            <Switch className="mt+ ml" isChecked={useGreyScale} onChange={() => setUseGreyScale(!useGreyScale)}>
                 {intl.formatMessage({ id: 'settings.grey' })}
             </Switch>
 
