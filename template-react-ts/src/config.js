@@ -25,6 +25,13 @@ const icon = {
 };
 
 /**
+ * The documentation's url of the enxtension.
+ */
+const links = {
+    documentation: '',
+}
+
+/**
  * The components available for your extensions
  * 'content' : For the Widget content itself (required)
  * 'settings' : For your widget settings
@@ -50,6 +57,7 @@ const config = {
     name,
     description,
     icon,
+    links,
     components,
     isPublic,
     whitelist,
