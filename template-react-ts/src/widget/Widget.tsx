@@ -2,18 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Lumapps } from 'lumapps-sdk-js';
 import {
     AspectRatio,
-    Button,
     Chip,
     ChipGroup,
-    Divider,
     ImageBlock,
     ImageBlockCaptionPosition,
     Notification,
-    NotificationType,
+    Kind,
     Size,
     Theme,
-    Toolbar,
-    UserBlock,
 } from '@lumx/react';
 
 import { FormattedMessage, IntlProvider } from '@lumapps-extensions-playground/translations';
@@ -39,8 +35,8 @@ const Widget: React.FC<WidgetProps> = ({ value = {}, globalValue = {} }) => {
     const [url, setUrl] = useState<string | undefined>();
     const [error, setError] = useState<string>();
 
-    const { imageId, useGreyScale, useBlur, blur } = value;
-    const { baseUrl = defaultGlobalSettings.baseUrl } = globalValue;
+    const { imageId, useGreyScale, useBlur, blur }: any = value;
+    const { baseUrl = defaultGlobalSettings.baseUrl }: any = globalValue;
 
     useEffect(() => {
         const size = 1200;
@@ -63,15 +59,15 @@ const Widget: React.FC<WidgetProps> = ({ value = {}, globalValue = {} }) => {
         <div className="widget-picsum">
             {error && (
                 <Notification
-                    type={NotificationType.error}
+                    type={Kind.error}
                     content={<FormattedMessage id="errors.retrieve_user" />}
                     isOpen
                     actionLabel="Dismiss"
-                    actionCallback={setError as any}
+                    onActionClick={() => setError(undefined)}
                 />
             )}
             <ImageBlock
-                aspectRatio={AspectRatio.horizontal}
+                alt=""
                 captionPosition={ImageBlockCaptionPosition.over}
                 description={(<FormattedMessage id="description" />) as any}
                 tags={

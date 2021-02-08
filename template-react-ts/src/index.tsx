@@ -2,10 +2,8 @@ import { Playground } from '@lumapps-extensions-playground/devenv';
 
 import '@lumapps-extensions-playground/devenv/devenv.esm.css';
 
-// We only import both themes for the theme switch
-// The order of import is important
-import '@lumx/core/lumx-theme-material.min.css';
-import '@lumx/core/lumx-theme-lumapps.min.css';
+// DO not remove
+import '@lumx/core/lumx.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
