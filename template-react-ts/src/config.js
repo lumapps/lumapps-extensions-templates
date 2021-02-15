@@ -8,8 +8,8 @@ export const useGlobalSettings = true;
 /**
  * The ids of your provider and extension
  */
-const providerId = '';
-const extensionId = '';
+const providerId = '111254103421414216664258126308453860562';
+const extensionId = '101021853165562821606065325782027490855';
 
 const description = {
     en: 'SampleWidgetTypescript',
@@ -41,7 +41,7 @@ const isPublic = true;
  * If your extension is not public only these customers will see and
  * will be able to install this extensions.
  */
-const whitelist = [''];
+const whitelist = [];
 
 // do not change the following unless you know what you are doing
 const config = {
@@ -52,6 +52,7 @@ const config = {
     icon,
     components,
     isPublic,
+    public: isPublic,
     whitelist,
     category: 'widget',
 };
