@@ -1,6 +1,6 @@
 {
   "name": "create-lumapps-extension",
-  "version": "0.4.0-beta.1",
+  "version": "0.4.0-beta.2",
   "description": "",
   "author": "lab@lumapps.com",
   "main": "index.js",
@@ -18,7 +18,6 @@
     "prepublishOnly": "rm -f template-*/yarn.lock && rm -rf template-*/node_modules",
     "version:patch": "yarn version --patch --no-git-tag-version",
     "version:minor": "yarn version --minor --no-git-tag-version",
-    "publish": "npm publish",
     "publish:beta": "npm publish --tag beta",
     "publish:alpha": "npm publish --tag alpha",
     "postversion": "node updateVersions.js",
