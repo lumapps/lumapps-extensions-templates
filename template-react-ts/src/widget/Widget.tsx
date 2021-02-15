@@ -122,9 +122,9 @@ const NotificationAwareWidget = (props: any) => {
             const { userLang: userLangPromise } = lumapps.context;
 
             const userLang = await userLangPromise;
-            if (Object.keys(messages).includes(userLang)) {
-                setLang(userLang);
-            }
+            const isLangInTrad = Object.keys(messages).includes(userLang);
+
+            setLang(isLangInTrad ? userLang : 'en');
         };
         getContext();
     }, []);
