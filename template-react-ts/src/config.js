@@ -32,6 +32,11 @@ const links = {
 }
 
 /**
+ * Whether the extension requires an oauth application
+ */
+const oauth = false;
+
+/**
  * The components available for your extensions
  * 'content' : For the Widget content itself (required)
  * 'settings' : For your widget settings
@@ -58,6 +63,7 @@ const config = {
     description,
     icon,
     links,
+    oauth,
     components,
     isPublic,
     whitelist,
