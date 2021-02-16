@@ -29,6 +29,12 @@ const icon = {
  */
 const oauth = false;
 
+/**
+ * The documentation's url of the enxtension.
+ */
+const links = {
+    documentation: '',
+}
 
 /**
  * The components available for your extensions
@@ -57,6 +63,7 @@ const config = {
     description,
     icon,
     oauth,
+    links,
     components,
     isPublic,
     public: isPublic,
