@@ -8,8 +8,8 @@ export const useGlobalSettings = true;
 /**
  * The ids of your provider and extension
  */
-const providerId = '111254103421414216664258126308453860562';
-const extensionId = '101021853165562821606065325782027490855';
+const providerId = '';
+const extensionId = '';
 
 const description = {
     en: 'SampleWidgetTypescript',
