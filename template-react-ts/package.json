@@ -1,6 +1,6 @@
 {
   "name": "template-react-ts",
-  "version": "0.4.0-beta.3",
+  "version": "0.4.0-beta.4",
   "private": true,
   "dependencies": {
     "@lumapps-extensions-playground/common": "^1.0.0-beta.6",
@@ -8,6 +8,7 @@
     "@lumx/core": "^1.0.7",
     "@lumx/icons": "^1.0.7",
     "@lumx/react": "^1.0.7",
+    "lodash": "^4.17.21",
     "lumapps-sdk-js": "^0.0.30",
     "moment": "^2.29.1",
     "moment-range": "^4.0.2",
@@ -42,6 +43,7 @@
     "@testing-library/user-event": "^7.1.2",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
+    "@types/lodash": "^4.14.168",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@typescript-eslint/eslint-plugin": "^2.18.0",
