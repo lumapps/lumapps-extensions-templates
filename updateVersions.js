@@ -63,6 +63,9 @@ async function init() {
 			pkg.devDependencies[
 				'@lumapps-extensions-playground/devenv'
 			] = `^${updatePlaygroundDepsToVersion}`
+			pkg.devDependencies[
+				'@lumapps-extensions-playground/playground-server'
+			] = `^${updatePlaygroundDepsToVersion}`
 		}
 
 		if (updateLumxToVersion) {

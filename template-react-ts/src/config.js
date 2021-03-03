@@ -25,6 +25,11 @@ const icon = {
 };
 
 /**
+ * Whether the extension requires an oauth application
+ */
+const oauth = false;
+
+/**
  * The documentation's url of the enxtension.
  */
 const links = {
@@ -48,7 +53,7 @@ const isPublic = true;
  * If your extension is not public only these customers will see and
  * will be able to install this extensions.
  */
-const whitelist = [''];
+const whitelist = [];
 
 // do not change the following unless you know what you are doing
 const config = {
@@ -57,9 +62,11 @@ const config = {
     name,
     description,
     icon,
+    oauth,
     links,
     components,
     isPublic,
+    public: isPublic,
     whitelist,
     category: 'widget',
 };

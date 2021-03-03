@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Lumapps } from 'lumapps-sdk-js';
 import {
-    AspectRatio,
-    Button,
     Chip,
     ChipGroup,
-    Divider,
     ImageBlock,
     ImageBlockCaptionPosition,
     Notification,
-    NotificationType,
+    Kind,
     Size,
     Theme,
-    Toolbar,
-    UserBlock,
+    AspectRatio,
 } from '@lumx/react';
 
 import { FormattedMessage, IntlProvider } from '@lumapps-extensions-playground/translations';
@@ -28,19 +24,26 @@ import messagesFr from '../translations/fr.json';
 
 import defaultGlobalSettings from './defaultGlobalSettings';
 
-const theme = Theme.light;
-
 interface WidgetProps {
     value?: any;
     globalValue?: any;
+    uuid: string;
+    contentId: string;
+    theme: Theme;
 }
 
-const Widget: React.FC<WidgetProps> = ({ value = {}, globalValue = {} }) => {
+const Widget = ({
+    value = {},
+    globalValue = {},
+    uuid,
+    contentId,
+    theme = Theme.light,
+}: WidgetProps): React.ReactElement => {
     const [url, setUrl] = useState<string | undefined>();
     const [error, setError] = useState<string>();
 
-    const { imageId, useGreyScale, useBlur, blur } = value;
-    const { baseUrl = defaultGlobalSettings.baseUrl } = globalValue;
+    const { imageId, useGreyScale, useBlur, blur }: any = value;
+    const { baseUrl = defaultGlobalSettings.baseUrl }: any = globalValue;
 
     useEffect(() => {
         const size = 1200;
@@ -57,21 +60,27 @@ const Widget: React.FC<WidgetProps> = ({ value = {}, globalValue = {} }) => {
     const { notifySuccess } = useNotifications();
 
     useEffect(() => {
-        notifySuccess('Notification from a widget !!', undefined, undefined, 10000);
+        notifySuccess(
+            'Notification from a widget !!',
+            'Click me',
+            () => alert("I'm a notification action callback"),
+            10000,
+        );
     }, []);
     return (
         <div className="widget-picsum">
             {error && (
                 <Notification
-                    type={NotificationType.error}
+                    theme={theme}
+                    type={Kind.error}
                     content={<FormattedMessage id="errors.retrieve_user" />}
                     isOpen
                     actionLabel="Dismiss"
-                    actionCallback={setError as any}
+                    onActionClick={() => setError(undefined)}
                 />
             )}
             <ImageBlock
-                aspectRatio={AspectRatio.horizontal}
+                alt=""
                 captionPosition={ImageBlockCaptionPosition.over}
                 description={(<FormattedMessage id="description" />) as any}
                 tags={
@@ -90,6 +99,9 @@ const Widget: React.FC<WidgetProps> = ({ value = {}, globalValue = {} }) => {
                 theme={theme}
                 title={(<FormattedMessage id="sub_title" />) as any}
                 image={url as string}
+                thumbnailProps={{
+                    aspectRatio: AspectRatio.horizontal,
+                }}
             />
         </div>
     );
@@ -107,9 +119,9 @@ const NotificationAwareWidget = (props: any) => {
             const { userLang: userLangPromise } = lumapps.context;
 
             const userLang = await userLangPromise;
-            if (Object.keys(messages).includes(userLang)) {
-                setLang(userLang);
-            }
+            const isLangInTrad = Object.keys(messages).includes(userLang);
+
+            setLang(isLangInTrad ? userLang : 'en');
         };
         getContext();
     }, []);
