@@ -9,7 +9,6 @@ import {
     Kind,
     Size,
     Theme,
-    Progress,
     AspectRatio,
 } from '@lumx/react';
 
@@ -24,8 +23,6 @@ import messagesEn from '../translations/en.json';
 import messagesFr from '../translations/fr.json';
 
 import defaultGlobalSettings from './defaultGlobalSettings';
-
-const theme = Theme.light;
 
 interface WidgetProps {
     value?: any;
