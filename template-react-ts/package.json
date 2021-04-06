@@ -1,6 +1,6 @@
 {
   "name": "template-react-ts",
-  "version": "0.4.0",
+  "version": "0.4.2",
   "private": true,
   "dependencies": {
     "@lumapps-extensions-playground/common": "^1.0.0",
@@ -9,7 +9,7 @@
     "@lumx/icons": "^1.0.7",
     "@lumx/react": "^1.0.7",
     "lodash": "^4.17.21",
-    "lumapps-sdk-js": "^0.0.30",
+    "lumapps-sdk-js": "^0.0.39",
     "moment": "^2.29.1",
     "moment-range": "^4.0.2",
     "react": "^16.13.1",
@@ -36,7 +36,7 @@
     ]
   },
   "devDependencies": {
-    "@lumapps-extensions-playground/devenv": "^1.0.0",
+    "@lumapps-extensions-playground/devenv": "^1.0.3",
     "@lumapps-extensions-playground/playground-server": "^1.0.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
