@@ -8,6 +8,7 @@ import '@lumx/core/lumx.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+
 import config from './config.js';
 import { Widget, WidgetGlobalSettings, WidgetSettings } from './widget';
 
