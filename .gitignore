@@ -2,10 +2,11 @@ node_modules
 .DS_Store
 dist
 template-*/yarn.lock
-*.mdr
+*.lum
 build
 rollup.config.js
 _site
 .jekyll-cache
 versionBump.json
 config.trans.js
+.idea
