@@ -4,15 +4,15 @@ title: Home
 nav_order: 1
 has_children: false
 ---
-# How to develop an extension for Lumapps
+# How to develop an extension for LumApps
 
-After gaining access to the Lumapps Extension program, you'll have access to a github repository and be able to launch the LumApps extension playground. 
+After gaining access to LumApps Extension program, you'll have access to a github repository and be able to launch the LumApps extension playground. 
 
-This playground offer a development environment for developer who want to create extensions for Lumapps platform.
+This playground offers a development environment for developer who want to create extensions for LumApps platforms.
 
-## Create your extension with Lumapps Extension template
-You can follow the documentationon the Lumapps extension template repository : 
-[Lumapps Extension Template](https://github.com/lumapps/lumapps-extensions-templates)
+## Create your extension with LumApps Extension template
+You can follow the documentationon the LumApps extension template repository : 
+[LumApps Extension Template](https://github.com/lumapps/lumapps-extensions-templates)
 
 ## Launch the playground
 
