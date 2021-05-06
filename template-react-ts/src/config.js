@@ -6,9 +6,9 @@
 export const useGlobalSettings = true;
 
 /**
- * The ids of your provider and extension
+ * The ids of your partner and extension
  */
-const providerId = '';
+const partnerId = '';
 const extensionId = '';
 
 const description = {
@@ -57,7 +57,7 @@ const whitelist = [];
 
 // do not change the following unless you know what you are doing
 const config = {
-    providerId,
+    partnerId,
     extensionId,
     name,
     description,
