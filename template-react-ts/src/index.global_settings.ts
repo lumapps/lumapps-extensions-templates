@@ -3,4 +3,4 @@
  */
 import { WidgetGlobalSettings } from './widget';
 
-export default { WidgetGlobalSettings };
+export { WidgetGlobalSettings };

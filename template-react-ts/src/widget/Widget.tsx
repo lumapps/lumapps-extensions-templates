@@ -12,7 +12,7 @@ import {
     AspectRatio,
 } from '@lumx/react';
 
-import { FormattedMessage, IntlProvider } from '@lumapps-extensions-playground/translations';
+import { FormattedMessage, IntlProvider } from 'react-intl';
 import {
     PredefinedErrorBoundary,
     useNotifications,

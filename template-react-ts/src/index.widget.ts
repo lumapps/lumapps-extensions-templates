@@ -5,4 +5,4 @@
 
 import { Widget, WidgetGlobalSettings, WidgetSettings } from './widget';
 
-export default { Widget, WidgetSettings, WidgetGlobalSettings };
+export { Widget, WidgetSettings, WidgetGlobalSettings };

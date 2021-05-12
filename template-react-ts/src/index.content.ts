@@ -3,4 +3,4 @@
  */
 import { Widget } from './widget';
 
-export default { Widget };
+export { Widget };
