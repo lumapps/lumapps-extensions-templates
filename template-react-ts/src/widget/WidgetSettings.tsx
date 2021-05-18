@@ -3,7 +3,7 @@ import { Slider, Switch, TextField } from '@lumx/react';
 
 import { Lumapps } from 'lumapps-sdk-js';
 
-import { FormattedMessage, IntlProvider, useIntl } from '@lumapps-extensions-playground/translations';
+import { FormattedMessage, IntlProvider, useIntl } from 'react-intl';
 import { PredefinedErrorBoundary, useDebounce, useExportProps } from '@lumapps-extensions-playground/common';
 
 import messagesEn from '../translations/en.json';
