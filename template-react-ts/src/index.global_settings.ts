@@ -1,6 +1,4 @@
 /**
  *  Do not modify unless you know what you are doing
  */
-import { WidgetGlobalSettings } from './widget';
-
-export { WidgetGlobalSettings };
+export { WidgetGlobalSettings } from './widget/WidgetGlobalSettings';

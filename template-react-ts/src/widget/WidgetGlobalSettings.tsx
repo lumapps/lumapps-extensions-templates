@@ -6,11 +6,11 @@ import { useDebounce, useExportProps } from '@lumapps-extensions-playground/comm
 import defaultGlobalSettings from './defaultGlobalSettings';
 
 /**
- * Render the widget Picsum setttings form.
+ * Render the widget Picsum settings form.
  *
  * @param {Object} props The settings component properties.
  */
-const WidgetGlobalSettings = ({ properties = {}, exportProp }: any) => {
+export const WidgetGlobalSettings = ({ properties = {}, exportProp }: any) => {
     const [baseUrl, setBaseUrl] = useState(properties.baseUrl || defaultGlobalSettings.baseUrl);
     const debouncedBaseUrl = useDebounce(baseUrl, 800);
     useExportProps(debouncedBaseUrl, 'baseUrl', properties, exportProp);
@@ -20,4 +20,3 @@ const WidgetGlobalSettings = ({ properties = {}, exportProp }: any) => {
         </div>
     );
 };
-export default WidgetGlobalSettings;
