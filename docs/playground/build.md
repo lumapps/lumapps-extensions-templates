@@ -116,7 +116,10 @@ You extension is build, you can now deploy it.
 
 You should be connected, have a partner and an extension id and have build your extension.
 
-The first step is to host your extension on your own server / CDN. When it’s done, you will have to keep an URL which should point to the generated LUM files.
+The first step is to host your extension on your own server / CDN.\
+To be accessible from Lumapps, your server must use HTTPS, and activate the CORS to let Lumapps platform contact and retrive the extension files.
+
+When it’s done, you will have to keep an URL which should point to the generated LUM files.
 
 In the playground, go to **PLAYGROUND SETTINGS** and go to the **BUILD & DEPLOY** tab.
 
