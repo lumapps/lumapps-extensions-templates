@@ -58,6 +58,7 @@ To access data from the customer LumApps platform, we provide React hooks int he
 Use this hook to retrieve the context around the widget extension (when added in a Luampps content): 
  - contentId
  - instanceId
+ - baseUrl
 
 ```javascript
 import React, { FC, useMemo } from 'react';
@@ -65,12 +66,12 @@ import React, { FC, useMemo } from 'react';
 import { useContext } from 'lumapps-sdk-js';
 
 export const HelloWidget: FC = () => {
-    const { contentId, instanceId } = useContext();
+    const { contentId, instanceId, baseUrl } = useContext();
 
     const welcomeMessage = useMemo(() => {
         return (
             <p>
-                This widget is used in {contentId} in the {instanceId} instance.
+                This widget is used in {contentId} in the {instanceId} instance. The environment base URL is : {baseUrl}
             </p>
         );
     }, [emaicontentIdl, contentId]);
