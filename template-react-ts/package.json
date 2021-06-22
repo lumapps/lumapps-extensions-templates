@@ -3,6 +3,8 @@
     "version": "0.4.2",
     "private": true,
     "scripts": {
+        "check": "tsc --noEmit",
+        "check:typing": "yarn run check",
         "start": "run-p start:playground start:playground-server",
         "start:playground": "react-scripts start",
         "start:playground-server": "node playground-server/index.js",
