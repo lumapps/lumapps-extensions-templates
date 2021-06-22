@@ -137,4 +137,4 @@ const NotificationAwareWidget = (props: any) => {
     );
 };
 
-export default NotificationAwareWidget;
+export { NotificationAwareWidget as Widget } ;

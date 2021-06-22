@@ -8,8 +8,12 @@ import '@lumx/core/lumx.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+
 import config from './config.js';
-import { Widget, WidgetGlobalSettings, WidgetSettings } from './widget';
+
+import { Widget } from './widget/Widget';
+import { WidgetSettings } from './widget/WidgetSettings';
+import { WidgetGlobalSettings } from './widget/WidgetGlobalSettings';
 
 ReactDOM.render(
     <React.StrictMode>

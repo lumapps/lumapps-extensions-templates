@@ -63,7 +63,7 @@ const WithIntlSettings: React.FC<WithIntlSettingsProps> = ({ properties = {}, ex
     );
 };
 
-const WidgetSettings = ({ properties = {}, exportProp = undefined }) => {
+export const WidgetSettings = ({ properties = {}, exportProp = undefined }) => {
     const messages: any = {
         en: messagesEn,
         fr: messagesFr,
@@ -91,5 +91,3 @@ const WidgetSettings = ({ properties = {}, exportProp = undefined }) => {
         </PredefinedErrorBoundary>
     );
 };
-
-export default WidgetSettings;
