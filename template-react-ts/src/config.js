@@ -33,7 +33,7 @@ const oauth = false;
  * The documentation's url of the enxtension.
  */
 const links = {
-    documentation: '',
+    documentation: null,
 }
 
 /**
