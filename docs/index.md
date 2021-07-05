@@ -8,6 +8,9 @@ has_children: false
 ## Request access to LumApps Marketplace program
 
 If you are interrested in, you can register to be part of the LumApps Marketplace program
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdSTpaiHUqfDqU1sf2jPWcLKYQ1w6hf4Cx94N9TtZYYa3iLhQ/viewform?embedded=true" width="640" height="844" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
 <style>
 .form {
     width        : 440px;
@@ -125,7 +128,7 @@ p:before {
         mail.click();
     }
 </script>
-
+<!--
 <form class="form" name="contact_form" onSubmit="submitForm()">
     <h2><img class="lumapps-logo" src="https://static.crozdesk.com/web_app_library/providers/logos/000/004/430/original/lumapps-1559230943-logo.png?1559230943"/>CONTACT US</h2>
     <p type="Name:">
@@ -142,3 +145,4 @@ p:before {
     </p>
     <button type="submit">Submit</button>
 </form>
+ -->
