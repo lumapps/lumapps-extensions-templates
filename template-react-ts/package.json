@@ -5,9 +5,9 @@
     "scripts": {
         "check": "tsc --noEmit",
         "check:typing": "yarn run check",
-        "start": "run-p start:playground start:playground-server",
+        "start": "run-p start:playground start:shipping-server",
         "start:playground": "react-scripts start",
-        "start:playground-server": "node playground-server/index.js",
+        "start:shipping-server": "lumapps-shipping-server",
         "test": "react-scripts test --coverage"
     },
     "eslintConfig": {
@@ -34,30 +34,30 @@
         ]
     },
     "dependencies": {
-        "@lumapps-extensions-playground/common": "^1.1.6",
-        "@lumx/core": "^1.0.17",
-        "@lumx/icons": "^1.0.17",
-        "@lumx/react": "^1.0.17",
+        "@lumapps-extensions-playground/common": "^1.1.7",
+        "@lumx/core": "^1.0.18",
+        "@lumx/icons": "^1.0.18",
+        "@lumx/react": "^1.0.18",
         "axios": "0.21.1",
         "lodash": "4.17.21",
-        "lumapps-sdk-js": "^0.0.41",
+        "lumapps-sdk-js": "^0.0.44",
         "moment": "^2.29.1",
         "moment-range": "^4.0.2",
-        "react": "^16.13.1",
-        "react-dom": "^16.13.1",
+        "react": "^16.14.0",
+        "react-dom": "^16.14.0",
         "react-intl": "5.15.7",
         "react-redux": "7.2.4",
         "reselect": "4.0.0"
     },
     "devDependencies": {
-        "@lumapps-extensions-playground/devenv": "^1.1.6",
-        "@lumapps-extensions-playground/playground-server": "^1.1.6",
+        "@lumapps-extensions-playground/devenv": "^1.1.7",
+        "@lumapps-extensions/shipping-server": "^1.0.1",
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.3.2",
         "@testing-library/user-event": "^7.1.2",
         "@types/enzyme": "^3.10.8",
         "@types/enzyme-adapter-react-16": "^1.0.6",
-        "@types/jest": "^24.0.0",
+        "@types/jest": "^24.9.1",
         "@types/lodash": "^4.14.168",
         "@types/node": "^12.0.0",
         "@types/react": "^16.9.0",
@@ -80,12 +80,6 @@
         "prettier": "2.2.0",
         "prettier-stylelint": "^0.4.2",
         "react-scripts": "3.4.3",
-        "stylelint": "^9.10.1",
-        "stylelint-config-idiomatic-order": "^6.2.0",
-        "stylelint-config-recommended": "^2.1.0",
-        "stylelint-config-recommended-scss": "^3.2.0",
-        "stylelint-scss": "^3.5.4",
-        "ts-loader": "8.1.0",
-        "typescript": "^4.0.3"
+        "typescript": "^4.3.5"
     }
 }
