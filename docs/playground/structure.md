@@ -6,29 +6,43 @@ nav_order: 1
 ---
 
 # Playground structure
+
+## The playground
+
 The LumApps Extension playground is divied in 3 sections : 
 
 ![alt text](../playground.png "Playground")
 
-## 1. The extension render section
+### 1. The extension render section
 This is the main section of the playground, it render the main component of your extension.
 
-## 2. The side panel
+### 2. The side panel
 This section contains the settigns of the playground and your extension. 
 
-### Widget settings
+#### Widget settings
 In the section you can see and test the widget settings component. 
 The set up defined are directly reflected on you widget content.
 On the cogwheel you can find the global settings component in a dialog to emulate the administration panel.
 
-### Current state
+#### Current state
 In the current state section, you'll find the data related to your extension, the provider and extension IDs, and the Lumapps user token you've set in the Playground settings.
 
 
-### Quick actions
+#### Quick actions
 In the quick actions section you can set a user language to test the translation of your extension, and switch to Darl theme to check the render of your extension content composant.
-## 3. The Playground settigns
+### 3. The Playground settings
 Here you can configure the extension playground.
+
+### 4. Login / access to back office
+You can log in to your lumapps environment from this button. This will allow you to automatically retrieve your lumapps token. When logged in you can access the back office of the playground.
+
+## 2. Back office
+
+![alt text](../back-office.png "Back office")
+
+You can find the back office menu (1), the list and informations about your deployed extensions (2).
+
+You can navigate between the back office and the playground and log out from your account by accessing the menu under your avatar (3).
 
 ### Lumapps context
 In the playground settings dialog you can set some contextual data.
