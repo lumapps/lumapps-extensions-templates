@@ -124,7 +124,7 @@ When it’s done, you will have to keep a URL which should point to the generate
 
 In the playground, go to **PLAYGROUND SETTINGS** and go to the **BUILD & DEPLOY** tab.
 
-In the section 2, **Deploy the extension**, fill in the HTTP Server input with the URL pointing to your LUM files.
+In the section 2, **Deploy the extension**, fill in the HTTP Server input with the URL pointing to the built files.
 
 Click on the DEPLOY EXTENSION IN BETA button.
 
