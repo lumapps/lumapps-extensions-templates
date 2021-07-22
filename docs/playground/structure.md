@@ -6,15 +6,15 @@ nav_order: 1
 ---
 
 # Playground structure
-The LumApps Extension playground is divied in 3 sections : 
+The LumApps Extension playground is divide in 3 sections : 
 
 ![alt text](../playground.png "Playground")
 
 ## 1. The extension render section
-This is the main section of the playground, it render the main component of your extension.
+This is the main section of the playground, it renders the main component of your extension.
 
 ## 2. The side panel
-This section contains the settigns of the playground and your extension. 
+This section contains the settings of the playground and your extension. 
 
 ### Widget settings
 In the section you can see and test the widget settings component. 
@@ -26,11 +26,12 @@ In the current state section, you'll find the data related to your extension, th
 
 
 ### Quick actions
-In the quick actions section you can set a user language to test the translation of your extension, and switch to Darl theme to check the render of your extension content composant.
-## 3. The Playground settigns
+In the quick actions section you can set a user language to test the translation of your extension, and switch to Dark theme to check the render of your extension content composant.
+## 3. The Playground settings
 Here you can configure the extension playground.
 
 ### Lumapps context
 In the playground settings dialog you can set some contextual data.
-The LumApps usert token can be set here and used by your extension. You may need to set also the HTTP origin in order to definie on which site your token is valid.
+The LumApps user token can be set here and used by your extension.
+You may need to set also the HTTP origin in order to define on which site your token is valid.
 If your extension need to content ID on which it's used, you can emulate it with the setting. 
