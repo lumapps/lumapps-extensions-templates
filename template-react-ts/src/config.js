@@ -30,7 +30,7 @@ const icon = {
 const oauth = false;
 
 /**
- * The documentation's url of the enxtension.
+ * The documentation's url of the extension.
  */
 const links = {
     documentation: null,
@@ -40,7 +40,7 @@ const links = {
  * The components available for your extensions
  * 'content' : For the Widget content itself (required)
  * 'settings' : For your widget settings
- * 'globalSettings' : For globalsettings used by platform admin.
+ * 'globalSettings' : For global settings used by platform admin.
  */
 const components = ['content', 'settings', 'global_settings'];
 
