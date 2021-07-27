@@ -4,8 +4,10 @@ title: Manifest
 parent: Extensions
 nav_order: 1
 ---
+
 # Manifest file
-To declare an extension in the LumApps marketplace, you have to set some data in a manifet file. This file is attached to the extension and is already pre configured when you create an extension using LumApps extension template.
+To declare an extension in the LumApps marketplace, you have to set some data in a manifest file.
+This file is attached to the extension and is already pre-configured when you create an extension using LumApps extension template.
 
 
 In this configuration file, you have to define the following properties : 
@@ -16,7 +18,7 @@ In this configuration file, you have to define the following properties :
 | **description** | Translatable string (required) | The description of the extension in multiple language                                    |
 | **icon**        | Translatable string (required) | The public link to the icon of the extension in multiple language                        |
 | **links**       | JSON Object                    | The useful HTTP links related to the extension.                                          |
-| **components**  | Array of components (required) | yumm                                                                                     |
+| **components**  | Array of components (required) | yumm                                                                                    |
 | **oauth**       | boolean                        | Indicates if the extension need to consume an OAuth application declare on customer side |
 | **providerId**  | string (required)              | Indicates if the extension need to consume an OAuth application declare on customer side |
 | **extensionId** | string (required)              | The id of your extension                                                                 |
@@ -29,10 +31,10 @@ Some properties are pretty simple to define such as name, description or icon. F
 
 ## <a name="links"></a>Links
 This property let the developer define useful links for the extension.
-For now we only manage documentation links and must be defined as a sub property of links attribute :
+As for now we only manage documentation links and must be defined as a sub property of links attribute :
 ```json
-links: {
-	documentation: ‘https//….’
+"links": {
+	"documentation": "https//…."
 }
 ```
 This link will be displayed in extension administration in the customer platform.
@@ -41,7 +43,7 @@ This link will be displayed in extension administration in the customer platform
 These Ids are claimed by LumApps employees for security reasons. For now only users with a valid LumApps JWT token can query Marketplace services.
 
 To claim Provider ID, you must give us at least its name, a support email address, and as a non required data, a phone number to reach the support.
-When the provider ID is generated, we can send it to you, and you will keep the same for all your extensions. You also have to set your provider Id in the manifest file.
+When the provider ID is generated, we can send it to you, and you will keep the same for all your extensions. You also have to set your provider id in the manifest file.
 
 And to claim the Extension ID, we will use data defined in the manifest file to generate the ID, like the provider ID, this ID has to be set in the extension manifest file.
 
@@ -57,10 +59,11 @@ Only the content component is required.
 
 ## <a name="oauth"></a>OAuth
 The OAuth attribute indicates the extension uses a Client OAuth Application declared in the client side. The administrator will have to select the Application he wants to use in the extension administration. The selected application will be sent to the Settings & Widget components via properties.
-You can find more details on OAuth in extension [here](./oauth.md)
+You can find more details on OAuth in extension [here](oauth.md)
 
 ## <a name="public"></a>Public
-The public attribute is used to define if the extension is available for every LumApps customer (at least customers with the feature enabled). If a partner doesn't want to publish its extension for all LumApps customers he can set his extension as private (non public).
+The public attribute is used to define if the extension is available for every LumApps customer (at least customers with the feature enabled).
+If a partner doesn't want to publish its extension for all LumApps customers he can set his extension as private (non-public).
 
 
 ## <a name="whitelist"></a>Whitelist

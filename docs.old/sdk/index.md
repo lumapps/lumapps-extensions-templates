@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Playground
-nav_order: 2
+title: SDK
+nav_order: 4
 has_children: true
 ---

@@ -1,11 +1,23 @@
 ---
 layout: default
 title: SDK JS
-parent: SDK
 nav_order: 1
+parent: SDK
 ---
 
 # Lumapps SDK JS
+
+<h6>Table of Contents</h6>
+
+- [Lumapps SDK JS](#lumapps-sdk-js)
+  - [Quickstart](#quickstart)
+  - [React hooks](#react-hooks)
+    - [useContext](#usecontext)
+    - [useCurrentUser](#usecurrentuser)
+    - [useLanguage](#uselanguage)
+    - [useOrganization](#useorganization)
+    - [useRequest](#userequest)
+
 The Lumapps JavaScript SDK is a lightweight interface to Lumapps for your React components.
 
 ## Quickstart
@@ -44,18 +56,21 @@ export const HelloWidget: FC = () => {
 ```
 
 ## React hooks
-To access data from the customer LumApps platform, we provide React hooks int he SDK :
+To access data from the customer LumApps platform, we provide React hooks in the SDK :
 
- - [useContext](#useContext)
- - [useCurrentUser](#useCurrentUser)
- - [useLanguage](#useLanguage)
- - [useOrganization](#useOrganization)
- - [useRequest](#useRequest)
+ - [useContext](#usecontext)
+ - [useCurrentUser](#usecurrentuser)
+ - [useLanguage](#uselanguage)
+ - [useOrganization](#useorganization)
+ - [useRequest](#userequest)
 
+The SDK also embed some helpers :
+ - useBooleanState
+ - useDebounce
+ - useExportProps
 
-
-###  <a name="useContext"></a>useContext
-Use this hook to retrieve the context around the widget extension (when added in a Luampps content): 
+### useContext
+Use this hook to retrieve the context around the widget extension (when added in a LumApps content): 
  - contentId
  - instanceId
  - baseUrl
@@ -85,9 +100,9 @@ export const HelloWidget: FC = () => {
 ```
 
 
-###  <a name="useCurrentUser"></a>useCurrentUser
+### useCurrentUser
 This hook give you access to the current user viewing the extension in the customer platform.
-With this hooks you can acess : 
+With this hook you can access : 
  - email
  - first name
  - last name
@@ -122,8 +137,8 @@ export const HelloWidget: FC = () => {
 };
 ```
 
-###  <a name="useLanguage"></a>useLanguage
-This hooks is used to get the user languages. It's usefull to translate your extensions.
+### useLanguage
+This hook is used to get the user languages. It's useful to translate your extensions.
 You have access to : 
  - displayLanguage
  - inputLanguage
@@ -153,8 +168,8 @@ export const HelloWidget: FC = () => {
 };
 ```
 
-###  <a name="useOrganization"></a>useOrganization
-This hooks give you access to the organization identifier : 
+### useOrganization
+This hook give you access to the organization identifier : 
 
 ```javascript
 import React, { FC, useMemo } from 'react';
@@ -181,5 +196,5 @@ export const HelloWidget: FC = () => {
 };
 ```
 
-###  <a name="useRequest"></a>useRequest
-this hook is used to contact an OAuth application. 
+### useRequest
+This hook is used to contact an OAuth application. 

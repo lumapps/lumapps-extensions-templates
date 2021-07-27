@@ -5,7 +5,6 @@ parent: Playground
 nav_order: 3
 ---
 
-
 # How to build and deploy an extension
 
 The playground let you build and deploy your extensions in your beta environment instance to see it in a real lumapps environment.
@@ -21,14 +20,14 @@ The playground let you build and deploy your extensions in your beta environment
 The first step is to be sure that you have connected the playground to your beta environment.
 
 To do so, in the playground, click on the **PLAYGROUND SETTINGS** button in the top right corner.
-In the **LUMAPPS CONTEXT** tab you will have to fulfill your **Lumapps Slug**
+In the **LUMAPPS CONTEXT** tab you will have to fill your **Lumapps Slug**
 
 > For exemple : if your beta environment URL is
 > https://preview.lumapps.com/a/my-beta-env/home
 > 
 > Your Slug will be : **my-beta-env**
 
-When those information are ok, click on the **GET TOKEN** button.
+When done, click on the **GET TOKEN** button.
 
 A new browser tab will open, where you will see a JSON with some information about your beta environment :
 
@@ -40,13 +39,13 @@ A new browser tab will open, where you will see a JSON with some information abo
 
 Copy the token and paste it in the **LumApps JWT token** field in the **Playground Settings**
 
-The **Lumapps organization Id** is automatically fulfilled and should correspond to the organizationId of the JSON from where you copy the token.
+The **Lumapps organization id** is automatically fulfilled and should correspond to the organizationId of the JSON from where you copy the token.
 
 Click on **SAVE IN LOCAL STORAGE**.
 
 Your playground is now connected to your lumapps environment.
 
-## 2. <a id="step-two"></a>Request a partner ID (first time only)
+## 2. <a name="step-two"></a> Request a partner ID (first time only)
 
 Now that you are connected to Lumapps, you can request a partner ID.
 
@@ -67,7 +66,7 @@ When refreshing the playground page, you should see you partner ID on the left p
 
 *If you need to build or deploy a new version of your extension, you will not have to retrieve your partner ID again.*
 
-## 3. <a id="step-three"></a>Request an extension ID (first time only)
+## 3. <a name="step-three"></a>Request an extension ID (first time only)
 
 You should now be connected to your beta environment and have a partner ID. Retrieving your extension ID is similar to the partner ID.
 
@@ -75,7 +74,7 @@ In the playground, go to the **REQUEST EXTENSION ID** tab.
 
 You have nothing to parameter in the tab. You should see your partner ID, the name of you extension, your logo…
 
-These information come from the `config.js` file of your extension.
+This information come from the `config.js` file of your extension.
 
 > Note: As you are deploying your extension in a beta environment, even if you modify the **isPublic** key and **whitelist** key in your `config.js` file, those will be forced to private and to your beta environment ID. So only your environment will have access to the extension.
 
@@ -107,9 +106,9 @@ To build your extension, choose the type of bump you want to do (« Major », «
 
 Click on the **BUILD EXTENSION** button. The extension files will be under the `dist/{your_extension_id}/` folder.
 
-You should see at least one file : Content.lum
+You should see at least one file : Content.js
 
-If you have created settings for your extension you should have one file per settings (Settings.lum, GlobalSettings.lum).
+If you have created settings for your extension you should have one file per settings (Settings.js, GlobalSettings.js).
 
 Your extension has been built, you can now deploy it.
 
@@ -136,16 +135,16 @@ That's it, your extension is deployed on your Lumapps beta environment.
 If you want to update your extension information : **name**, **description**, **icon** you need to follow these steps : 
 
 - Edit the information you want to change in your `config.js` file.
-- Connect the playground to your Lumapps environment (cf. steps [1 - Retrieve your environment token](#step-one))
+- Connect the playground to your Lumapps environment (cf. steps [1 - Retrieve your environment token](#a-idstep-onea1--retrieve-your-environment-jwt-token))
 - In the playground, go to **PLAYGROUND SETTINGS**, click on the **REQUEST EXTENSION ID** tab and then **UPDATE EXTENSION IN BETA**
 
-> You don't need to build and deploy your extension to updates those information
+> You don't need to build and deploy your extension to updates this information
 
 ## 7. Build and deploy a new version
 
 To deploy a new version, you should follow these steps: 
 
-- Be sure to be connected on the Lumapps beta environment (cf. [step 1](#step-one))
-- Choose the type of bump you want to do and build (cf. [step 4](#step-four))
+- Be sure to be connected on the Lumapps beta environment (cf. [step 1](#a-idstep-onea1--retrieve-your-environment-jwt-token))
+- Choose the type of bump you want to do and build (cf. [step 4](#4-a-idstep-fourabuild-your-extension))
 - Update your files on your server / CDN : the URL of your server / CDN is linked to the version of your extension
-- Deploy the extension (cf. [step 5](#step-five))
+- Deploy the extension (cf. [step 5](#5-a-idstep-fiveadeploy-your-extension))
