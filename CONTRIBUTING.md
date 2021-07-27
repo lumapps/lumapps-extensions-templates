@@ -26,7 +26,7 @@ npm publish
 The doc uses [docsify](https://docsify.js.org) and simply uses markdown files.
 The navigation is setup in the `_sidebar.md` file.
 
-### Dev localy
+### Dev locally
 
 ```
 yarn serve:doc

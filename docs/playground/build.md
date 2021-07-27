@@ -10,7 +10,7 @@ nav_order: 3
 
 The playground let you build and deploy your extensions in your beta environment instance to see it in a real lumapps environment.
 
-**Before starting, you should have this informations :**
+**Before starting, you should have the following information :**
 
 -   An instance of the playground running on your computer with the extension you want to deploy
 -   An email address with an admin access to your Lumapps beta environment
@@ -20,16 +20,17 @@ The playground let you build and deploy your extensions in your beta environment
 
 The first step is to be sure that you have connected the playground to your beta environment.
 
-To do so, in the playground, click on the **PLAYGROUND SETTINGS** button in the top right corner. In the **LUMAPPS CONTEXT** tab you will have to fulfill your **Lumapps Slug**
+To do so, in the playground, click on the **PLAYGROUND SETTINGS** button in the top right corner.
+In the **LUMAPPS CONTEXT** tab you will have to fulfill your **Lumapps Slug**
 
 > For exemple : if your beta environment URL is
 > https://preview.lumapps.com/a/my-beta-env/home
 > 
 > Your Slug will be : **my-beta-env**
 
-When those informations are ok, click on the **GET TOKEN** button.
+When those information are ok, click on the **GET TOKEN** button.
 
-A new browser tab will open, where you will see a JSON with several informations about your beta environment :
+A new browser tab will open, where you will see a JSON with some information about your beta environment :
 
 -   CellUrl
 -   organizationId
@@ -51,11 +52,11 @@ Now that you are connected to Lumapps, you can request a partner ID.
 
 To do so, open the **PLAYGROUND SETTINGS** and go to the **REQUEST PARTNER ID** tab.
 
-In order to retrieve your partner ID you will have to fill in at minima your partner name and an email address.
+In order to retrieve your partner ID you will have to fill in at minima your partner name, and an email address.
 
-When the the form is fulfill, click on **CLAIM ID FOR BETA**. Your partner ID should be displayed on the page.
+When the form is filled, click on **CLAIM ID FOR BETA**. Your partner ID should be displayed on the page.
 
-> IMPORTANT : COPY YOUR PARTNER ID, YOU WONT BE ABLE TO RETRIEVE IT ON YOUR OWN
+> IMPORTANT : COPY YOUR PARTNER ID, YOU WON'T BE ABLE TO RETRIEVE IT ON YOUR OWN
 
 Copy the **partner ID** and paste it in you extension config.
 You can find the `config.js` file in your extension folder. Copy your partner id in the partnerId variables as a string and save the file :
@@ -74,13 +75,13 @@ In the playground, go to the **REQUEST EXTENSION ID** tab.
 
 You have nothing to parameter in the tab. You should see your partner ID, the name of you extension, your logo…
 
-Those information come from the `config.js` file of your extension.
+These information come from the `config.js` file of your extension.
 
 > Note: As you are deploying your extension in a beta environment, even if you modify the **isPublic** key and **whitelist** key in your `config.js` file, those will be forced to private and to your beta environment ID. So only your environment will have access to the extension.
 
 If everything look good, click on the **CLAIM ID FOR BETA** button. Your extension ID should be displayed.
 
-> IMPORTANT: COPY YOU EXTENSION ID AS YOU WONT BE ABLE TO RETRIEVE IT ON YOUR OWN.
+> IMPORTANT: COPY YOU EXTENSION ID AS YOU WON'T BE ABLE TO RETRIEVE IT ON YOUR OWN.
 
 
 Copy the **extension ID** and paste it in you extension config.
@@ -88,7 +89,7 @@ You can find the `config.js` file your extension folder. Copy your extension id 
 
     const  extensionId  =  'paste_your_extension_id_here';
 
-When refreshing the playground page, you should see you extension ID on the left panel in the **Current state** section.
+When refreshing the playground page, you should see your extension ID on the left panel in the **Current state** section.
 
 *If you need to build or deploy a new version of your extension, you will not have to retrieve your extension ID again.*
 
@@ -110,16 +111,17 @@ You should see at least one file : Content.lum
 
 If you have created settings for your extension you should have one file per settings (Settings.lum, GlobalSettings.lum).
 
-You extension is build, you can now deploy it.
+Your extension has been built, you can now deploy it.
 
 ## 5. <a id="step-five"></a>Deploy your extension
 
 You should be connected, have a partner and an extension id and have build your extension.
 
 The first step is to host your extension on your own server / CDN.\
-To be accessible from Lumapps, your server must use HTTPS, and activate the CORS to let Lumapps platform contact and retrive the extension files.
+To be accessible from Lumapps, your server must use HTTPS.
+You should also activate the CORS to let Lumapps platform contact and retrieve the extension files.
 
-When it’s done, you will have to keep an URL which should point to the generated LUM files.
+When it’s done, you will have to keep a URL which should point to the generated LUM files.
 
 In the playground, go to **PLAYGROUND SETTINGS** and go to the **BUILD & DEPLOY** tab.
 
@@ -127,17 +129,17 @@ In the section 2, **Deploy the extension**, fill in the HTTP Server input with t
 
 Click on the DEPLOY EXTENSION IN BETA button.
 
-Thats it, your extension is deployed on your Lumapps beta environment.
+That's it, your extension is deployed on your Lumapps beta environment.
 
-## 6. <a id="step-six"></a>Update your extension informations
+## 6. <a id="step-six"></a>Update your extension information
 
-If you want to update your extension informations : **name**, **description**, **icon** you need to follow these steps : 
+If you want to update your extension information : **name**, **description**, **icon** you need to follow these steps : 
 
-- Edit the informations you want to change in your `config.js` file.
+- Edit the information you want to change in your `config.js` file.
 - Connect the playground to your Lumapps environment (cf. steps [1 - Retrieve your environment token](#step-one))
 - In the playground, go to **PLAYGROUND SETTINGS**, click on the **REQUEST EXTENSION ID** tab and then **UPDATE EXTENSION IN BETA**
 
-> You don't need to build and deploy your extension to updates those informations
+> You don't need to build and deploy your extension to updates those information
 
 ## 7. Build and deploy a new version
 
