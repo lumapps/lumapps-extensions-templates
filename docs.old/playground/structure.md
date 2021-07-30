@@ -18,7 +18,7 @@ This section contains the settings of the playground and your extension.
 
 ### Widget settings
 In the section you can see and test the widget settings component. 
-The set up defined are directly reflected on you widget content.
+The settings defined are directly reflected on you widget content.
 On the cogwheel you can find the global settings component in a dialog to emulate the administration panel.
 
 ### Current state

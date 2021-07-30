@@ -26,7 +26,7 @@ If you use a dependency which is not in that list, your extension may not render
 
 If you have a specific need, you can contact us.
 
-# Import dependecies - Good practices
+# Import dependencies - Good practices
 
 You can import any dependencies into your extension, but they can increase drastically the size of your bundle.
 To prevent this and create a better user experience you should consider using dynamic import when you can.
