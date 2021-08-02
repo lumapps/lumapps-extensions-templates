@@ -21,9 +21,9 @@ We encourage you to use Python language since our backend SDK is only available 
 
 ## Share To & Widget Extension
 
-Since the LumApps product is developed using **ReactJS** framework, the Extensions that require a UI and an integration within the LumApps platform have to be developed using this framework. You can find more information about the ReactJS framework on the [official website](https://reactjs.org/)
+Since the LumApps product is developed using **ReactJS** framework, Extensions that require a UI and an integration within the LumApps platform have to be developed using this framework. You can find more information about the ReactJS framework on the [official website](https://reactjs.org/)
 
-We also hardly encourage you to use **TypeScript** language for your front extensions. You can find more information about tTypeScript on the [official website](https://www.typescriptlang.org/)
+We also strongly encourage you to use **TypeScript** language for your front extensions. You can find more information about TypeScript on the [official website](https://www.typescriptlang.org/)
 
 Extension written with any other language and framework won't be approved during the [Review](lifecycle-management.md#review)
 
