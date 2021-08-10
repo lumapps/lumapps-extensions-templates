@@ -13,7 +13,7 @@
   - [Publish](#publish)
 
 ## Found an issue?
-If you find a bug in the source code or a mistake in the documentation, you can help us by submitting an issue to our [GitHub Repository](https://github.com/lumapps/lumapps-extensions-templates/issues). Even better you can submit a Pull Request with a fix.
+If you find a bug in the source code or a mistake in the documentation, you can help us by submitting an issue to our [GitHub Repository](https://github.com/lumapps/lumapps-extensions-templates/issues).
 
 If you are feeling it, you can even fix the issue yourself and submit a Pull Request. Before opening a Pull Request, please see the Submission Guidelines below.
 
@@ -29,7 +29,7 @@ Before you submit your issue search the archive, maybe your question was already
 If your issue appears to be a bug, and hasn't been reported, open a new issue. Help us to maximize the effort by not reporting duplicate issues. Providing the following information will increase the chances of your issue being dealt with quickly:
 
 -   **Motivation for or Use Case** - explain why this is a bug for you
--   **LumApps Extensions Templates Versiob** - is it a regression?
+-   **LumApps Extensions Templates Version** - is it a regression?
 -   **Operating System** - is this a problem with all OS ?
 -   **Reproduce the Error** - provide a live example (using [Plunker](http://plnkr.co/edit) or [JSFiddle](http://jsfiddle.net/)) or a unambiguous set of steps.
 
