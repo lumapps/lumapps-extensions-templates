@@ -20,17 +20,17 @@ has_children: false
       - [Extensions manager](#extensions-manager)
   - [Troubleshooting](#troubleshooting)
 
-The LumApps Extensions Playground allow Extension developers to develop and test their extension  quickly, easily and locally. It's a ReactJs based application that you can import on your machine. It lets you connect your extension with your LumApps test platform.
+The LumApps Extensions Playground allow Extension developers to develop and test their extension quickly, easily and locally. It's a ReactJS based application that you can import on your machine. It lets you connect your extension with your LumApps test platform.
 
 You use the Playground to create and run an extension project, using either your own extension code or example templates. An extension project is a combination of an extension manifest (metadata) and extension code.
 
 ## Create a project
-1. Install the LumApps extension template, a library to kickstart your extensions : 
+1. Install the LumApps extension template, a library to kick-start your extensions : 
    - https://github.com/lumapps/lumapps-extensions-templates
 2. Run the create lumapps-extension script to retrieve the Extensions Playground application and a sample extension.
-3. install the needed dependencies
+3. Install the needed dependencies :
    - `yarn`
-4. Run the playground
+4. Run the playground :
     - `yarn start`
 
 
@@ -43,10 +43,10 @@ The Playground offer multiple features to help you develop, test, and interact w
 ### Local Test
 The Playground is basically made to offer a Local Test environment for your extension. This local environment emulate a LumApps platform to let you render and connect your extension parts. From there you can test all parts of your extension and see if its work as expected all together.
 
-To emulate a LumApps platform you can use some options such as the Theme switcher to visualize your extension with a Ligh or Dark Theme, and a language field to test the translations of your extension.
+To emulate a LumApps platform you can use some options such as the Theme switcher to visualize your extension with a Light or Dark Theme, and a language field to test the translations of your extension.
 
 ### Login
-The Playground allow you to signin to your LumApps test platform with your credentials. Once logged in, your account is used by the SDK to emulate the current connected user. The login feature give you acces to administration feature within the Playground.
+The Playground allow you to sign in to your LumApps test platform with your credentials. Once logged in, your account is used by the SDK to emulate the current connected user. The login feature gives you access to administration feature within the Playground.
 
 ### Deployment manager
 

@@ -24,12 +24,12 @@ has_children: false
       - [Dynamic import](#dynamic-import)
   - [Using OAuth application](#using-oauth-application)
     - [Configure extension](#configure-extension)
-    - [Recieved selected application](#recieved-selected-application)
+    - [Received selected application](#received-selected-application)
 
 ## Extension Manifest
 The Extension Manifest is the file used by the LumApps Marketplace to identify your extension and know what your extension does.
 
-You'll have to fill in this Extension Manifest to be able to declare your extension in the LumApps Marketplace. This file is attached to the extension and is already pre configured when you create an extension using LumApps Extension Template.
+You'll have to fill in this Extension Manifest to be able to declare your extension in the LumApps Marketplace. This file is attached to the extension and is already pre-configured when you create an extension using LumApps Extension Template.
 
 
 ### Manifest attributes
@@ -54,7 +54,7 @@ Some properties are pretty simple to define such as name, description or icon. F
 
 ### Links
 This property let the developer define useful links for the extension.
-For now we only manage documentation links and must be defined as a sub property of links attribute :
+For now, we only manage documentation links and must be defined as a sub property of links attribute :
 ```json
 links: {
 	documentation: ‘https//….’
@@ -66,7 +66,7 @@ This link will be displayed in extension administration in the customer platform
 These Ids are claimed by LumApps employees for security reasons. For now only users with a valid LumApps JWT token can query Marketplace services.
 
 To claim Partner ID, you must give us at least its name, a support email address, and as a non required data, a phone number to reach the support.
-When the Partner ID is generated, we can send it to you, and you will keep the same for all your extensions. You also have to set your Partner Id in the manifest file.
+When the Partner ID is generated, we can send it to you, and you will keep the same for all your extensions. You also have to set your Partner ID in the manifest file.
 
 And to claim the Extension ID, we will use data defined in the manifest file to generate the ID, like the Provider ID, this ID has to be set in the extension manifest file.
 
@@ -76,7 +76,7 @@ The components attribute is the array of React components type that compose its 
 
 For Widget Extensions, the available values are : 
  - **content** - For widget content components
- - **settings** - For widget settings component (display when user add a widget in a content)
+ - **settings** - For widget settings component (display when user adds a widget in a content)
  - **global_settings** - Global settings of the extension (display in extension administration)
 
 Only the content component is required.
@@ -109,11 +109,11 @@ If your provider is not present in the list you can request a provider creation 
  - Provider type
 
 ### Public
-The public attribute is used to define if the extension is available for every LumApps customer (at least customers with the feature enabled). If a partner doesn't want to publish its extension for all LumApps customers he can set his extension as private (non public).
+The public attribute is used to define if the extension is available for every LumApps customer (at least customers with the feature enabled). If a partner doesn't want to publish its extension for all LumApps customers he can set his extension as private (non-public).
 
 
 ### Whitelist
-The whitelist is used only for private extension. You have to define a list of authorized customer ids for your extension.
+The whitelist is used only for private extension. You have to define a list of authorized customer IDs for your extension.
 The customer ID is available in the customer platform by pressing on CTRL + ?, the customer ID is displayed in the dialog.
 
 If a customer has multiple platforms in different environments (Production and Staging for example), he also has a different customer ID for each environment, so each customer ID has to be whitelisted to publish the extension in every environment for this customer.
@@ -148,8 +148,8 @@ Here is the list of available libraries :
 | :------------------------------------------------------------- | :--------- | :--------------------- |
 | [axios](https://github.com/axios/axios)                        | "^0.21.1"  |                        |
 | [lodash](https://github.com/lodash/lodash)                     | "4.17.21"  |                        |
-| [lumapps-sdk-js](https://www.npmjs.com/package/lumapps-sdk-js) | "0.0.44"   | LumApps Javascript SDK |
-| [lumX](https://github.com/lumapps/design-system)               | "^1.0.17"  | Lumapps Design System  |
+| [lumapps-sdk-js](https://www.npmjs.com/package/lumapps-sdk-js) | "0.0.44"   | LumApps JavaScript SDK |
+| [lumX](https://github.com/lumapps/design-system)               | "^1.0.17"  | LumApps Design System  |
 | [prop-types](https://github.com/facebook/prop-types)           | "15"       |                        |
 | [qs](https://github.com/ljharb/qs)                             | "^6.7.0"   |                        |
 | [react](https://github.com/facebook/react)                     | "^16.13.1" |                        |
@@ -161,11 +161,12 @@ You can import any dependencies into your extension, but they can increase drast
 To prevent this and create a better user experience you should consider using dynamic import when you can.
 
 #### Dynamic import
+
 Dynamic import let you make import asynchronously. In some cases, it can be very useful to load a dependency only when needed.
 
-Exemple :
+Example :
 
-In this exemple, we import two elements from `my-library`.
+In this example, we import two elements from `my-library`.
 
 Imports are only made when the `loadLibrary` function is called.
 
@@ -208,11 +209,12 @@ From your extension you can use the OAuth protocol to contact an application ser
 ### Configure extension
 If your extension need to use an OAuth application you have to set it up in the manifest file. (see [Manifest](#oauth))
 
-Then the user who will install you app will have the capability to define which application (declare on its platform) he want to use.
+Then the user who will install you app will have the capability to define which application (declare on its platform) he wants to use.
 
-### Recieved selected application
-In your Content & your Settings components you'll be able to retrieve the application set by the customer administrator via props sent by Lumapps to your extension.
-You'll recieved the OAuth application ID inside the globalValue property :
+### Received selected application
+
+In your Content & your Settings components you'll be able to retrieve the application set by the customer administrator via props sent by LumApps to your extension.
+You'll receive the OAuth application ID inside the `globalValue` property :
 
 ```javascript
 interface WidgetProps {

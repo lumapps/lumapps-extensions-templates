@@ -10,25 +10,28 @@ parent: SDK
 <h6>Table of Contents</h6>
 
 - [Lumapps SDK JS](#lumapps-sdk-js)
-  - [Quickstart](#quickstart)
+  - [Quick start](#quick-start)
   - [React hooks](#react-hooks)
     - [useContext](#usecontext)
     - [useCurrentUser](#usecurrentuser)
     - [useLanguage](#uselanguage)
     - [useOrganization](#useorganization)
     - [useRequest](#userequest)
+    - [useBooleanState](#usebooleanstate)
+    - [useDebounce](#usedebounce)
+    - [useExportProps](#useexportprops)
 
-The Lumapps JavaScript SDK is a lightweight interface to Lumapps for your React components.
+The LumApps JavaScript SDK is a lightweight interface to LumApps for your React components.
 
-## Quickstart
+## Quick start
 
-Install the SDK with npm:
+Install the SDK with NPM:
 
 ```console
 $ npm install --save lumapps-sdk-js
 ```
 
-Import Lumapps Hooks to use them:
+Import LumApps Hooks to use them:
 
 ```javascript
 import React, { FC, useMemo } from 'react';
@@ -65,7 +68,7 @@ To access data from the customer LumApps platform, we provide React hooks in the
  - [useRequest](#userequest)
 
 The SDK also embed some helpers :
- - useBooleanState
+ - [useBooleanState](#usebooleanstate)
  - useDebounce
  - useExportProps
 
@@ -198,3 +201,106 @@ export const HelloWidget: FC = () => {
 
 ### useRequest
 This hook is used to contact an OAuth application. 
+
+
+### useBooleanState
+This helper ease the ReactJS useState usage for boolean values.
+```typescript
+import React, { FC, useMemo } from 'react';
+import { ExpansionPanel } from '@lumx/react';
+
+import { useBooleanState } from 'lumapps-sdk-js/helpers';
+
+export const HelloWidget: FC = () => {
+    const [isPanelOpen, togglePanel, closePanel] = useBooleanState(!parameters.isCollapsed);
+
+    return (
+        <ExpansionPanel
+            hasBackground
+            onClose={closePanel}
+            isOpen={isPanelOpen}
+            onToggleOpen={togglePanel}
+            toggleButtonProps={{ label: 'toggle' }}
+        >
+            <p>Content</p>
+        </ExpansionPanel>
+    );
+};
+```
+
+### useDebounce
+The `useDebounce` helper allows you to debounce any fast changing value.
+
+```typescript
+import React, { FC, useMemo } from 'react';
+import { ExpansionPanel } from '@lumx/react';
+import { callAPI } from './api';
+
+import { useDebounce } from 'lumapps-sdk-js/helpers';
+
+export const HelloWidget: FC = () => {
+    const [value, setValue] = useState();
+    const debouncedValue = useDebounce(value, 800);
+
+    useEffect(() => {
+        if (debouncedValue) {
+            callApi(debouncedValue);
+        }
+    }, [debouncedValue]);
+
+    return (
+         <div>
+            <TextField
+                className="mt0 ml"
+                label="Value"
+                value={value}
+                onChange={setValue}
+            />
+         </div>
+    );
+};
+```
+
+### useExportProps
+This helper can be used to ease the `exportProps` function usage. This function is used to send the settings from a setting component to the content component as props.
+
+This hook required the following properties : 
+```typescript
+/**
+ * @param {Object}   value        The Value of the property to set
+ * @param {string}   name         The name of the property
+ * @param {Object}   props        The property object that regroup ll the properties to send to Content component.
+ * @param {Function} exportMethod The fucntion to call to export these properties to the Content component.
+ **/
+useExportProps = (
+    value: any,
+    name: string,
+    props: any,
+    exportMethod: any) => {}
+```
+
+```typescript
+import React, { FC, useMemo } from 'react';
+import { ExpansionPanel } from '@lumx/react';
+import { callAPI } from './api';
+
+import { useDebounce, useExportProps } from 'lumapps-sdk-js/helpers';
+
+export const HelloWidget: FC = ({ properties = {}, exportProp }: any) => {
+    const [value, setValue] = useState();
+    const debouncedValue = useDebounce(value, 800);
+
+    useExportProps(debouncedValue, 'value', properties, exportProp);
+
+    return (
+         <div>
+            <TextField
+                className="mt0 ml"
+                label="Value"
+                value={value}
+                onChange={setValue}
+            />
+         </div>
+    );
+};
+```

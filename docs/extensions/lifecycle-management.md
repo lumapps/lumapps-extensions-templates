@@ -39,7 +39,7 @@ Once you complete your tests on your LumApps test platform, you can submit the v
 The submission is done via a GitHub Pull Request with the code you want to submit.
 
 ## Post Review - Approved or Rejected
-After an extension version is  reviewed by LumApps, it is placed under on these 2 status : 
+After an extension version is reviewed by LumApps, it is placed under on these 2 status : 
  - **Approved** means your extension respects our guidelines, you can ask for production deployment for your extension.
  - **Rejected** means that your extension may not respect our guidelines and some revisions are required. The reason will be explained in the PR. You can edit your extension test it again and resubmit your extension when you are ready.
 
@@ -67,4 +67,4 @@ To update your extension after editing your extension itself, or fixing issues, 
 
 ## Delete an extension
 If you decide to stop supporting your extension you can ask for deletion. We'll delete your extension from the production. Your extension will no longer be visible and usable by LumApps users.
-You can delete a specific version of an extension  
+You can delete a specific version of an extension. 
