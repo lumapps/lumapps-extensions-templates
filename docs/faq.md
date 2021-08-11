@@ -17,16 +17,16 @@ has_children: false
     - [Do I need a partner ID and/or an extension ID ?](#do-i-need-a-partner-id-andor-an-extension-id-)
     - [Can I use fake partner and extension IDs ?](#can-i-use-fake-partner-and-extension-ids-)
   - [LumApps Test Platform](#lumapps-test-platform)
-    - [How can I reach my LumApps test platform](#how-can-i-reach-my-lumapps-test-platform)
+    - [How can I reach my LumApps test platform ?](#how-can-i-reach-my-lumapps-test-platform-)
 
 ## Extension development
 
 ### What if I do not want to use mocked data ?
-With the Playground we mock the information you can retrieve with the LumApps JavaScript SDK, if you want to use more real data, you can sign in to the Playground with your LumApps test account. It will replace the following mocked information :
- -  **Current connected user** - the SDK will use your user as the current connected user for your extension.
+With the Playground we mock the information you can retrieve with the LumApps JavaScript SDK, if you want to use more real data, you can sign in to the playground with your LumApps test account. It will replace the following mocked information :
+ -  **Current connected user** - The SDK will use your user as the current connected user for your extension.
  -  **Instance ID** - The instance ID will be your LumApps Test Platform ID
 
-Another solution to edit mocked data is to use the Playground settings dialog. You can set up the following information : 
+Another solution to edit mocked data is to use the playground settings dialog. You can set up the following information : 
  - **Base URL** - By editing the HTTP Origin field
  - **Content ID** - You can define a specific content ID to be used by the LumApps JavaScript SDK
 
@@ -39,13 +39,13 @@ As we encourage you to use the LumApps Design System, you can check the [Design 
 ## LumApps Playground
 
 ### Do I need a partner ID and/or an extension ID ?
-No, as long as you develop and test your extension locally in the LumApps Extension Playground, you do not need to declare identifier for your extension.
+No, as long as you develop and test your extension locally in the LumApps extension playground, you do not need to declare identifier for your extension.
 Your provider ID is created during the creation of your environment.
 
 ### Can I use fake partner and extension IDs ?
-No, to deploy your extension on your LumApps Test Platform you'll have to use real IDs to let the platform identify your extension in the test Marketplace. 
+No, to deploy your extension on your LumApps test platform you'll have to use real IDs to let the platform identify your extension in the test marketplace. 
 
 ## LumApps Test Platform
 
 ### How can I reach my LumApps test platform ?
-You can access to the LumApps Test Platform via this URL : [https://preview.lumapps.com](https://preview.lumapps.com). You'll have to sign in with the credentials LumApps sent you if it's the first time you sign in, or the one you set after your first login.
+You can access to the LumApps test platform via this URL : [https://preview.lumapps.com](https://preview.lumapps.com). You'll have to sign in with the credentials LumApps sent you if it's the first time you sign in, or the one you set after your first login.

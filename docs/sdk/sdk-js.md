@@ -31,7 +31,7 @@ Install the SDK with NPM:
 $ npm install --save lumapps-sdk-js
 ```
 
-Import LumApps Hooks to use them:
+Import LumApps hooks to use them:
 
 ```javascript
 import React, { FC, useMemo } from 'react';
@@ -59,7 +59,7 @@ export const HelloWidget: FC = () => {
 ```
 
 ## React hooks
-To access data from the customer LumApps platform, we provide React hooks in the SDK :
+To access data from the customer LumApps platform, we provide React hooks in the SDK:
 
  - [useContext](#usecontext)
  - [useCurrentUser](#usecurrentuser)
@@ -67,10 +67,10 @@ To access data from the customer LumApps platform, we provide React hooks in the
  - [useOrganization](#useorganization)
  - [useRequest](#userequest)
 
-The SDK also embed some helpers :
+The SDK also embeds some helpers:
  - [useBooleanState](#usebooleanstate)
- - useDebounce
- - useExportProps
+ - [useDebounce](#usedebounce)
+ - [useExportProps](#useexportprops)
 
 ### useContext
 Use this hook to retrieve the context around the widget extension (when added in a LumApps content): 
@@ -104,8 +104,8 @@ export const HelloWidget: FC = () => {
 
 
 ### useCurrentUser
-This hook give you access to the current user viewing the extension in the customer platform.
-With this hook you can access : 
+This hook gives you access to the current user viewing the extension in the customer platform.
+With this hook you can access: 
  - email
  - first name
  - last name
@@ -142,7 +142,7 @@ export const HelloWidget: FC = () => {
 
 ### useLanguage
 This hook is used to get the user languages. It's useful to translate your extensions.
-You have access to : 
+You have access to: 
  - displayLanguage
  - inputLanguage
 
@@ -172,7 +172,7 @@ export const HelloWidget: FC = () => {
 ```
 
 ### useOrganization
-This hook give you access to the organization identifier : 
+This hook gives you access to the organization identifier: 
 
 ```javascript
 import React, { FC, useMemo } from 'react';
@@ -264,7 +264,7 @@ export const HelloWidget: FC = () => {
 ### useExportProps
 This helper can be used to ease the `exportProps` function usage. This function is used to send the settings from a setting component to the content component as props.
 
-This hook required the following properties : 
+This hook required the following properties: 
 ```typescript
 /**
  * @param {Object}   value        The Value of the property to set

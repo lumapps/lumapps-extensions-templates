@@ -1,16 +1,16 @@
 ---
 layout: default
-title: Develop extensions
+title: Developing extensions
 nav_order: 5
 parent: Extensions
 has_children: false
 ---
 
-# Develop Extensions
+# Developing Extensions
 
 <h6>Table of Contents</h6>
 
-- [Develop Extensions](#develop-extensions)
+- [Developing Extensions](#developing-extensions)
   - [Extension Manifest](#extension-manifest)
     - [Manifest attributes](#manifest-attributes)
     - [Links](#links)
@@ -27,9 +27,9 @@ has_children: false
     - [Received selected application](#received-selected-application)
 
 ## Extension Manifest
-The Extension Manifest is the file used by the LumApps Marketplace to identify your extension and know what your extension does.
+The extension manifest is the file used by the LumApps Marketplace to identify your extension and know what your extension does.
 
-You'll have to fill in this Extension Manifest to be able to declare your extension in the LumApps Marketplace. This file is attached to the extension and is already pre-configured when you create an extension using LumApps Extension Template.
+You'll have to fill in this extension manifest to be able to declare your extension in the LumApps Marketplace. This file is attached to the extension and is already pre-configured when you create an extension using LumApps extension template.
 
 
 ### Manifest attributes
@@ -53,8 +53,8 @@ In this configuration file, you have to define the following properties :
 Some properties are pretty simple to define such as name, description or icon. For other properties here is a quick description on how to retrieve the wanted data.
 
 ### Links
-This property let the developer define useful links for the extension.
-For now, we only manage documentation links and must be defined as a sub property of links attribute :
+This property lets the developer define useful links for the extension.
+For now, we only manage documentation links and must be defined as a sub property of links attribute:
 ```json
 links: {
 	documentation: ‘https//….’
@@ -63,18 +63,18 @@ links: {
 This link will be displayed in extension administration in the customer platform.
 
 ### PartnerId & ExtensionId
-These Ids are claimed by LumApps employees for security reasons. For now only users with a valid LumApps JWT token can query Marketplace services.
+Only users with a valid LumApps JWT token can query marketplace services. And for security reasons the partner ID is claimed by LumApps employees
 
-To claim Partner ID, you must give us at least its name, a support email address, and as a non required data, a phone number to reach the support.
+To claim partner ID, you must give us at least its name, a support email address, and as a non required data, a phone number to reach the support.
 When the Partner ID is generated, we can send it to you, and you will keep the same for all your extensions. You also have to set your Partner ID in the manifest file.
 
-And to claim the Extension ID, we will use data defined in the manifest file to generate the ID, like the Provider ID, this ID has to be set in the extension manifest file.
+And to claim the extension ID, we will use data defined in the manifest file to generate the ID, like the provider ID, this ID has to be set in the extension manifest file.
 
 ### Components
-The components attribute is the array of React components type that compose its extension, the components depends on the category of your extension.
+The components attribute is the array of React components type that compose its extension. The components depend on the category of your extension.
 
 
-For Widget Extensions, the available values are : 
+For widget extensions, the available values are : 
  - **content** - For widget content components
  - **settings** - For widget settings component (display when user adds a widget in a content)
  - **global_settings** - Global settings of the extension (display in extension administration)
@@ -82,8 +82,8 @@ For Widget Extensions, the available values are :
 Only the content component is required.
 
 
-For Share To Extensions, the available values are : 
- - **content** - For Share To dialog content
+For share to extensions, the available values are : 
+ - **content** - For share to dialog content
  - **global_settings** - Global settings of the extension (display in extension administration)
 
 
@@ -109,12 +109,13 @@ If your provider is not present in the list you can request a provider creation 
  - Provider type
 
 ### Public
+
 The public attribute is used to define if the extension is available for every LumApps customer (at least customers with the feature enabled). If a partner doesn't want to publish its extension for all LumApps customers he can set his extension as private (non-public).
 
 
 ### Whitelist
 The whitelist is used only for private extension. You have to define a list of authorized customer IDs for your extension.
-The customer ID is available in the customer platform by pressing on CTRL + ?, the customer ID is displayed in the dialog.
+The customer ID is available in the customer platform by pressing on `CTRL + ?`. The customer ID is displayed in the dialog.
 
 If a customer has multiple platforms in different environments (Production and Staging for example), he also has a different customer ID for each environment, so each customer ID has to be whitelisted to publish the extension in every environment for this customer.
 
@@ -138,7 +139,7 @@ The category attribute is used to define the kind of extension. It could be **wi
 
 
 ## Extension Dependencies
-For your Frontend extensions, you'll need to add dependencies.
+For your frontend extensions, you'll need to add dependencies.
 
 As your extension will be loaded by the LumApps platform you cannot use any libraries you want, but we provide a list of authorized libraries for your extension.
 
@@ -157,12 +158,12 @@ Here is the list of available libraries :
 
 ### Add new dependencies
 
-You can import any dependencies into your extension, but they can increase drastically the size of your bundle.
+You can import any dependency into your extension, but they can increase drastically the size of your bundle.
 To prevent this and create a better user experience you should consider using dynamic import when you can.
 
 #### Dynamic import
 
-Dynamic import let you make import asynchronously. In some cases, it can be very useful to load a dependency only when needed.
+Dynamic import lets you make import asynchronously. In some cases, it can be very useful to load a dependency only when needed.
 
 Example :
 
@@ -174,7 +175,7 @@ We can use webpack magic comments to optimize even more the build by telling web
 
 `/* webpackExports: ["import1", "import2", ...] */`
 
-Remember : the imports are made asynchronously, so you need to check that they are loaded before using them
+Remember : Imports are made asynchronously, so you need to check that they are loaded before using them
 
 ```tsx
 const Widget = (): React.ReactElement => {
@@ -207,14 +208,14 @@ export default Widget;
 From your extension you can use the OAuth protocol to contact an application server.
 
 ### Configure extension
-If your extension need to use an OAuth application you have to set it up in the manifest file. (see [Manifest](#oauth))
+If your extension needs to use an OAuth application you have to set it up in the manifest file. For more information, see [Manifest](#oauth).
 
-Then the user who will install you app will have the capability to define which application (declare on its platform) he wants to use.
+Then the user who installs the app has the capability to define which application (declare on its platform) he wants to use.
 
 ### Received selected application
 
-In your Content & your Settings components you'll be able to retrieve the application set by the customer administrator via props sent by LumApps to your extension.
-You'll receive the OAuth application ID inside the `globalValue` property :
+In your content & your Settings components you'll be able to retrieve the application set by the customer administrator via props sent by LumApps to your extension.
+You'll recieve the OAuth application ID inside the `globalValue` property:
 
 ```javascript
 interface WidgetProps {

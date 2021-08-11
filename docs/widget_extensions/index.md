@@ -17,7 +17,7 @@ has_children: false
   - [Make API calls to LumApps](#make-api-calls-to-lumapps)
 
 ## Extension Widget File Structure
-For a Widget Extension, your extension's directory should look like something like this :
+For a widget extension, your extension's directory should look like something like this :
 
 ```
 my-extension-widget
@@ -40,7 +40,7 @@ my-extension-widget
 |-- tsconfig.build.json
 `-- tsconfig.json
 ```
-You can use the LumApps Extensions Template to scaffold an extension and be sure you have the correct configuration to start you development.
+You can use the LumApps extensions template to scaffold an extension and be sure you have the correct configuration to start you development.
 
 
 
@@ -80,7 +80,7 @@ const Widget() => {
 }
 ```
 
-In the Playground the SDK will use the language set on the `Quick actions` pane to let you test your widget in different languages.
+In the playground the SDK will use the language set on the `Quick actions` pane to let you test your widget in different languages.
 
 
 
@@ -94,7 +94,7 @@ Within the LumApps platform, your extension widget components will received diff
 | **globalValue** | Content                    | JSON Object with the value settings defined in the Global Settings component.                                       |
 | **Theme**       | Content                    | LumApps Design System type to indicates the current them apply to your component (`Theme.Light` or `Theme.Dark`). |
 | **properties**  | Settings / Global Settings | JSON object containing the value of the settings defined by the user.                                               |
-| **exportProps** | Settings / Global Settings | Function used to export the values of the settings and refresh the Content component with the new settings values.  |
+| **exportProps** | Settings / Global Settings | Function used to export the values of the settings and refresh the content component with the new settings values.  |
 
 
 
@@ -114,5 +114,5 @@ const { data } = await axios.get(`${baseUrl}/_ah/api/v1/users/list`, {
 });
 ```
 
-If you want to test API call to LumApps from the Playground, CORS errors may occur. As you are running your extension locally, the local host is not whitelisted on LumApps side. You'll need to use a backend application to access the LumApps API.
-In the LumApps Playground, the SDK will use the current user logged in the Playground as the current user, and the value set in the HTTP Origin field in Playground settings as Base URL.
+If you want to test API call to LumApps from the playground, CORS errors may occur. As you are running your extension locally, the local host is not whitelisted on LumApps side. You'll need to use a backend application to access the LumApps API.
+In the LumApps playground, the SDK use the current user logged in the playground as the current user, and the value set in the HTTP Origin field in playground settings as base URL.
