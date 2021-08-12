@@ -34,7 +34,7 @@
         ]
     },
     "dependencies": {
-        "@lumapps-extensions-playground/common": "^1.2.O",
+        "@lumapps-extensions-playground/common": "^1.2.1",
         "@lumx/core": "^1.0.19",
         "@lumx/icons": "^1.0.19",
         "@lumx/react": "^1.0.19",
@@ -50,7 +50,7 @@
         "reselect": "4.0.0"
     },
     "devDependencies": {
-        "@lumapps-extensions-playground/devenv": "^1.2.0",
+        "@lumapps-extensions-playground/devenv": "^1.2.1",
         "@lumapps-extensions/shipping-server": "^1.0.1",
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.3.2",
