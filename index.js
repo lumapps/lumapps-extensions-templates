@@ -44,7 +44,7 @@ async function init() {
 	let choosedTemplate = t || template
 	if(!choosedTemplate) {
 		const choices = [
-			{key: 1, name: 'React Typescript', value: 'react-ts'}
+			{key: 1, name: 'Widget Extension', value: 'widget-extension'}
 		]
 		choice = await inquirer.prompt({
 			type: 'list',
@@ -59,8 +59,6 @@ async function init() {
 	console.log(`\nScaffolding project in ${root}...`)
 	
 	await fs.ensureDir(root)
-
-
 
 	const templateDir = path.join(
 		__dirname,

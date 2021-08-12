@@ -5,9 +5,9 @@
     "scripts": {
         "check": "tsc --noEmit",
         "check:typing": "yarn run check",
-        "start": "run-p start:playground start:playground-server",
+        "start": "run-p start:playground start:shipping-server",
         "start:playground": "react-scripts start",
-        "start:playground-server": "node playground-server/index.js",
+        "start:shipping-server": "lumapps-shipping-server",
         "test": "react-scripts test --coverage"
     },
     "eslintConfig": {
@@ -34,13 +34,13 @@
         ]
     },
     "dependencies": {
-        "@lumapps-extensions-playground/common": "^1.1.6",
-        "@lumx/core": "^1.0.17",
-        "@lumx/icons": "^1.0.17",
-        "@lumx/react": "^1.0.17",
+        "@lumapps-extensions-playground/common": "^1.2.O",
+        "@lumx/core": "^1.0.19",
+        "@lumx/icons": "^1.0.19",
+        "@lumx/react": "^1.0.19",
         "axios": "0.21.1",
         "lodash": "4.17.21",
-        "lumapps-sdk-js": "^0.0.41",
+        "lumapps-sdk-js": "^0.0.44",
         "moment": "^2.29.1",
         "moment-range": "^4.0.2",
         "react": "^16.13.1",
@@ -50,8 +50,8 @@
         "reselect": "4.0.0"
     },
     "devDependencies": {
-        "@lumapps-extensions-playground/devenv": "^1.1.6",
-        "@lumapps-extensions-playground/playground-server": "^1.1.6",
+        "@lumapps-extensions-playground/devenv": "^1.2.0",
+        "@lumapps-extensions/shipping-server": "^1.0.1",
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.3.2",
         "@testing-library/user-event": "^7.1.2",
