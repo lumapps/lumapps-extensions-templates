@@ -13,12 +13,12 @@
   - [Publish](#publish)
 
 ## Found an issue?
-If you find a bug in the source code or a mistake in the documentation, you can help us by submitting an issue to our [GitHub Repository](https://github.com/lumapps/lumapps-extensions-templates/issues).
+If you find a bug in the source code or a mistake in the documentation, you can help us by submitting an issue to our [GitHub Repository][Github Repo].
 
-If you are feeling it, you can even fix the issue yourself and submit a Pull Request. Before opening a Pull Request, please see the Submission Guidelines below.
+If you are feeling it, you can even fix the issue and submit a Pull Request. Before handing in a Pull Request, please see the Submission Guidelines below.
 
 ## Want a feature?
-You can request a new feature by submitting an issue to our [GitHub Repository](https://github.com/lumapps/lumapps-extensions-templates/issues). If you would like to implement a new feature then consider what kind of change it is, discuss it with us before hand in your issue, so that we can better coordinate our efforts, prevent duplication of work, and help you to craft the change so that it is successfully accepted into the project.
+You can request a new feature by submitting an issue to our [GitHub Repository][Github Repo]. If you would like to implement a new feature then consider what kind of change it is, discuss it with us before hand in your issue, so that we can better coordinate our efforts, prevent duplication of work, and help you to craft the change so that it is successfully accepted into the project.
 
 ## Submission guidelines
 
@@ -26,12 +26,12 @@ You can request a new feature by submitting an issue to our [GitHub Repository](
 
 Before you submit your issue search the archive, maybe your question was already answered.
 
-If your issue appears to be a bug, and hasn't been reported, open a new issue. Help us to maximize the effort by not reporting duplicate issues. Providing the following information will increase the chances of your issue being dealt with quickly:
+If your issue appears to be a bug, and hasn't been reported, open a new issue. Help us to minimize our effort by not reporting duplicate issues. Providing the following information will increase the chances of your issue being dealt with quickly:
 
 -   **Motivation for or Use Case** - explain why this is a bug for you
 -   **LumApps Extensions Templates Version** - is it a regression?
 -   **Operating System** - is this a problem with all OS ?
--   **Reproduce the Error** - provide a live example (using [Plunker](http://plnkr.co/edit) or [JSFiddle](http://jsfiddle.net/)) or a unambiguous set of steps.
+-   **Reproduce the Error** - provide a live example (using [Plunker](http://plnkr.co/edit) or [JSFiddle](http://jsfiddle.net/)) or an unambiguous set of steps.
 
 ### Submitting a pull request
 
@@ -70,12 +70,12 @@ That's it! Thank you for your contribution!
 
 ## Coding rules
 
-We're using ES6 JavaScript, TypeScript and to build the tool.
+We're using ES6 JavaScript and TypeScript to build the tool.
 NPM scripts are used to ease the setup, start and build of LumApps Extensions Template.
 
 The coding convention is the following:
 
--   4 spaces for indentation, for JavaScript, TypeScript.
+-   4 spaces for indentation, for JavaScript and TypeScript.
 -   Wrap all codes at 120 characters.
 -   Use camel-case.
 -   Use the [Allman style](http://en.wikipedia.org/wiki/Indent_style#Allman_style).
@@ -108,4 +108,8 @@ Once merged on master you can publish it via the lumapps npm profile by going to
 ```
 npm publish
 ```
+
+
+[Github Repo]: https://github.com/lumapps/lumapps-extensions-templates/issues
+
 
