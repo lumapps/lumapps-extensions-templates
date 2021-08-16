@@ -15,7 +15,7 @@
 ## Found an issue?
 If you find a bug in the source code or a mistake in the documentation, you can help us by submitting an issue to our [GitHub Repository][Github Repo].
 
-If you are feeling it, you can even fix the issue and submit a Pull Request. Before handing in a Pull Request, please see the Submission Guidelines below.
+If you feel like it, you can even fix the issue and submit a Pull Request. Before handing in a Pull Request, please see the Submission Guidelines below.
 
 ## Want a feature?
 You can request a new feature by submitting an issue to our [GitHub Repository][Github Repo]. If you would like to implement a new feature then consider what kind of change it is, discuss it with us before hand in your issue, so that we can better coordinate our efforts, prevent duplication of work, and help you to craft the change so that it is successfully accepted into the project.
@@ -26,7 +26,7 @@ You can request a new feature by submitting an issue to our [GitHub Repository][
 
 Before you submit your issue search the archive, maybe your question was already answered.
 
-If your issue appears to be a bug, and hasn't been reported, open a new issue. Help us to minimize our effort by not reporting duplicate issues. Providing the following information will increase the chances of your issue being dealt with quickly:
+If your issue appears to be a bug, and hasn't been reported, open a new issue. Help us to minimize our efforts by not reporting duplicate issues. Providing the following information will increase the chances of your issue being dealt with quickly:
 
 -   **Motivation for or Use Case** - explain why this is a bug for you
 -   **LumApps Extensions Templates Version** - is it a regression?
@@ -103,7 +103,7 @@ version:minor
 ```
 
 Then make a PR to master. 
-Once merged on master you can publish it via the lumapps npm profile by going to the master branch and running
+Once merged on master you can publish it via the LumApps NPM profile by going to the master branch and running
 
 ```
 npm publish
