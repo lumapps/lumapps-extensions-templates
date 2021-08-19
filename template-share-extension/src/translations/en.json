@@ -1,0 +1,7 @@
+{
+    "title": "Lorem Picsum",
+    "sub_title": "Sample widget",
+    "description": "This is a tiny example of all the things you can do with a LumApps widget",
+    "errors.retrieve_user": "An error occured while retrieving user",
+    "errors.dismiss": "Dismiss"
+}
