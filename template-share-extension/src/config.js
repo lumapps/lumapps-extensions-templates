@@ -33,9 +33,14 @@ const shareTo = {
 };
 
 /**
- * Whether the extension requires an oauth application
- */
-const oauth = false;
+ * Define if your extension needs to connect to extenal service through an application declare on provider side.
+ * 
+ * Uncomment the following block to declare application usage for your extension.
+ * Do not forget to add the application attribute in the config object.
+ */ 
+/*const application = {
+    providerType: '',
+};*/
 
 /**
  * The documentation's url of the extension.
@@ -70,7 +75,7 @@ const config = {
     description,
     icon,
     shareTo,
-    oauth,
+    //application,
     links,
     components,
     isPublic,
