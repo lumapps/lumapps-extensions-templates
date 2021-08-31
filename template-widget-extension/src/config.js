@@ -3,8 +3,6 @@
  *  update the following to fit your needs
  */
 
-export const useGlobalSettings = true;
-
 /**
  * The ids of your partner and extension
  */
@@ -70,9 +68,5 @@ const config = {
     whitelist,
     category: 'widget',
 };
-
-if (!useGlobalSettings) {
-    config.components.pop();
-}
 
 export default config;
