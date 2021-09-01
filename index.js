@@ -44,7 +44,8 @@ async function init() {
 	let choosedTemplate = t || template
 	if(!choosedTemplate) {
 		const choices = [
-			{key: 1, name: 'Widget Extension', value: 'widget-extension'}
+			{key: 1, name: 'Widget Extension', value: 'widget-extension'},
+			{key: 2, name: 'Share Extension', value: 'share-extension'}
 		]
 		choice = await inquirer.prompt({
 			type: 'list',
