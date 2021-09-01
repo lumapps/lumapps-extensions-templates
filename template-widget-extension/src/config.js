@@ -22,10 +22,16 @@ const icon = {
         'https://lh3.googleusercontent.com/-6F_iwel8KGY/WD8MdGS0PkI/AAAAAAAAGDI/KaqvKtZCK_AsdK6BcKp6Cy1MpwoEWCUvgCKgB/s400/logo.png', // a working link to your widget icon
 };
 
+
 /**
- * Whether the extension requires an oauth application
- */
-const oauth = false;
+ * Define if your extension needs to connect to extenal service through an application declare on provider side.
+ * 
+ * Uncomment the following block to declare application usage for your extension.
+ * Do not forget to add the application attribute in the config object.
+ */ 
+/*const application = {
+    providerType: '',
+};*/
 
 /**
  * The documentation's url of the extension.
@@ -60,7 +66,7 @@ const config = {
     name,
     description,
     icon,
-    oauth,
+    //application,
     links,
     components,
     isPublic,

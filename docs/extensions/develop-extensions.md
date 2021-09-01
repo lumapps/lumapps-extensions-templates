@@ -16,7 +16,7 @@ has_children: false
     - [Links](#links)
     - [PartnerId & ExtensionId](#partnerid--extensionid)
     - [Components](#components)
-    - [OAuth](#oauth)
+    - [Application](#application)
     - [Public](#public)
     - [Whitelist](#whitelist)
   - [Extension Dependencies](#extension-dependencies)
@@ -42,7 +42,7 @@ In this configuration file, you have to define the following properties :
 | **icon**        | Translatable string (required) | The public link to the icon of the extension in multiple language                        |
 | **links**       | JSON Object                    | The useful HTTP links related to the extension.                                          |
 | **components**  | Array of components (required) | Array of the components that compose your extension                                      |
-| **oauth**       | boolean                        | Indicates if the extension need to consume an OAuth application declare on customer side |
+| **application** | JSON Object                    | Indicates if the extension need to connect to an external service (from LumApps side).  |
 | **partnerId**   | string (required)              | The id of your partner                                                                   |
 | **extensionId** | string (required)              | The id of your extension                                                                 |
 | **public**      | boolean (required)             | Whether the extension is public or private                                               |
@@ -90,9 +90,23 @@ For Share To Extensions, the available values are :
 Only the content component is required.
 
 
-### OAuth
-The OAuth attribute indicates the extension uses a Client OAuth Application declared in the client side. The administrator will have to select the Application he wants to use in the extension administration. The selected application will be sent to the Settings & Widget components via properties.
-You can find more details on OAuth in extension [here](#using-oauth-application)
+### Application
+The application attribute is used to indicate your extension needs to contact an external service through an authorization protocol (OAuth v2 or Application token).
+To determine which provider you want to connect to your extension you have to set the provider type in the application object :
+
+```json
+application: {
+	providerType: 'microsoft'
+}
+```
+
+The provider type can be retrieved from the provider list accessible by contacting the following endpoint
+`https://go-shared-services.api.lumapps.com/v2/providers`.
+
+If your provider is not present in the list you can request a provider creation by sending us the following information :
+ - Provider name
+ - Provider icon
+ - Provider type
 
 ### Public
 The public attribute is used to define if the extension is available for every LumApps customer (at least customers with the feature enabled). If a partner doesn't want to publish its extension for all LumApps customers he can set his extension as private (non public).
