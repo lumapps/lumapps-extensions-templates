@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Lumapps } from 'lumapps-sdk-js';
+import React, { useEffect, useState, useMemo } from 'react';
+import { useLanguage } from 'lumapps-sdk-js';
 import {
     Size,
     Theme,
@@ -119,20 +119,22 @@ const NotificationAwareContent = (props: any) => {
     };
     const [lang, setLang] = useState<string>('en');
     useEffect(() => {
-        const getContext = async () => {
-            const lumapps = new Lumapps();
-            const { userLang: userLangPromise } = lumapps.context;
-
-            const userLang = await userLangPromise;
-            const isLangInTrad = Object.keys(messages).includes(userLang);
-
-            setLang(isLangInTrad ? userLang : 'en');
-        };
-        getContext();
+        const { displayLanguage } = useLanguage();
+        const messages = useMemo(
+            () => ({
+                en: messagesEn,
+                fr: messagesFr,
+            }),
+            [],
+        );
+        const lang = useMemo(() => (Object.keys(messages).includes(displayLanguage) ? displayLanguage : 'en'), [
+            displayLanguage,
+            messages,
+        ]);
     }, [messages]);
 
     return (
-        <IntlProvider messages={messages[lang]} locale={lang}>
+        <IntlProvider messages={messages[lang as keyof typeof messages]} locale={lang}>
             <NotificationsProvider>
                 <PredefinedErrorBoundary>
                     <Share {...props} />

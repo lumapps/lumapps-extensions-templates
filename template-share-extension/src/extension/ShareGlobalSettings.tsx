@@ -13,7 +13,9 @@ import defaultGlobalSettings from './defaultGlobalSettings';
 export const ShareGlobalSettings = ({ properties = {}, exportProp }: any) => {
     const [baseUrl, setBaseUrl] = useState(properties.baseUrl || defaultGlobalSettings.baseUrl);
     const debouncedBaseUrl = useDebounce(baseUrl, 800);
+
     useExportProps(debouncedBaseUrl, 'baseUrl', properties, exportProp);
+    
     return (
         <div>
             <TextField className="mt0 ml" label="URL" value={baseUrl} onChange={setBaseUrl} />
