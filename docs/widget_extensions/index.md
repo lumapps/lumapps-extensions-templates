@@ -23,19 +23,20 @@ For a widget extension, your extension's directory should look like something li
 my-extension-widget
 |-- src
 |   |-- widget
-|   |   |-- translations
-|   |   |   |-- en.json
-|   |   |   |-- es.json
-|   |   |   `- fr.json
 |   |   |-- index.ts
 |   |   |-- Widget.tsx
 |   |   |-- WidgetGlobalSettings.tsx
 |   |   `-- WidgetSettings.tsx
+|   |-- translations
+|   |   |-- en.json
+|   |   |-- es.json
+|   |   `- fr.json
 |   |-- config.js
 |   |-- index.content.ts
+|   |-- index.global_settings.ts
 |   |-- index.settings.ts
 |   |-- index.tsx
-|   `-- index.widget.ys
+|   `-- index.widget.ts
 |-- package.json
 |-- tsconfig.build.json
 `-- tsconfig.json
@@ -53,6 +54,7 @@ You have to use the `useLanguage` hook to retrieve the current language of the u
 
 ``` typescript
 import { IntlProvider } from 'react-intl';
+import { useLanguage } from 'lumapps-sdk-js';
 
 import messagesEn from '../translations/en.json';
 import messagesFr from '../translations/fr.json';
