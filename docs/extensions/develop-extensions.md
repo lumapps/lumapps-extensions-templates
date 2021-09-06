@@ -208,7 +208,7 @@ export default Widget;
 From your extension you can use the OAuth protocol to contact an application server.
 
 ### Configure extension
-If your extension needs to use an OAuth application you have to set it up in the manifest file. For more information, see [Manifest](#oauth).
+If your extension needs to use an OAuth application you have to set it up in the manifest file. For more information, see [Manifest](#application).
 
 Then the user who installs the app has the capability to define which application (declare on its platform) he wants to use.
 
