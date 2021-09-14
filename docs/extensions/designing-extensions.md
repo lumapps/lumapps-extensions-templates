@@ -13,6 +13,7 @@ has_children: false
 - [Designing Extensions](#designing-extensions)
   - [Introduction](#introduction)
   - [General guidelines](#general-guidelines)
+    - [Terminology](#terminology)
     - [UI Recommendation](#ui-recommendation)
   - [Share To Extension Guidelines](#share-to-extension-guidelines)
   - [Widget Extension Guidelines](#widget-extension-guidelines)
@@ -28,7 +29,7 @@ Extensions provide ways to extend LumApps. We provide guidelines to help ensure 
 The guidelines in this section apply to all extension types. Guidelines for specific extension types appear in Share To extension guidelines, and Widget extension guidelines.
 
 
-### Terminology
+### Terminology
 
 The following table contains terms you need to understand when you’re designing an extension.
 
