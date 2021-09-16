@@ -118,19 +118,14 @@ const NotificationAwareContent = (props: any) => {
         fr: messagesFr,
     };
     const [lang, setLang] = useState<string>('en');
+    const { displayLanguage } = useLanguage();
+
     useEffect(() => {
-        const { displayLanguage } = useLanguage();
-        const messages = useMemo(
-            () => ({
-                en: messagesEn,
-                fr: messagesFr,
-            }),
-            [],
-        );
-        const lang = useMemo(() => (Object.keys(messages).includes(displayLanguage) ? displayLanguage : 'en'), [
-            displayLanguage,
-            messages,
-        ]);
+        const messages = () => ({
+            en: messagesEn,
+            fr: messagesFr,
+        });
+        const lang = () => (Object.keys(messages).includes(displayLanguage) ? displayLanguage : 'en');
     }, [messages]);
 
     return (
