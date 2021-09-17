@@ -26,16 +26,24 @@ const shareTo = {
         en: 'My external service',
     },
     icon: {
-        en: 'https://www.logolynx.com/images/logolynx/56/56f9957253c5718361c93a52c1ab950d.png'
+        en: 'https://www.logolynx.com/images/logolynx/56/56f9957253c5718361c93a52c1ab950d.png',
     },
 };
 
 /**
+ * Define the availability of your extension :
+ * - open : available for everyone
+ * - marketplace : the customer need to have access to the marketplace
+ */
+
+const availability = 'marketplace';
+
+/**
  * Define if your extension needs to connect to extenal service through an application declare on provider side.
- * 
+ *
  * Uncomment the following block to declare application usage for your extension.
  * Do not forget to add the application attribute in the config object.
- */ 
+ */
 /*const application = {
     providerType: '',
 };*/
@@ -45,7 +53,7 @@ const shareTo = {
  */
 const links = {
     documentation: null,
-}
+};
 
 /**
  * The components available for your extensions
@@ -67,19 +75,20 @@ const whitelist = [];
 
 // do not change the following unless you know what you are doing
 const config = {
-    partnerId,
-    extensionId,
-    name,
-    description,
-    icon,
-    shareTo,
     //application,
-    links,
-    components,
-    isPublic,
-    public: isPublic,
-    whitelist,
+    availability,
     category: 'share_to',
+    components,
+    description,
+    extensionId,
+    icon,
+    isPublic,
+    links,
+    name,
+    partnerId,
+    public: isPublic,
+    shareTo,
+    whitelist,
 };
 
 export default config;

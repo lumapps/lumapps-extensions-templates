@@ -10,45 +10,47 @@ has_children: false
 
 <h6>Table of Contents</h6>
 
-- [Developing Extensions](#developing-extensions)
-  - [Extension Manifest](#extension-manifest)
-    - [Manifest attributes](#manifest-attributes)
-    - [Links](#links)
-    - [PartnerId & ExtensionId](#partnerid--extensionid)
-    - [Components](#components)
-    - [Application](#application)
-    - [Public](#public)
-    - [Whitelist](#whitelist)
-  - [Extension Dependencies](#extension-dependencies)
-    - [Add new dependencies](#add-new-dependencies)
-      - [Dynamic import](#dynamic-import)
-  - [Using OAuth application](#using-oauth-application)
-    - [Configure extension](#configure-extension)
-    - [Received selected application](#received-selected-application)
+-  [Develop Extensions](#develop-extensions)
+   -  [Extension Manifest](#extension-manifest)
+      -  [Manifest attributes](#manifest-attributes)
+      -  [Links](#links)
+      -  [Availability](#availability)
+      -  [PartnerId & ExtensionId](#partnerid--extensionid)
+      -  [Components](#components)
+      -  [Application](#application)
+      -  [Public](#public)
+      -  [Whitelist](#whitelist)
+   -  [Extension Dependencies](#extension-dependencies)
+      -  [Add new dependencies](#add-new-dependencies)
+         -  [Dynamic import](#dynamic-import)
+   -  [Using OAuth application](#using-oauth-application)
+      -  [Configure extension](#configure-extension)
+      -  [Recieved selected application](#recieved-selected-application)
 
 ## Extension Manifest
-The extension manifest is the file used by the LumApps Marketplace to identify your extension and know what your extension does.
+
+The Extension Manifest is the file used by the LumApps Marketplace to identify your extension and know what your extension does.
 
 You'll have to fill in this extension manifest to be able to declare your extension in the LumApps Marketplace. This file is attached to the extension and is already pre-configured when you create an extension using LumApps extension template.
 
-
 ### Manifest attributes
-In this configuration file, you have to define the following properties : 
 
-| Attribute       | Type                           | Description                                                                              |
-| :-------------- | :----------------------------- | :--------------------------------------------------------------------------------------- |
-| **name**        | Translatable string (required) | The name of the extension in multiple language                                           |
-| **description** | Translatable string (required) | The description of the extension in multiple language                                    |
-| **icon**        | Translatable string (required) | The public link to the icon of the extension in multiple language                        |
-| **links**       | JSON Object                    | The useful HTTP links related to the extension.                                          |
-| **components**  | Array of components (required) | Array of the components that compose your extension                                      |
-| **application** | JSON Object                    | Indicates if the extension need to connect to an external service (from LumApps side).  |
-| **partnerId**   | string (required)              | The id of your partner                                                                   |
-| **extensionId** | string (required)              | The id of your extension                                                                 |
-| **public**      | boolean (required)             | Whether the extension is public or private                                               |
-| whitelist       | Array of string OR JSON Object | The list of whitelisted customer IDs. Used only if your extension is not public          |
-| **category**    | string (required)              | The category of your extension.                                                          |
+In this configuration file, you have to define the following properties :
 
+| Attribute        | Type                           | Description                                                                            |
+| :--------------- | :----------------------------- | :------------------------------------------------------------------------------------- |
+| **name**         | Translatable string (required) | The name of the extension in multiple language                                         |
+| **description**  | Translatable string (required) | The description of the extension in multiple language                                  |
+| **icon**         | Translatable string (required) | The public link to the icon of the extension in multiple language                      |
+| **links**        | JSON Object                    | The useful HTTP links related to the extension.                                        |
+| **availability** | string (required)              | The availability of the extension                                                      |
+| **components**   | Array of components (required) | Array of the components that compose your extension                                    |
+| **application**  | JSON Object                    | Indicates if the extension need to connect to an external service (from LumApps side). |
+| **partnerId**    | string (required)              | The id of your partner                                                                 |
+| **extensionId**  | string (required)              | The id of your extension                                                               |
+| **public**       | boolean (required)             | Whether the extension is public or private                                             |
+| whitelist        | Array of string OR JSON Object | The list of whitelisted customer IDs. Used only if your extension is not public        |
+| **category**     | string (required)              | The category of your extension.                                                        |
 
 Some properties are pretty simple to define such as name, description or icon. For other properties here is a quick description on how to retrieve the wanted data.
 
@@ -60,7 +62,17 @@ links: {
 	documentation: ‘https//….’
 }
 ```
+
 This link will be displayed in extension administration in the customer platform.
+
+### Availability
+
+Define the availability of the extension. Two types are available :
+
+-  `marketplace` (default) : The customer need to have the marketplace activated on his environment
+-  `open` : The extension is available for everyone.
+
+> Note that if your extension is set as `marketplace`, a customer without the marketplace activated will never be able to see the extension even if you withelist it.
 
 ### PartnerId & ExtensionId
 Only users with a valid LumApps JWT token can query marketplace services. And for security reasons the partner ID is claimed by LumApps employees
@@ -73,6 +85,7 @@ And to claim the extension ID, we will use data defined in the manifest file to 
 ### Components
 The components attribute is the array of React components type that compose its extension. The components depend on the category of your extension.
 
+For Widget Extensions, the available values are :
 
 For widget extensions, the available values are : 
  - **content** - For widget content components
@@ -81,6 +94,7 @@ For widget extensions, the available values are :
 
 Only the content component is required.
 
+For Share To Extensions, the available values are :
 
 For share to extensions, the available values are : 
  - **content** - For share to dialog content
@@ -89,8 +103,8 @@ For share to extensions, the available values are :
 
 Only the content component is required.
 
-
 ### Application
+
 The application attribute is used to indicate your extension needs to contact an external service through an authorization protocol (OAuth v2 or Application token).
 To determine which provider you want to connect to your extension you have to set the provider type in the application object :
 
@@ -104,21 +118,20 @@ The provider type can be retrieved from the provider list accessible by contacti
 `https://go-shared-services.api.lumapps.com/v2/providers`.
 
 If your provider is not present in the list you can request a provider creation by sending us the following information :
- - Provider name
- - Provider icon
- - Provider type
+
+-  Provider name
+-  Provider icon
+-  Provider type
 
 ### Public
 
 The public attribute is used to define if the extension is available for every LumApps customer (at least customers with the feature enabled). If a partner doesn't want to publish its extension for all LumApps customers he can set his extension as private (non-public).
-
 
 ### Whitelist
 The whitelist is used only for private extension. You have to define a list of authorized customer IDs for your extension.
 The customer ID is available in the customer platform by pressing on `CTRL + ?`. The customer ID is displayed in the dialog.
 
 If a customer has multiple platforms in different environments (Production and Staging for example), he also has a different customer ID for each environment, so each customer ID has to be whitelisted to publish the extension in every environment for this customer.
-
 
 ```json
 # Simple whitelist (for production environment)
@@ -137,7 +150,6 @@ whitelist : {
 ### Category
 The category attribute is used to define the kind of extension. It could be **widget**, **backend** or **share_to**.
 
-
 ## Extension Dependencies
 For your frontend extensions, you'll need to add dependencies.
 
@@ -154,7 +166,6 @@ Here is the list of available libraries :
 | [prop-types](https://github.com/facebook/prop-types)           | "15"       |                        |
 | [qs](https://github.com/ljharb/qs)                             | "^6.7.0"   |                        |
 | [react](https://github.com/facebook/react)                     | "^16.13.1" |                        |
-
 
 ### Add new dependencies
 
@@ -179,32 +190,33 @@ Remember : Imports are made asynchronously, so you need to check that they are l
 
 ```tsx
 const Widget = (): React.ReactElement => {
-  const [myLibrary, setMyLibrary] = useState < any > null;
+   const [myLibrary, setMyLibrary] = useState < any > null;
 
-  const loadLibrary = async () => {
-    const { exempleImportedConst, exempleImportedFunction } = await import(
-      /* webpackExports: ["exempleImportedConst", "exempleImportedFunction"] */ 'my-library'
-    );
-    setMyLibrary({ exempleImportedConst, exempleImportedFunction });
-  };
+   const loadLibrary = async () => {
+      const { exempleImportedConst, exempleImportedFunction } = await import(
+         /* webpackExports: ["exempleImportedConst", "exempleImportedFunction"] */ "my-library"
+      );
+      setMyLibrary({ exempleImportedConst, exempleImportedFunction });
+   };
 
-  return (
-    <>
-      <button onClick={loadLibrary}>Click me</button>
-      {myLibrary && (
-        <>
-          <p>Display : {myLibrary.exempleImportedConst}</p>
-          <p>Execute : {myLibrary.exempleImportedFunction()}</p>
-        </>
-      )}
-    </>
-  );
+   return (
+      <>
+         <button onClick={loadLibrary}>Click me</button>
+         {myLibrary && (
+            <>
+               <p>Display : {myLibrary.exempleImportedConst}</p>
+               <p>Execute : {myLibrary.exempleImportedFunction()}</p>
+            </>
+         )}
+      </>
+   );
 };
 
 export default Widget;
 ```
 
 ## Using OAuth application
+
 From your extension you can use the OAuth protocol to contact an application server.
 
 ### Configure extension
