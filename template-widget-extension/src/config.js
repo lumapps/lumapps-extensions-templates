@@ -22,13 +22,20 @@ const icon = {
         'https://lh3.googleusercontent.com/-6F_iwel8KGY/WD8MdGS0PkI/AAAAAAAAGDI/KaqvKtZCK_AsdK6BcKp6Cy1MpwoEWCUvgCKgB/s400/logo.png', // a working link to your widget icon
 };
 
+/**
+ * Define the availability of your extension :
+ * - open : available for everyone
+ * - marketplace : the customer need to have access to the marketplace
+ */
+
+const availability = 'marketplace';
 
 /**
  * Define if your extension needs to connect to extenal service through an application declare on provider side.
- * 
+ *
  * Uncomment the following block to declare application usage for your extension.
  * Do not forget to add the application attribute in the config object.
- */ 
+ */
 /*const application = {
     providerType: '',
 };*/
@@ -38,7 +45,7 @@ const icon = {
  */
 const links = {
     documentation: null,
-}
+};
 
 /**
  * The components available for your extensions
@@ -61,18 +68,19 @@ const whitelist = [];
 
 // do not change the following unless you know what you are doing
 const config = {
-    partnerId,
-    extensionId,
-    name,
-    description,
-    icon,
     //application,
-    links,
+    availability,
+    category: 'widget',
     components,
+    description,
+    extensionId,
+    icon,
     isPublic,
+    links,
+    name,
+    partnerId,
     public: isPublic,
     whitelist,
-    category: 'widget',
 };
 
 export default config;
