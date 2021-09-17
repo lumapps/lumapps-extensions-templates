@@ -127,8 +127,6 @@ If your provider is not present in the list you can request a provider creation 
 
 The public attribute is used to define if the extension is available for every LumApps customer (at least customers with the feature enabled). If a partner doesn't want to publish its extension for all LumApps customers he can set his extension as private (non-public).
 
-The public attribute is used to define if the extension is available for every LumApps customer (at least customers with the feature enabled). If a partner doesn't want to publish its extension for all LumApps customers he can set his extension as private (non public).
-
 ### Whitelist
 The whitelist is used only for private extension. You have to define a list of authorized customer IDs for your extension.
 The customer ID is available in the customer platform by pressing on `CTRL + ?`. The customer ID is displayed in the dialog.
