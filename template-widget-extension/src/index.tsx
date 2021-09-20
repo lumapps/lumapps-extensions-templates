@@ -20,9 +20,9 @@ ReactDOM.render(
         <Provider store={store}>
             <Playground
                 config={config}
-                Widget={Widget}
-                WidgetSettings={WidgetSettings}
-                WidgetGlobalSettings={WidgetGlobalSettings}
+                ContentComponent={Widget}
+                SettingsComponent={WidgetSettings}
+                GlobalSettingsComponent={WidgetGlobalSettings}
             />
         </Provider>
     </React.StrictMode>,

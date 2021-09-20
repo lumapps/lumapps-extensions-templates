@@ -17,7 +17,7 @@ import { ShareGlobalSettings } from './extension/ShareGlobalSettings';
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
-            <Playground config={config} Content={Share} GlobalSettings={ShareGlobalSettings} />
+            <Playground config={config} ContentComponent={Share} GlobalSettingsComponent={ShareGlobalSettings} />
         </Provider>
     </React.StrictMode>,
     document.getElementById('root'),
