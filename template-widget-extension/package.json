@@ -34,13 +34,13 @@
         ]
     },
     "dependencies": {
-        "@lumapps-extensions-playground/common": "^1.2.2",
-        "@lumx/core": "^1.0.22",
-        "@lumx/icons": "^1.0.22",
-        "@lumx/react": "^1.0.22",
+        "@lumapps-extensions-playground/common": "^1.3.0",
+        "@lumx/core": "^2.0.1",
+        "@lumx/icons": "^2.0.1",
+        "@lumx/react": "^2.0.1",
         "axios": "0.21.1",
         "lodash": "4.17.21",
-        "lumapps-sdk-js": "^0.0.44",
+        "lumapps-sdk-js": "^1.0.1",
         "moment": "^2.29.1",
         "moment-range": "^4.0.2",
         "react": "^16.13.1",
@@ -50,8 +50,8 @@
         "reselect": "4.0.0"
     },
     "devDependencies": {
-        "@lumapps-extensions-playground/devenv": "^1.2.2",
-        "@lumapps-extensions/shipping-server": "^1.1.2",
+        "@lumapps-extensions-playground/devenv": "^1.3.0",
+        "@lumapps-extensions/shipping-server": "^1.1.3",
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.3.2",
         "@testing-library/user-event": "^7.1.2",
