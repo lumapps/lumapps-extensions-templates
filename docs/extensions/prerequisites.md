@@ -11,15 +11,15 @@ has_children: false
 <h6>Table of Contents</h6>
 
 - [Technical prerequisites](#technical-prerequisites)
-  - [Backend Extension](#backend-extension)
-  - [Share To & Widget Extension](#share-to--widget-extension)
-    - [Extension Parts](#extension-parts)
+  - [Backend extension](#backend-extension)
+  - [Share To & Widget extension](#share-to--widget-extension)
+    - [Extension parts](#extension-parts)
 
-## Backend Extension
+## Backend extension
 In Backend extensions you can define your extension as you want while it respects our guidelines.
 We encourage you to use Python language as our backend SDK is only available in this language.
 
-## Share To & Widget Extension
+## Share To & Widget extension
 
 Since the LumApps product is developed using **ReactJS** framework. Extensions that require a UI and an integration within the LumApps platform have to be developed using this framework. You can find more information about the ReactJS framework on the [official website](https://reactjs.org/).
 
@@ -27,7 +27,7 @@ We also encourage you to use **TypeScript** language for your front extensions. 
 
 Extension written with any other language and framework won't be approved during the [review](lifecycle-management.md#review).
 
-### Extension Parts
+### Extension parts
 Extensions are composed of three parts, one required and two optional.
 
 Required:

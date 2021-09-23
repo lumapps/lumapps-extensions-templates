@@ -11,9 +11,9 @@ has_children: false
 
 - [Partner management](#partner-management)
   - [Registering and managing partner organization](#registering-and-managing-partner-organization)
-    - [How to Register an Organization](#how-to-register-an-organization)
+    - [How to register an organization](#how-to-register-an-organization)
     - [Why my request to enter LumApps Market may be rejected?](#why-my-request-to-enter-lumapps-market-may-be-rejected)
-  - [Manage my Partner Organization](#manage-my-partner-organization)
+  - [Manage my partner organization](#manage-my-partner-organization)
 
 This guide explains how to register a developer organization, which enables you to manage and build extensions for the LumApps marketplace. 
 
@@ -22,7 +22,7 @@ This guide explains how to register a developer organization, which enables you 
 Before you start developing for the LumApps Marketplace you need a declared partner organization.
 A partner organization is a set of information to identify the owner of an extension, to give us and the customer a way to contact you.
 
-### How to Register an Organization
+### How to register an organization
 After requesting access to the LumApps marketplace program, if your request is accepted we will contact you to have information about your organization. 
 The following information will be used by LumApps to register your partner organization in the LumApps Marketplace and to generate your LumApps test platform.
 You'll receive all needed information to start working on your extension as soon as your environment is set up on LumApps.
@@ -43,6 +43,6 @@ We may reject your request to enter the LumApps marketplace program for several 
  - The email domain does not match the organization URL provided
  - The project is not possible with the LumApps marketplace
 
-## Manage my Partner Organization
+## Manage my partner organization
 Your partner information are available in the LumApps extension playground, in the back office interface.
 As for now you cannot edit your partner information by yourself. You need to contact the LumApps marketplace support if you want to edit any of your partner organization information.   

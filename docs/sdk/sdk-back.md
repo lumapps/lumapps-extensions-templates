@@ -10,7 +10,7 @@ parent: SDK
 <h6>Table of Contents</h6>
 
 - [SDK Python](#sdk-python)
-  - [SDK Documentation site](#sdk-documentation-site)
+  - [SDK documentation site](#sdk-documentation-site)
 
-## SDK Documentation site
+## SDK documentation site
 The Python SDK documentation can be read on this [site](https://lumapps.github.io/lumapps-sdk/)

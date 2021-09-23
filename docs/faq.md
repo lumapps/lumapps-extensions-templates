@@ -13,10 +13,10 @@ has_children: false
   - [Extension development](#extension-development)
     - [What if I do not want to use mocked data ?](#what-if-i-do-not-want-to-use-mocked-data-)
     - [Where can I find documentation for a specific UI component ?](#where-can-i-find-documentation-for-a-specific-ui-component-)
-  - [LumApps Playground](#lumapps-playground)
+  - [LumApps playground](#lumapps-playground)
     - [Do I need a partner ID and/or an extension ID ?](#do-i-need-a-partner-id-andor-an-extension-id-)
     - [Can I use fake partner and extension IDs ?](#can-i-use-fake-partner-and-extension-ids-)
-  - [LumApps Test Platform](#lumapps-test-platform)
+  - [LumApps test platform](#lumapps-test-platform)
     - [How can I reach my LumApps test platform ?](#how-can-i-reach-my-lumapps-test-platform-)
 
 ## Extension development
@@ -36,7 +36,7 @@ The last possibility is to edit the language field in the Quick actions section 
 As we encourage you to use the LumApps Design System, you can check the [Design System documentation site](https://design.lumapps.com) to find all the component you can import and how to use them.
 
 
-## LumApps Playground
+## LumApps playground
 
 ### Do I need a partner ID and/or an extension ID ?
 No, as long as you develop and test your extension locally in the LumApps extension playground, you do not need to declare identifier for your extension.
@@ -45,7 +45,7 @@ Your provider ID is created during the creation of your environment.
 ### Can I use fake partner and extension IDs ?
 No, to deploy your extension on your LumApps test platform you'll have to use real IDs to let the platform identify your extension in the test marketplace. 
 
-## LumApps Test Platform
+## LumApps test platform
 
 ### How can I reach my LumApps test platform ?
 You can access to the LumApps test platform via this URL : [https://preview.lumapps.com](https://preview.lumapps.com). You'll have to sign in with the credentials LumApps sent you if it's the first time you sign in, or the one you set after your first login.

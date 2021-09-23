@@ -5,16 +5,16 @@ nav_order: 7
 has_children: false
 ---
 
-# Share To Extensions
+# Share To extensions
 
 <h6> Table of Contents</h6>
 
-- [Share To Extensions](#share-to-extensions)
-  - [Extension Share File Structure](#extension-share-file-structure)
+- [Share To extensions](#share-to-extensions)
+  - [Share extension - file structure](#share-extension---file-structure)
   - [Translations](#translations)
   - [Props received](#props-received)
 
-## Extension Share File Structure
+## Share extension - file structure
 For a share extension, your extension's directory should look like something like this :
 
 ```
