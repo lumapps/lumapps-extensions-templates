@@ -10,22 +10,23 @@ has_children: false
 
 <h6>Table of Contents</h6>
 
--  [Develop Extensions](#develop-extensions)
-   -  [Extension Manifest](#extension-manifest)
-      -  [Manifest attributes](#manifest-attributes)
-      -  [Links](#links)
-      -  [Availability](#availability)
-      -  [PartnerId & ExtensionId](#partnerid--extensionid)
-      -  [Components](#components)
-      -  [Application](#application)
-      -  [Public](#public)
-      -  [Whitelist](#whitelist)
-   -  [Extension Dependencies](#extension-dependencies)
-      -  [Add new dependencies](#add-new-dependencies)
-         -  [Dynamic import](#dynamic-import)
-   -  [Using OAuth application](#using-oauth-application)
-      -  [Configure extension](#configure-extension)
-      -  [Recieved selected application](#recieved-selected-application)
+- [Developing Extensions](#developing-extensions)
+  - [Extension Manifest](#extension-manifest)
+    - [Manifest attributes](#manifest-attributes)
+    - [Links](#links)
+    - [Availability](#availability)
+    - [PartnerId & ExtensionId](#partnerid--extensionid)
+    - [Components](#components)
+    - [Application](#application)
+    - [Public](#public)
+    - [Whitelist](#whitelist)
+    - [Category](#category)
+  - [Extension Dependencies](#extension-dependencies)
+    - [Add new dependencies](#add-new-dependencies)
+      - [Dynamic import](#dynamic-import)
+  - [Using OAuth application](#using-oauth-application)
+    - [Configure extension](#configure-extension)
+    - [Received selected application](#received-selected-application)
 
 ## Extension Manifest
 
@@ -147,7 +148,8 @@ whitelist : {
 }
 ```
 
-### Category
+### Category
+
 The category attribute is used to define the kind of extension. It could be **widget**, **backend** or **share_to**.
 
 ## Extension Dependencies
