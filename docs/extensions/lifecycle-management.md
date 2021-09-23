@@ -29,7 +29,7 @@ When you’re satisfied with the local test version, you can deploy your extensi
 
 In both local test and hosted test, extensions are visible only to a developer-provided list of test accounts and a small subset of LumApps staff. Other users won't have access to your extension.
 
-To move from local test to hosted test, you have to use the LumApps extensions playground.
+To move from local test to hosted test, you have to use the LumApps extensions playground, and more specifically the [deployment manager](extension-playground.md#deployment-manager).
 
 You can find more information on how to use your LumApps test environment [Install and configure an extension documentation](https://docs.lumapps.com/docs/expand-l9650191038731043/expand-l9615254296582716).
 
