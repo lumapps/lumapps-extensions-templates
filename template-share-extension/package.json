@@ -1,6 +1,6 @@
 {
   "name": "template-react-ts",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "private": true,
   "scripts": {
     "check": "tsc --noEmit",
@@ -38,9 +38,9 @@
     "@lumx/core": "^2.0.1",
     "@lumx/icons": "^2.0.1",
     "@lumx/react": "^2.0.1",
-    "axios": "0.21.1",
+    "axios": "0.21.4",
     "lodash": "4.17.21",
-    "lumapps-sdk-js": "^1.0.1",
+    "lumapps-sdk-js": "^0.0.44",
     "moment": "^2.29.1",
     "moment-range": "^4.0.2",
     "react": "^16.13.1",
