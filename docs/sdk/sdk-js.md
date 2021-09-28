@@ -111,6 +111,7 @@ With this hook you can access:
  - last name
  - thumbnail photo URL
  - token
+ - apiProfile
 
 ```javascript
 import React, { FC, useMemo } from 'react';
@@ -119,7 +120,7 @@ import React, { FC, useMemo } from 'react';
 import { useCurrentUser } from 'lumapps-sdk-js';
 
 export const HelloWidget: FC = () => {
-    const { email, fullName, thumbnailPhotoUrl } = useCurrentUser();
+    const { email, fullName, thumbnailPhotoUrl, apiProfile } = useCurrentUser();
 
     const welcomeMessage = useMemo(() => {
         return (
