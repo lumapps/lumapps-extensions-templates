@@ -1,16 +1,7 @@
-# lumapps-extensions-templates
-A set of templates to kickstart your LumApps extensions development
+# LumApps Extension Templates
+A set of templates to kick-start your LumApps extensions development
 
 To create an extension from a template
-
-```bash
-  npm init lumapps-extension <project-name>
-  cd <project-name>
-  npm install
-  npm run start
-```
-
-If using Yarn:
 
 ```bash
   yarn create lumapps-extension <project-name>
@@ -23,13 +14,14 @@ If using Yarn:
 
 Available templates:
 
-- `react-ts`
+- `widget-extension`
+- `share-extension`
 
 
 To scaffold with specific template:
 
 ```bash
-$ yarn create lumapps-extension my-lumapps-extension-project --template react-ts
+$ yarn create lumapps-extension my-lumapps-extension-project --template widget-extension
 ```
 
 ## Documentation
