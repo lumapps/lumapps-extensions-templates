@@ -30,13 +30,13 @@ You have to fill in the template to give code reviewer enough information about 
 ### Pull Request labels
 We use labels on PR to give developers visibility on review and deployment workflow.
 
-| label       | description                                                                                                              |
+| Label       | Description                                                                                                              |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------ |
 | need review | Ask for a code review. The code review is performed by LumApps.                                                          |
-| need deploy | Ask form a production deployment of your extension. The deployment is perfomed by LumApps after a validated code review. |
+| need deploy | Ask for a production deployment of your extension. The deployment is performed by LumApps after a validated code review. |
 | validated   | Your code review has been validated by LumApps.                                                                          |
 | rejected    | Your extension has been rejected by LumApps.                                                                             |
-| deployed    | Your extension has been deployed by LumApps and can be used by LumApps customer.                                         |
+| deployed    | Your extension has been deployed by LumApps and can be used by LumApps customers.                                         |
 
 ## Extension deployment
 Once your source code has been reviewed and validated, your extension can be deployed in production.
