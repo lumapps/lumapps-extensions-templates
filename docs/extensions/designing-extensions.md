@@ -46,7 +46,7 @@ The following table contains terms you need to understand when you’re designin
 
 ## Share To extension guidelines
  - **UI** - In LumApps we develop and maintain a [Design System](https://design.lumapps.com/), in order to keep consistency with the LumApps platform of our client, you have to use this design for your extension. Using this library will bring you facilities to use some LumApps core features (Theme switching from Light to Dark), ease the development of your extension.
- - **Sizing** - As LumApps platform can be used on mobile, you have to think about mobile responsivity of your extension to ensure the user experience is still good even on smaller screen. You can test the responsivity during the local test on the playground, the content part of your extension is in a resizable block. 
+ - **Sizing** - As LumApps platform can be used on mobile, you have to think about mobile responsiveness of your extension to ensure the user experience is still good even on smaller screen. You can test the responsiveness during the local test on the playground, the content part of your extension is in a resizable block. 
  - **Accessibility** - Always keep an eye on accessibility of your extension. Think of color contrast, keyboard navigation, and as explain above, mobile navigation.
  - **Internationalization** - LumApps customers can be worldwide, your extension must implement internationalization features and provide several translations. At least you have to provide English translations for your extension.
 
@@ -55,7 +55,7 @@ Widget extensions are meant to be used in content and visible by all LumApps end
  - **Performances** -Your extension will be used in content, with other widgets, your extension must not alter global performances of LumApps platform, you can refer to [develop extensions](develop-extensions.md) page to have good practices. If you have to load data, use loading indicator, and clear and concise loading states.
  - **UI** - In LumApps we develop and maintain a [Design System](https://design.lumapps.com/), in order to keep consistency with the LumApps platform of our client, you have to use this design for your extension. Using this library will bring you facilities to use some LumApps core features (Theme switching from Light to Dark), ease the usage of specific styles for LumApps customers, and ease the development of your extension.
  - **Feedbacks** - Provide LumApps users with clear feedbacks on updates or errors. Users should know what happens on the extension.
- - **Sizing** - As LumApps platform can be used on mobile, you have to think about responsivity of your extension to ensure the user experience is still good even on smaller screen. You can test the responsivity during the local test on the playground, the content part of your extension is in a resizable block. 
+ - **Sizing** - As LumApps platform can be used on mobile, you have to think about responsiveness of your extension to ensure the user experience is still good even on smaller screen. You can test the responsiveness during the local test on the playground, the content part of your extension is in a resizable block. 
  - **Accessibility** - Always keep an eye on accessibility of your extension. Think of color contrast, keyboard navigation, and as explain above, mobile navigation.
  - **Internationalization** - LumApps customers can be worldwide, your extension must implement internationalization features and provide several translations. At least you have to provide English translations for your extension.
 
