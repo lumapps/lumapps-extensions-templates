@@ -30,7 +30,7 @@ You use the playground to create and run an extension project, using either your
 ### Prerequisites
 1. Install [NodeJs](https://nodejs.org/) and [Yarn](https://yarnpkg.com/).
 
-2. Use the latest LTS version of [NodeJS releases]([dsds](https://nodejs.org/en/about/releases/)), you can use tools like [n](https://github.com/tj/n) or [nvm](https://github.com/nvm-sh/nvm) to easily manage your NodeJS versions.
+2. Use the latest LTS version of [NodeJS releases](https://nodejs.org/en/about/releases/), you can use tools like [n](https://github.com/tj/n) or [nvm](https://github.com/nvm-sh/nvm) to easily manage your NodeJS versions.
 
 ### Use the CLI
 1. Install the LumApps extension template, a library to kick-start your extensions: 
