@@ -1,46 +1,45 @@
 {
-   "name": "create-lumapps-extension",
-   "version": "0.5.1",
-   "description": "",
-   "author": "lab@lumapps.com",
-   "main": "index.js",
-   "bin": {
-      "create-lumapps-extension": "index.js",
-      "cha": "index.js"
-   },
-   "files": [
-      "index.js",
-      "src",
-      "template-*"
-   ],
-   "scripts": {
-      "run": "node index.js",
-      "prepublishOnly": "rm -f template-*/yarn.lock && rm -rf template-*/node_modules",
-      "version:patch": "yarn version --patch --no-git-tag-version",
-      "version:minor": "yarn version --minor --no-git-tag-version",
-      "publish:beta": "npm publish --tag beta",
-      "publish:alpha": "npm publish --tag alpha",
-      "postversion": "node updateVersions.js",
-      "serve:doc": "docsify serve docs",
-      "create:test": "node index.js test-template"
-   },
-   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/lumapps/create-lumapps-extensions-templates.git"
-   },
-   "license": "MIT",
-   "bugs": {
-      "url": "https://github.com/lumapps/create-lumapps-extensions-templates/issues"
-   },
-   "dependencies": {
-      "chalk": "^4.1.0",
-      "fs-extra": "^9.0.0",
-      "inquirer": "^7.3.3",
-      "minimist": "^1.2.5"
-   },
-   "homepage": "https://github.com/lumapps/create-lumapps-extensions-templates#readme",
-   "devDependencies": {
-      "docsify": "^4.12.1",
-      "docsify-cli": "^4.4.3"
-   }
+    "name": "create-lumapps-extension",
+    "version": "0.5.1",
+    "description": "",
+    "author": "lab@lumapps.com",
+    "main": "index.js",
+    "bin": {
+        "create-lumapps-extension": "index.js",
+        "cha": "index.js"
+    },
+    "files": [
+        "index.js",
+        "src",
+        "template-*"
+    ],
+    "scripts": {
+        "run": "node index.js",
+        "prepublishOnly": "rm -f template-*/yarn.lock && rm -rf template-*/node_modules",
+        "version:patch": "yarn version --patch --no-git-tag-version",
+        "version:minor": "yarn version --minor --no-git-tag-version",
+        "publish:beta": "npm publish --tag beta",
+        "publish:alpha": "npm publish --tag alpha",
+        "postversion": "node updateVersions.js",
+        "serve:doc": "docsify serve docs"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lumapps/create-lumapps-extensions-templates.git"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/lumapps/create-lumapps-extensions-templates/issues"
+    },
+    "dependencies": {
+        "chalk": "^4.1.0",
+        "fs-extra": "^9.0.0",
+        "inquirer": "^7.3.3",
+        "minimist": "^1.2.5"
+    },
+    "homepage": "https://github.com/lumapps/create-lumapps-extensions-templates#readme",
+    "devDependencies": {
+        "docsify": "^4.12.1",
+        "docsify-cli": "^4.4.3"
+    }
 }
