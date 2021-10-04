@@ -76,8 +76,7 @@ const Share = ({ value = {}, theme = Theme.light }: ShareProps): React.ReactElem
                             link={link}
                             theme={theme}
                             thumbnailProps={{
-                                image:
-                                    'https://images.unsplash.com/photo-1549492423-400259a2e574?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=554&q=80',
+                                image: 'https://images.unsplash.com/photo-1549492423-400259a2e574?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=554&q=80',
                                 alt: 'Landscape',
                             }}
                         />

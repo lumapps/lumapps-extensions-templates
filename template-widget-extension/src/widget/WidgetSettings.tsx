@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Slider, Switch, TextField } from '@lumx/react';
 
-import { Lumapps } from 'lumapps-sdk-js';
+import { useLanguage } from 'lumapps-sdk-js';
 
 import { FormattedMessage, IntlProvider, useIntl } from 'react-intl';
 import { PredefinedErrorBoundary, useDebounce, useExportProps } from '@lumapps-extensions-playground/common';
@@ -69,19 +69,8 @@ export const WidgetSettings = ({ properties = {}, exportProp = undefined }) => {
         fr: messagesFr,
     };
 
-    const [lang, setLang] = useState<string>('en');
-    useEffect(() => {
-        const getContext = async () => {
-            const lumapps = new Lumapps();
-            const { userLang: userLangPromise } = lumapps.context;
-
-            const userLang = await userLangPromise;
-            if (Object.keys(messages).includes(userLang)) {
-                setLang(userLang);
-            }
-        };
-        getContext();
-    }, []);
+    const { displayLanguage } = useLanguage();
+    const lang = displayLanguage !== '' ? displayLanguage : 'en';
 
     return (
         <PredefinedErrorBoundary lang={lang}>

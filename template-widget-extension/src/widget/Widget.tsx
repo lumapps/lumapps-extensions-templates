@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Lumapps } from 'lumapps-sdk-js';
+import { useLanguage } from 'lumapps-sdk-js';
 import {
     Chip,
     ChipGroup,
@@ -112,19 +112,9 @@ const NotificationAwareWidget = (props: any) => {
         en: messagesEn,
         fr: messagesFr,
     };
-    const [lang, setLang] = useState<string>('en');
-    useEffect(() => {
-        const getContext = async () => {
-            const lumapps = new Lumapps();
-            const { userLang: userLangPromise } = lumapps.context;
 
-            const userLang = await userLangPromise;
-            const isLangInTrad = Object.keys(messages).includes(userLang);
-
-            setLang(isLangInTrad ? userLang : 'en');
-        };
-        getContext();
-    }, []);
+    const { displayLanguage } = useLanguage();
+    const lang = displayLanguage !== '' ? displayLanguage : 'en';
 
     return (
         <IntlProvider messages={messages[lang]} locale={lang}>
