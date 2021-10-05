@@ -11,7 +11,9 @@ has_children: false
 <h6>Table of Contents</h6>
 
 - [LumApps Extensions Playground](#lumapps-extensions-playground)
-  - [Create a project](#create-a-project)
+  - [Create an extension](#create-an-extension)
+    - [Prerequisites](#prerequisites)
+    - [Use the CLI](#use-the-cli)
   - [Playground interfaces](#playground-interfaces)
     - [Local Test](#local-test)
     - [Login](#login)
@@ -24,15 +26,23 @@ The LumApps extensions playground allow extension developers to develop and test
 
 You use the playground to create and run an extension project, using either your own extension code or example templates. An extension project is a combination of an extension manifest (metadata) and extension code.
 
-## Create a project
-1. Install the LumApps extension template, a library to kick-start your extensions: 
-   - https://github.com/lumapps/lumapps-extensions-templates
-2. Run the create lumapps-extension script to retrieve the Extensions Playground application and a sample extension.
-3. Install the needed dependencies :
-   - `yarn`
-4. Run the playground :
-    - `yarn start`
+## Create an extension
+### Prerequisites
+1. Install [NodeJs](https://nodejs.org/) and [Yarn](https://yarnpkg.com/).
 
+2. Use the latest LTS version of [NodeJS releases](https://nodejs.org/en/about/releases/), you can use tools like [n](https://github.com/tj/n) or [nvm](https://github.com/nvm-sh/nvm) to easily manage your NodeJS versions.
+
+### Use the CLI
+1. Install the LumApps extension template, a library to kick-start your extensions: 
+   - [https://github.com/lumapps/lumapps-extensions-templates](https://github.com/lumapps/lumapps-extensions-templates)
+2. Then you can run the following commands to create, initiate and launch your extension:
+
+```shell
+yarn create lumapps-extension <extension-name>
+cd <extension-name>
+yarn 
+yarn start
+```
 
 ## Playground interfaces
 
