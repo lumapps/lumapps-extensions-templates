@@ -6,28 +6,29 @@ parent: Extensions
 has_children: false
 ---
 
-# Developing Extensions
+# Developing extensions
 
 <h6>Table of Contents</h6>
 
--  [Develop Extensions](#develop-extensions)
-   -  [Extension Manifest](#extension-manifest)
-      -  [Manifest attributes](#manifest-attributes)
-      -  [Links](#links)
-      -  [Availability](#availability)
-      -  [PartnerId & ExtensionId](#partnerid--extensionid)
-      -  [Components](#components)
-      -  [Application](#application)
-      -  [Public](#public)
-      -  [Whitelist](#whitelist)
-   -  [Extension Dependencies](#extension-dependencies)
-      -  [Add new dependencies](#add-new-dependencies)
-         -  [Dynamic import](#dynamic-import)
-   -  [Using OAuth application](#using-oauth-application)
-      -  [Configure extension](#configure-extension)
-      -  [Recieved selected application](#recieved-selected-application)
+- [Developing extensions](#developing-extensions)
+  - [Extension manifest](#extension-manifest)
+    - [Manifest attributes](#manifest-attributes)
+    - [Links](#links)
+    - [Availability](#availability)
+    - [PartnerId & ExtensionId](#partnerid--extensionid)
+    - [Components](#components)
+    - [Application](#application)
+    - [Public](#public)
+    - [Whitelist](#whitelist)
+    - [Category](#category)
+  - [Extension dependencies](#extension-dependencies)
+    - [Add new dependencies](#add-new-dependencies)
+      - [Dynamic import](#dynamic-import)
+  - [Using OAuth application](#using-oauth-application)
+    - [Configure extension](#configure-extension)
+    - [Received selected application](#received-selected-application)
 
-## Extension Manifest
+## Extension manifest
 
 The Extension Manifest is the file used by the LumApps Marketplace to identify your extension and know what your extension does.
 
@@ -147,10 +148,11 @@ whitelist : {
 }
 ```
 
-### Category
+### Category
+
 The category attribute is used to define the kind of extension. It could be **widget**, **backend** or **share_to**.
 
-## Extension Dependencies
+## Extension dependencies
 For your frontend extensions, you'll need to add dependencies.
 
 As your extension will be loaded by the LumApps platform you cannot use any libraries you want, but we provide a list of authorized libraries for your extension.

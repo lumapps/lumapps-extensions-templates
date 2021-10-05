@@ -11,12 +11,12 @@ has_children: false
 <h6> Table of Contents</h6>
 
 - [Widget Extensions](#widget-extensions)
-  - [Extension Widget File Structure](#extension-widget-file-structure)
+  - [Widget extension - file structure](#widget-extension---file-structure)
   - [Translations](#translations)
   - [Props received](#props-received)
   - [Make API calls to LumApps](#make-api-calls-to-lumapps)
 
-## Extension Widget File Structure
+## Widget extension - file structure
 For a widget extension, your extension's directory should look like something like this :
 
 ```

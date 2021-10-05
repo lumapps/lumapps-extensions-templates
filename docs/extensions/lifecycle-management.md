@@ -6,30 +6,30 @@ parent: Extensions
 has_children: false
 ---
 
-# Extensions Life Cycle Management
+# Extensions life cycle management
 
 <h6>Table of Contents</h6>
 
-- [Extensions Life Cycle Management](#extensions-life-cycle-management)
-  - [Local Test](#local-test)
-  - [LumApps Test Environment](#lumapps-test-environment)
+- [Extensions life cycle management](#extensions-life-cycle-management)
+  - [Local test](#local-test)
+  - [LumApps test environment](#lumapps-test-environment)
   - [Review](#review)
-  - [Post Review - Approved or Rejected](#post-review---approved-or-rejected)
+  - [Post review - Approved or Rejected](#post-review---approved-or-rejected)
   - [Release](#release)
   - [Update an extension after release](#update-an-extension-after-release)
     - [Update the extension's information](#update-the-extensions-information)
     - [Update extension](#update-extension)
   - [Delete an extension](#delete-an-extension)
 
-## Local Test
+## Local test
 Every version of every extension begins with local test. This test is performed in the LumApps extensions playground in which you will be able to render your extension and emulate a LumApps environment.
 
-## LumApps Test Environment
+## LumApps test environment
 When you’re satisfied with the local test version, you can deploy your extension to your LumApps test platform. Then you can install and use your extension to ensure everything is fine in a LumApps environment.
 
 In both local test and hosted test, extensions are visible only to a developer-provided list of test accounts and a small subset of LumApps staff. Other users won't have access to your extension.
 
-To move from local test to hosted test, you have to use the LumApps extensions playground.
+To move from local test to hosted test, you have to use the LumApps extensions playground, and more specifically the [deployment manager](extension-playground.md#deployment-manager).
 
 You can find more information on how to use your LumApps test environment [Install and configure an extension documentation](https://docs.lumapps.com/docs/expand-l9650191038731043/expand-l9615254296582716).
 
@@ -38,7 +38,7 @@ Once your tests are done on your LumApps test platform, you can submit the versi
 
 The submission is done via a GitHub pull request with the code you want to submit.
 
-## Post Review - Approved or Rejected
+## Post review - Approved or Rejected
 After an extension version is reviewed by LumApps, it can be placed into on of these 2 states : 
  - **Approved** means your extension respects our guidelines. You can ask for production deployment for your extension.
  - **Rejected** means that your extension may not respect our guidelines and some revisions are required. The reason will be explained in the PR. You can edit your extension, test it again and resubmit your extension when you are ready.

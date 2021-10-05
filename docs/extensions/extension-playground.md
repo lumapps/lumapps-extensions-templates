@@ -6,16 +6,16 @@ parent: Extensions
 has_children: false
 ---
 
-# LumApps Extensions Playground
+# LumApps extensions playground
 
 <h6>Table of Contents</h6>
 
-- [LumApps Extensions Playground](#lumapps-extensions-playground)
+- [LumApps extensions playground](#lumapps-extensions-playground)
   - [Create an extension](#create-an-extension)
     - [Prerequisites](#prerequisites)
     - [Use the CLI](#use-the-cli)
   - [Playground interfaces](#playground-interfaces)
-    - [Local Test](#local-test)
+    - [Local test](#local-test)
     - [Login](#login)
     - [Deployment manager](#deployment-manager)
     - [Back Office interface](#back-office-interface)
@@ -50,7 +50,7 @@ The playground offers multiple features to help you develop, test, and interact 
 
 ![LumApps Extensions Playground](Playground.png "LumApps Extensions Playground")
 
-### Local Test
+### Local test
 The playground is designed to offer a local test environment for your extension. This local environment emulate a LumApps platform to let you render and connect your extension parts. From there you can test all parts of your extension and see if its works as expected all together.
 
 To emulate a LumApps platform you can use some options such as the **Theme switcher** to visualize your extension with a light or dark Theme, and a language field to test the translations of your extension.
