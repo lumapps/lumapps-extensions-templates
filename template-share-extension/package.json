@@ -50,7 +50,7 @@
     "reselect": "4.0.0"
   },
   "devDependencies": {
-    "@lumapps-extensions-playground/devenv": "^1.3.0",
+    "@lumapps-extensions-playground/devenv": "^1.4.1",
     "@lumapps-extensions/shipping-server": "^1.1.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
