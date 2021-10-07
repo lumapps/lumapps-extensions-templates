@@ -34,7 +34,6 @@
     ]
   },
   "dependencies": {
-    "@lumapps-extensions-playground/common": "^1.3.0",
     "@lumx/core": "^2.0.3",
     "@lumx/icons": "^2.0.3",
     "@lumx/react": "^2.0.3",

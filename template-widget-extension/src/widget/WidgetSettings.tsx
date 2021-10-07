@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Slider, Switch, TextField } from '@lumx/react';
-
-import { Lumapps } from 'lumapps-sdk-js';
-
+import React, { useMemo, useState } from 'react';
 import { FormattedMessage, IntlProvider, useIntl } from 'react-intl';
-import { PredefinedErrorBoundary, useDebounce, useExportProps } from '@lumapps-extensions-playground/common';
+import { Slider, Switch, TextField } from '@lumx/react';
+import { PredefinedErrorBoundary, useDebounce, useExportProps, useLanguage } from 'lumapps-sdk-js';
 
 import messagesEn from '../translations/en.json';
 import messagesFr from '../translations/fr.json';

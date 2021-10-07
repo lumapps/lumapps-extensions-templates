@@ -1,8 +1,6 @@
 import { Playground, store } from '@lumapps-extensions-playground/devenv';
 
-import '@lumapps-extensions-playground/devenv/devenv.esm.css';
-
-// DO not remove
+// Do not remove
 import '@lumx/core/lumx.css';
 
 import React from 'react';

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Lumapps } from 'lumapps-sdk-js';
+import React, { useEffect, useMemo, useState } from 'react';
+import { FormattedMessage, IntlProvider } from 'react-intl';
 import {
     Chip,
     ChipGroup,
@@ -12,12 +12,7 @@ import {
     AspectRatio,
 } from '@lumx/react';
 
-import { FormattedMessage, IntlProvider } from 'react-intl';
-import {
-    PredefinedErrorBoundary,
-    useNotifications,
-    NotificationsProvider,
-} from '@lumapps-extensions-playground/common';
+import { NotificationsProvider, PredefinedErrorBoundary, useLanguage, useNotifications } from 'lumapps-sdk-js';
 
 import messagesEn from '../translations/en.json';
 import messagesFr from '../translations/fr.json';

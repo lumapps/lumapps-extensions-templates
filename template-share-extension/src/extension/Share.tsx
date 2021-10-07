@@ -1,5 +1,6 @@
-import React, { useEffect, useState, useMemo } from 'react';
-import { useLanguage } from 'lumapps-sdk-js';
+import React, { useMemo, useState } from 'react';
+import { IntlProvider } from 'react-intl';
+import { NotificationsProvider, PredefinedErrorBoundary, useLanguage } from 'lumapps-sdk-js';
 import {
     Size,
     Theme,
@@ -15,9 +16,6 @@ import {
     Button,
     Emphasis,
 } from '@lumx/react';
-
-import { IntlProvider } from 'react-intl';
-import { PredefinedErrorBoundary, NotificationsProvider } from '@lumapps-extensions-playground/common';
 
 import messagesEn from '../translations/en.json';
 import messagesFr from '../translations/fr.json';
