@@ -6,8 +6,15 @@
 /**
  * The ids of your partner and extension
  */
-const partnerId = '';
-const extensionId = '';
+const partnerId = {
+    beta: '',
+    production: '',
+};
+
+const extensionId = {
+    beta: '',
+    production: '',
+};
 
 const description = {
     en: 'Sample extension to share contents and posts',
