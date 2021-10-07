@@ -28,6 +28,8 @@ const icon = {
     en: 'https://snipstock.com/assets/cdn/png/9c1f15d4a0f1db7c0faa3daae39e56bd.png',
 };
 
+const oauth = false;
+
 const shareTo = {
     name: {
         en: 'My external service',
@@ -90,6 +92,7 @@ const config = {
     icon,
     links,
     name,
+    oauth,
     partnerId,
     public: isPublic,
     shareTo,

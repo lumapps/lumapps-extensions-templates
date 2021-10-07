@@ -29,6 +29,8 @@ const icon = {
         'https://lh3.googleusercontent.com/-6F_iwel8KGY/WD8MdGS0PkI/AAAAAAAAGDI/KaqvKtZCK_AsdK6BcKp6Cy1MpwoEWCUvgCKgB/s400/logo.png', // a working link to your widget icon
 };
 
+const oauth = false;
+
 /**
  * Define the availability of your extension :
  * - open : available for everyone
@@ -83,6 +85,7 @@ const config = {
     icon,
     links,
     name,
+    oauth,
     partnerId,
     public: isPublic,
     whitelist,
