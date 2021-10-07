@@ -60,19 +60,15 @@ import messagesEn from '../translations/en.json';
 import messagesFr from '../translations/fr.json';
 
 const Widget() => {
-    const messages: any = {
+    const { displayLanguage } = useLanguage();
+    const messages: Record<string, Record<string, string>> = {
         en: messagesEn,
         fr: messagesFr,
     };
-
-    const [lang, setLang] = useState<string>('en');
-    const { displayLanguage } = useLanguage();
-
-    useEffect(() => {
-        if (Object.keys(messages).includes(displayLanguage)) {
-            setLang(displayLanguage);
-        }
-    }, [messages, displayLanguage]);
+    const lang = useMemo(() => (Object.keys(messages).includes(displayLanguage) ? displayLanguage : 'en'), [
+        displayLanguage,
+        messages,
+    ]);
 
     return (
         <IntlProvider messages={messages[lang]} locale={lang}>

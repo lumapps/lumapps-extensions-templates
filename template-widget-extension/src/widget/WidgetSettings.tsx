@@ -61,30 +61,21 @@ const WithIntlSettings: React.FC<WithIntlSettingsProps> = ({ properties = {}, ex
 };
 
 export const WidgetSettings = ({ properties = {}, exportProp = undefined }) => {
-    const messages: any = {
+    const { displayLanguage } = useLanguage();
+    const messages: Record<string, Record<string, string>> = {
         en: messagesEn,
         fr: messagesFr,
     };
-
-    const [lang, setLang] = useState<string>('en');
-    useEffect(() => {
-        const getContext = async () => {
-            const lumapps = new Lumapps();
-            const { userLang: userLangPromise } = lumapps.context;
-
-            const userLang = await userLangPromise;
-            if (Object.keys(messages).includes(userLang)) {
-                setLang(userLang);
-            }
-        };
-        getContext();
-    }, []);
+    const lang = useMemo(() => (Object.keys(messages).includes(displayLanguage) ? displayLanguage : 'en'), [
+        displayLanguage,
+        messages,
+    ]);
 
     return (
-        <PredefinedErrorBoundary lang={lang}>
-            <IntlProvider locale={lang} messages={messages[lang]}>
+        <IntlProvider locale={lang} messages={messages[lang]}>
+            <PredefinedErrorBoundary>
                 <WithIntlSettings properties={properties} exportProp={exportProp} />
-            </IntlProvider>
-        </PredefinedErrorBoundary>
+            </PredefinedErrorBoundary>
+        </IntlProvider>
     );
 };

@@ -111,23 +111,18 @@ const Share = ({ value = {}, theme = Theme.light }: ShareProps): React.ReactElem
 };
 
 const NotificationAwareContent = (props: any) => {
-    const messages: any = {
+    const { displayLanguage } = useLanguage();
+    const messages: Record<string, Record<string, string>> = {
         en: messagesEn,
         fr: messagesFr,
     };
-    const [lang, setLang] = useState<string>('en');
-    const { displayLanguage } = useLanguage();
-
-    useEffect(() => {
-        const messages = () => ({
-            en: messagesEn,
-            fr: messagesFr,
-        });
-        const lang = () => (Object.keys(messages).includes(displayLanguage) ? displayLanguage : 'en');
-    }, [messages]);
+    const lang = useMemo(() => (Object.keys(messages).includes(displayLanguage) ? displayLanguage : 'en'), [
+        displayLanguage,
+        messages,
+    ]);
 
     return (
-        <IntlProvider messages={messages[lang as keyof typeof messages]} locale={lang}>
+        <IntlProvider locale={lang} messages={messages[lang]}>
             <NotificationsProvider>
                 <PredefinedErrorBoundary>
                     <Share {...props} />

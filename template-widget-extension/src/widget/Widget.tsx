@@ -103,26 +103,18 @@ const Widget = ({
 };
 
 const NotificationAwareWidget = (props: any) => {
-    const messages: any = {
+    const { displayLanguage } = useLanguage();
+    const messages: Record<string, Record<string, string>> = {
         en: messagesEn,
         fr: messagesFr,
     };
-    const [lang, setLang] = useState<string>('en');
-    useEffect(() => {
-        const getContext = async () => {
-            const lumapps = new Lumapps();
-            const { userLang: userLangPromise } = lumapps.context;
-
-            const userLang = await userLangPromise;
-            const isLangInTrad = Object.keys(messages).includes(userLang);
-
-            setLang(isLangInTrad ? userLang : 'en');
-        };
-        getContext();
-    }, []);
+    const lang = useMemo(() => (Object.keys(messages).includes(displayLanguage) ? displayLanguage : 'en'), [
+        displayLanguage,
+        messages,
+    ]);
 
     return (
-        <IntlProvider messages={messages[lang]} locale={lang}>
+        <IntlProvider locale={lang} messages={messages[lang]}>
             <NotificationsProvider>
                 <PredefinedErrorBoundary>
                     <Widget {...props} />

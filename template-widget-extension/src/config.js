@@ -31,7 +31,7 @@ const icon = {
 const availability = 'marketplace';
 
 /**
- * Define if your extension needs to connect to extenal service through an application declare on provider side.
+ * Define if your extension needs to connect to external service through an application declare on provider side.
  *
  * Uncomment the following block to declare application usage for your extension.
  * Do not forget to add the application attribute in the config object.
@@ -68,14 +68,12 @@ const whitelist = [];
 
 // do not change the following unless you know what you are doing
 const config = {
-    //application,
     availability,
     category: 'widget',
     components,
     description,
     extensionId,
     icon,
-    isPublic,
     links,
     name,
     partnerId,
