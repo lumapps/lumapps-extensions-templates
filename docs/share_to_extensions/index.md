@@ -81,7 +81,7 @@ In the playground the SDK will use the language set on the `Quick actions` pane 
 
 
 ## Props received
-Within the LumApps platform, your extension widget components will received different props.
+Within the LumApps platform, your extension widget components will receive different props.
 
 
 | Props           | Components      | Description                                                                                                        |

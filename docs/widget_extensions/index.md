@@ -87,7 +87,7 @@ In the playground the SDK will use the language set on the `Quick actions` pane 
 
 
 ## Props received
-Within the LumApps platform, your extension widget components will received different props.
+Within the LumApps platform, your extension widget components will receive different props.
 
 
 | Props           | Components                 | Description                                                                                                         |
@@ -116,5 +116,5 @@ const { data } = await axios.get(`${baseUrl}/_ah/api/v1/users/list`, {
 });
 ```
 
-If you want to test API call to LumApps from the playground, CORS errors may occur. As you are running your extension locally, the local host is not whitelisted on LumApps side. You'll need to use a backend application to access the LumApps API.
+If you want to test API calls to LumApps from the playground, CORS errors may occur. As you are running your extension locally, the local host is not whitelisted on LumApps side. You'll need to use a backend application to access the LumApps API.
 In the LumApps playground, the SDK use the current user logged in the playground as the current user, and the value set in the HTTP Origin field in playground settings as base URL.
