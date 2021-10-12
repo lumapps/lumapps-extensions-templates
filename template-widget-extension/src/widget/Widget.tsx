@@ -19,21 +19,12 @@ import messagesFr from '../translations/fr.json';
 
 import defaultGlobalSettings from './defaultGlobalSettings';
 
-interface WidgetProps {
-    value?: any;
-    globalValue?: any;
-    uuid: string;
-    contentId: string;
-    theme: Theme;
-}
+type Widget = import('lumapps-sdk-js').ContentComponent<
+    import('./types').SampleAppGlobalParams,
+    import('./types').SampleAppParams
+>;
 
-const Widget = ({
-    value = {},
-    globalValue = {},
-    uuid,
-    contentId,
-    theme = Theme.light,
-}: WidgetProps): React.ReactElement => {
+const Widget: Widget = ({ value = {}, globalValue = {}, theme = Theme.light }) => {
     const [url, setUrl] = useState<string | undefined>();
     const [error, setError] = useState<string>();
 
@@ -102,7 +93,7 @@ const Widget = ({
     );
 };
 
-const NotificationAwareWidget = (props: any) => {
+const NotificationAwareWidget: Widget = (props) => {
     const { displayLanguage } = useLanguage();
     const messages: Record<string, Record<string, string>> = {
         en: messagesEn,

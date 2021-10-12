@@ -1,31 +1,36 @@
 import React, { useMemo, useState } from 'react';
 import { IntlProvider } from 'react-intl';
-import { NotificationsProvider, PredefinedErrorBoundary, useLanguage } from 'lumapps-sdk-js';
 import {
-    Size,
-    Theme,
-    LinkPreview,
-    FlexBox,
-    UserBlock,
-    Orientation,
     Alignment,
-    Thumbnail,
-    ThumbnailVariant,
-    TextField,
-    Toolbar,
     Button,
     Emphasis,
+    FlexBox,
+    LinkPreview,
+    Orientation,
+    Size,
+    TextField,
+    Theme,
+    Thumbnail,
+    ThumbnailVariant,
+    Toolbar,
+    UserBlock,
 } from '@lumx/react';
+import { NotificationsProvider, PredefinedErrorBoundary, useLanguage } from 'lumapps-sdk-js';
 
 import messagesEn from '../translations/en.json';
 import messagesFr from '../translations/fr.json';
 
 interface ShareProps {
-    value?: any;
-    theme: Theme;
+    link: string;
+    onClose(): void;
+    title: string;
+    uid: string;
 }
 
-const Share = ({ value = {}, theme = Theme.light }: ShareProps): React.ReactElement => {
+const Share: import('lumapps-sdk-js').ContentComponent<undefined, ShareProps> = ({
+    value = {},
+    theme = Theme.light,
+}) => {
     const { link = 'https://google.com', onClose, title = 'Google application', uid } = value;
 
     const [message, setMessage] = useState<string>();
@@ -48,6 +53,7 @@ const Share = ({ value = {}, theme = Theme.light }: ShareProps): React.ReactElem
                     />
                     <FlexBox style={{ height: 'fit-content' }}>External service</FlexBox>
                 </FlexBox>
+
                 <FlexBox style={{ backgroundColor: 'white', padding: 12 }}>
                     <div>
                         <UserBlock
@@ -93,6 +99,7 @@ const Share = ({ value = {}, theme = Theme.light }: ShareProps): React.ReactElem
                             >
                                 Cancel
                             </Button>
+
                             <Button
                                 onClick={() => {
                                     alert(`Share content ${uid}`);
@@ -110,7 +117,7 @@ const Share = ({ value = {}, theme = Theme.light }: ShareProps): React.ReactElem
     );
 };
 
-const NotificationAwareContent = (props: any) => {
+const NotificationAwareContent: typeof Share = (props) => {
     const { displayLanguage } = useLanguage();
     const messages: Record<string, Record<string, string>> = {
         en: messagesEn,

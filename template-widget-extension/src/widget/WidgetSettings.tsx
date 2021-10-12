@@ -6,18 +6,18 @@ import { PredefinedErrorBoundary, useDebounce, useExportProps, useLanguage } fro
 import messagesEn from '../translations/en.json';
 import messagesFr from '../translations/fr.json';
 
-interface WithIntlSettingsProps {
-    properties?: any;
-    exportProp: any;
-}
+type WidgetSettings = import('lumapps-sdk-js').SettingsComponent<
+    import('./types').SampleAppGlobalParams,
+    import('./types').SampleAppParams
+>;
 
-const WithIntlSettings: React.FC<WithIntlSettingsProps> = ({ properties = {}, exportProp }) => {
+const WithIntlSettings: WidgetSettings = ({ properties = {}, exportProp }) => {
     const intl = useIntl();
 
     const [imageId, setImageId] = useState(properties.imageId);
-    const [useGreyScale, setUseGreyScale] = useState<boolean>(!!properties.useGreyScale);
-    const [useBlur, setUseBlur] = useState<boolean>(!!properties.useBlur);
-    const [blur, setBlur] = useState(properties.blur);
+    const [useGreyScale, setUseGreyScale] = useState<boolean>(properties.useGreyScale || false);
+    const [useBlur, setUseBlur] = useState<boolean>(properties.useBlur || false);
+    const [blur, setBlur] = useState(properties.blur || 1);
 
     const debouncedImageId = useDebounce(imageId, 800);
 
@@ -60,7 +60,7 @@ const WithIntlSettings: React.FC<WithIntlSettingsProps> = ({ properties = {}, ex
     );
 };
 
-export const WidgetSettings = ({ properties = {}, exportProp = undefined }) => {
+export const WidgetSettings: WidgetSettings = (props) => {
     const { displayLanguage } = useLanguage();
     const messages: Record<string, Record<string, string>> = {
         en: messagesEn,
@@ -74,7 +74,7 @@ export const WidgetSettings = ({ properties = {}, exportProp = undefined }) => {
     return (
         <IntlProvider locale={lang} messages={messages[lang]}>
             <PredefinedErrorBoundary>
-                <WithIntlSettings properties={properties} exportProp={exportProp} />
+                <WithIntlSettings {...props} />
             </PredefinedErrorBoundary>
         </IntlProvider>
     );
