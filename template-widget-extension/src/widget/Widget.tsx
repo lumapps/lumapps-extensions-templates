@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Lumapps } from 'lumapps-sdk-js';
+import React, { useEffect, useMemo, useState } from 'react';
+import { FormattedMessage, IntlProvider } from 'react-intl';
 import {
     Chip,
     ChipGroup,
@@ -12,33 +12,19 @@ import {
     AspectRatio,
 } from '@lumx/react';
 
-import { FormattedMessage, IntlProvider } from 'react-intl';
-import {
-    PredefinedErrorBoundary,
-    useNotifications,
-    NotificationsProvider,
-} from '@lumapps-extensions-playground/common';
+import { NotificationsProvider, PredefinedErrorBoundary, useLanguage, useNotifications } from 'lumapps-sdk-js';
 
 import messagesEn from '../translations/en.json';
 import messagesFr from '../translations/fr.json';
 
 import defaultGlobalSettings from './defaultGlobalSettings';
 
-interface WidgetProps {
-    value?: any;
-    globalValue?: any;
-    uuid: string;
-    contentId: string;
-    theme: Theme;
-}
+type Widget = import('lumapps-sdk-js').ContentComponent<
+    import('./types').SampleAppGlobalParams,
+    import('./types').SampleAppParams
+>;
 
-const Widget = ({
-    value = {},
-    globalValue = {},
-    uuid,
-    contentId,
-    theme = Theme.light,
-}: WidgetProps): React.ReactElement => {
+const Widget: Widget = ({ value = {}, globalValue = {}, theme = Theme.light }) => {
     const [url, setUrl] = useState<string | undefined>();
     const [error, setError] = useState<string>();
 
@@ -107,27 +93,19 @@ const Widget = ({
     );
 };
 
-const NotificationAwareWidget = (props: any) => {
-    const messages: any = {
+const NotificationAwareWidget: Widget = (props) => {
+    const { displayLanguage } = useLanguage();
+    const messages: Record<string, Record<string, string>> = {
         en: messagesEn,
         fr: messagesFr,
     };
-    const [lang, setLang] = useState<string>('en');
-    useEffect(() => {
-        const getContext = async () => {
-            const lumapps = new Lumapps();
-            const { userLang: userLangPromise } = lumapps.context;
-
-            const userLang = await userLangPromise;
-            const isLangInTrad = Object.keys(messages).includes(userLang);
-
-            setLang(isLangInTrad ? userLang : 'en');
-        };
-        getContext();
-    }, []);
+    const lang = useMemo(() => (Object.keys(messages).includes(displayLanguage) ? displayLanguage : 'en'), [
+        displayLanguage,
+        messages,
+    ]);
 
     return (
-        <IntlProvider messages={messages[lang]} locale={lang}>
+        <IntlProvider locale={lang} messages={messages[lang]}>
             <NotificationsProvider>
                 <PredefinedErrorBoundary>
                     <Widget {...props} />

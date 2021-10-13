@@ -6,8 +6,15 @@
 /**
  * The ids of your partner and extension
  */
-const partnerId = '';
-const extensionId = '';
+const partnerId = {
+    beta: '',
+    production: '',
+};
+
+const extensionId = {
+    beta: '',
+    production: '',
+};
 
 const description = {
     en: 'SampleWidgetTypescript',
@@ -22,6 +29,8 @@ const icon = {
         'https://lh3.googleusercontent.com/-6F_iwel8KGY/WD8MdGS0PkI/AAAAAAAAGDI/KaqvKtZCK_AsdK6BcKp6Cy1MpwoEWCUvgCKgB/s400/logo.png', // a working link to your widget icon
 };
 
+const oauth = false;
+
 /**
  * Define the availability of your extension :
  * - open : available for everyone
@@ -31,7 +40,7 @@ const icon = {
 const availability = 'marketplace';
 
 /**
- * Define if your extension needs to connect to extenal service through an application declare on provider side.
+ * Define if your extension needs to connect to external service through an application declare on provider side.
  *
  * Uncomment the following block to declare application usage for your extension.
  * Do not forget to add the application attribute in the config object.
@@ -68,16 +77,15 @@ const whitelist = [];
 
 // do not change the following unless you know what you are doing
 const config = {
-    //application,
     availability,
     category: 'widget',
     components,
     description,
     extensionId,
     icon,
-    isPublic,
     links,
     name,
+    oauth,
     partnerId,
     public: isPublic,
     whitelist,

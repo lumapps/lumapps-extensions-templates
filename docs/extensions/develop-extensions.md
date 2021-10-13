@@ -73,7 +73,7 @@ Define the availability of the extension. Two types are available :
 -  `marketplace` (default) : The customer need to have the marketplace activated on his environment
 -  `open` : The extension is available for everyone.
 
-> Note that if your extension is set as `marketplace`, a customer without the marketplace activated will never be able to see the extension even if you withelist it.
+> Note that if your extension is set as `marketplace`, a customer without the marketplace activated will never be able to see the extension even if you whitelist it.
 
 ### PartnerId & ExtensionId
 Only users with a valid LumApps JWT token can query marketplace services. And for security reasons the partner ID is claimed by LumApps employees
@@ -229,7 +229,7 @@ Then the user who installs the app has the capability to define which applicatio
 ### Received selected application
 
 In your content & your Settings components you'll be able to retrieve the application set by the customer administrator via props sent by LumApps to your extension.
-You'll recieve the OAuth application ID inside the `globalValue` property:
+You'll receive the OAuth application ID inside the `globalValue` property:
 
 ```javascript
 interface WidgetProps {

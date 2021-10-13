@@ -6,8 +6,15 @@
 /**
  * The ids of your partner and extension
  */
-const partnerId = '';
-const extensionId = '';
+const partnerId = {
+    beta: '',
+    production: '',
+};
+
+const extensionId = {
+    beta: '',
+    production: '',
+};
 
 const description = {
     en: 'Sample extension to share contents and posts',
@@ -20,6 +27,8 @@ const name = {
 const icon = {
     en: 'https://snipstock.com/assets/cdn/png/9c1f15d4a0f1db7c0faa3daae39e56bd.png',
 };
+
+const oauth = false;
 
 const shareTo = {
     name: {
@@ -39,7 +48,7 @@ const shareTo = {
 const availability = 'marketplace';
 
 /**
- * Define if your extension needs to connect to extenal service through an application declare on provider side.
+ * Define if your extension needs to connect to external service through an application declare on provider side.
  *
  * Uncomment the following block to declare application usage for your extension.
  * Do not forget to add the application attribute in the config object.
@@ -75,16 +84,15 @@ const whitelist = [];
 
 // do not change the following unless you know what you are doing
 const config = {
-    //application,
     availability,
     category: 'share_to',
     components,
     description,
     extensionId,
     icon,
-    isPublic,
     links,
     name,
+    oauth,
     partnerId,
     public: isPublic,
     shareTo,

@@ -54,19 +54,15 @@ import messagesEn from '../translations/en.json';
 import messagesFr from '../translations/fr.json';
 
 const Widget() => {
-    const messages: any = {
+    const { displayLanguage } = useLanguage();
+    const messages: Record<string, Record<string, string>> = {
         en: messagesEn,
         fr: messagesFr,
     };
-
-    const [lang, setLang] = useState<string>('en');
-    const { displayLanguage } = useLanguage();
-
-    useEffect(() => {
-        if (Object.keys(messages).includes(displayLanguage)) {
-            setLang(displayLanguage);
-        }
-    }, [messages, displayLanguage]);
+    const lang = useMemo(() => (Object.keys(messages).includes(displayLanguage) ? displayLanguage : 'en'), [
+        displayLanguage,
+        messages,
+    ]);
 
     return (
         <IntlProvider messages={messages[lang]} locale={lang}>
@@ -81,7 +77,7 @@ In the playground the SDK will use the language set on the `Quick actions` pane 
 
 
 ## Props received
-Within the LumApps platform, your extension widget components will received different props.
+Within the LumApps platform, your extension widget components will receive different props.
 
 
 | Props           | Components      | Description                                                                                                        |

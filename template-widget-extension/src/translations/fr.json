@@ -2,11 +2,11 @@
     "title": "Lorem Picsum",
     "sub_title": "Exemple de widget",
     "description": "Ceci est un petit exemple de ce qu'il est possible de faire avec les widgets LumApps",
-    "errors.retrieve_user": "An error occured while retrieving user",
+    "errors.retrieve_user": "Une erreur est survenue au moment de récupérer l'utilisateur",
     "errors.dismiss": "Fermer",
     "settings.image_id": "ID de l'image",
     "settings.grey": "Noir et blanc",
     "settings.blur": "Flou",
-    "settings.blur_value_title": "Valaur du flou",
+    "settings.blur_value_title": "Valeur du flou",
     "settings.blur_value_desc": "Ajuster la valeur du flou"
 }
