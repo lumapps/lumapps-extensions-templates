@@ -16,6 +16,7 @@ Available templates:
 
 - `widget-extension`
 - `share-extension`
+- `empty-extension`
 
 
 To scaffold with specific template:
