@@ -109,6 +109,7 @@ With this hook you can access:
  - email
  - first name
  - last name
+ - full name
  - thumbnail photo URL
  - token
  - apiProfile
@@ -174,6 +175,8 @@ export const HelloWidget: FC = () => {
 
 ### useOrganization
 This hook gives you access to the organization identifier: 
+- id
+- slug
 
 ```javascript
 import React, { FC, useMemo } from 'react';
