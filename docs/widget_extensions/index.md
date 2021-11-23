@@ -30,7 +30,7 @@ my-extension-widget
 |   |-- translations
 |   |   |-- en.json
 |   |   |-- es.json
-|   |   `- fr.json
+|   |   `-- fr.json
 |   |-- config.js
 |   |-- index.content.ts
 |   |-- index.global_settings.ts
@@ -52,14 +52,14 @@ To connect your extension with the LumApps translation system, you'll have to us
 You have to use the `useLanguage` hook to retrieve the current language of the user to render your widget with the current user language. Natively, we provide the [react-intl](https://www.npmjs.com/package/react-intl) library to manage the translation in your ReactJS components.
 
 
-``` typescript
+```tsx
 import { IntlProvider } from 'react-intl';
 import { useLanguage } from 'lumapps-sdk-js';
 
 import messagesEn from '../translations/en.json';
 import messagesFr from '../translations/fr.json';
 
-const Widget() => {
+const Widget = () => {
     const { displayLanguage } = useLanguage();
     const messages: Record<string, Record<string, string>> = {
         en: messagesEn,
@@ -103,7 +103,7 @@ If your extension needs to make API calls to LumApps you'll have to retrieve the
 In the LumApps SDK you'll need to use the `useCurrentUser` hook to have access to the current user token, and the `useContext` hook get the base URL of the LumApps platform.
 
 Example of API call 
-``` typescript
+```tsx
 const { token } = useCurrentUser();
 const { baseURL } = useContext();
 
