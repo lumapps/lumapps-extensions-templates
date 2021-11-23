@@ -209,7 +209,7 @@ This hook is used to contact an OAuth application.
 
 ### useBooleanState
 This helper ease the ReactJS useState usage for boolean values.
-```typescript
+```tsx
 import React, { FC, useMemo } from 'react';
 import { ExpansionPanel } from '@lumx/react';
 
@@ -235,7 +235,7 @@ export const HelloWidget: FC = () => {
 ### useDebounce
 The `useDebounce` helper allows you to debounce any fast changing value.
 
-```typescript
+```tsx
 import React, { FC, useMemo } from 'react';
 import { ExpansionPanel } from '@lumx/react';
 import { callAPI } from './api';
@@ -283,7 +283,7 @@ useExportProps = (
     exportMethod: any) => {}
 ```
 
-```typescript
+```tsx
 import React, { FC, useMemo } from 'react';
 import { ExpansionPanel } from '@lumx/react';
 import { callAPI } from './api';
