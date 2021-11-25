@@ -163,10 +163,10 @@ Here is the list of available libraries :
 | :------------------------------------------------------------- | :--------- | :--------------------- |
 | [axios](https://github.com/axios/axios)                        | "^0.21.1"  |                        |
 | [lodash](https://github.com/lodash/lodash)                     | "4.17.21"  |                        |
-| [lumapps-sdk-js](https://www.npmjs.com/package/lumapps-sdk-js) | "0.0.44"   | LumApps JavaScript SDK |
-| [lumX](https://github.com/lumapps/design-system)               | "^1.0.17"  | LumApps Design System  |
-| [prop-types](https://github.com/facebook/prop-types)           | "15"       |                        |
-| [qs](https://github.com/ljharb/qs)                             | "^6.7.0"   |                        |
+| [lumapps-sdk-js](https://www.npmjs.com/package/lumapps-sdk-js) | "^1.4.0"   | LumApps JavaScript SDK |
+| [lumX](https://github.com/lumapps/design-system)               | "^2.1.3"   | LumApps Design System  |
+| [moment](https://github.com/moment/moment)                     | "^2.29.1"  |                        |
+| [moment-range](https://github.com/rotaready/moment-range)      | "^4.0.2"   |                        |
 | [react](https://github.com/facebook/react)                     | "^16.13.1" |                        |
 
 ### Add new dependencies
