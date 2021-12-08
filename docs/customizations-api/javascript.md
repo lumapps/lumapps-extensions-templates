@@ -101,4 +101,4 @@ In order to render the custom component on the page, we use the `render` functio
 
 This code will result in the following component being rendered on the page:
 
-![Target Page Placement Above](./assets/page-above.png "Target Page Placement Above Example")
+![Target Page Placement Above](./javascript/assets/page-above.png "Target Page Placement Above Example")

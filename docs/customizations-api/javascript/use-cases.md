@@ -198,7 +198,7 @@ window.lumapps.customize(({ targets, components, render, placement, constants })
 **Use case limitations and best practices**
 - This customizations could be combined with `window.lumapps.getCurrentContent()` in order to render the message on just a few pages, by checking their ID. However, in those scenarios we recommend adding a widget to those pages rather than executing a customization.
 
-## Create a "Copy Link to Content" action
+## Create a Copy Link to Content action
 
 The contextual actions menu displays a set of actions that can be executed on the currently displayed content. It is a great place to add custom actions to your contents. For example, let's say that you want to add a `Copy link to content` action, that will copy the current content's link to the clipboard.
 
@@ -559,7 +559,7 @@ window.lumapps.disable('search-box');
 
 Adding this code snippet to the application will hide the search box from your LumApps site.
 
-## Add links to other administration tools, either external or internal to LumApps
+## Add links to other administration tools
 
 The settings target is a great way of adding links that will only be displayed for users that have the sufficient access rights to see the [settings icon](https://docs.lumapps.com/docs/explore-l3451406716743173#l34173657923168954).
 
@@ -607,7 +607,7 @@ window.lumapps.disable('sticky-header');
 }
 ```
 
-## Adding a customizations to a widget
+## Adding a customization to a widget
 
 The following customization adds an HTML block at the top of the given widget.
 

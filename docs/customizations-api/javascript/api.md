@@ -25,16 +25,16 @@ window.lumapps.customize(callback, configuration)
 
 Where `callback` is a function that will receive a set of `parameters` and returns `void`. These are the `parameters` that the `callback` function expects:
 
-| Parameter        | Description                                                                                                                                                        |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `targets`        | The different [targets](#targets) that can be customized on your site.                                                                                             |
-| `placement`      | The different [placements](#placements) that can be used for positioning components on your site.                                                                  |
-| `components`     | A group of [components](#components) that can be used for customizing your site.                                                                                   |
-| `constants`      | A group of variables that hold the different [constants](#constants) that can be used for creating components on your site.                                        |
-| `render`         | Function that allows rendering a component in a specific placement and target. See more details for this function [here](#render).                                 |
-| `session`        | Object that contains several values from the current session that can be useful when creating customizations. See more details for this function [here](#session). |
-| `onNavigation`   | Function that will be executed once the application has performed a navigation. See more details for this function [here](#on-navigation)                          |
-| `api`            | [Axios](https://github.com/axios/axios) instance that allows the developer to execute AJAX requests. See more details for this function [here](#axios-api)         |
+| Parameter      | Description                                                                                                                                                        |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `targets`      | The different [targets](#targets) that can be customized on your site.                                                                                             |
+| `placement`    | The different [placements](#placements) that can be used for positioning components on your site.                                                                  |
+| `components`   | A group of [components](#components) that can be used for customizing your site.                                                                                   |
+| `constants`    | A group of variables that hold the different [constants](#constants) that can be used for creating components on your site.                                        |
+| `render`       | Function that allows rendering a component in a specific placement and target. See more details for this function [here](#render).                                 |
+| `session`      | Object that contains several values from the current session that can be useful when creating customizations. See more details for this function [here](#session). |
+| `onNavigation` | Function that will be executed once the application has performed a navigation. See more details for this function [here](#on-navigation)                          |
+| `api`          | [Axios](https://github.com/axios/axios) instance that allows the developer to execute AJAX requests. See more details for this function [here](#axios-api)         |
 
 And `configuration` is an object that allows these properties:
 
@@ -46,6 +46,7 @@ And `configuration` is an object that allows these properties:
 ### targets
 
 `targets` is a key/value object that holds the available targets that can be customized on LumApps. This variable allows developers to avoid figuring out which ids to use in order to customize a specific target, and it also defines the available targets that can be customized. As of now, these are the values for this object:
+
 | Target                           | Description                                                                         | Compatibilities                                        |
 |----------------------------------|-------------------------------------------------------------------------------------|--------------------------------------------------------|
 | `targets.APP`                    | Target id for application                                                           | [Documentation](./capabilities#application)            |
@@ -101,6 +102,7 @@ window.lumapps.customize(({ targets, components, render, placement, constants })
 `placement` is a key/value object that holds the available placements that can be used for customizing LumApps.
 
 This variable allows developers to avoid figuring out which ids to use in order to customize a specific target, and it also defines the available palcements that can be customized. As of now, these are the values for this object:
+
 | Placement           | Description                                                  |
 |---------------------|--------------------------------------------------------------|
 | `placement.ABOVE`   | Places the customized component at the top of the target.    |
@@ -133,6 +135,7 @@ window.lumapps.customize(({ components, constants }) => {
 ```
 
 `Avatar` options:
+
 | Option      | Description                                                         | Is required? | Option type                             | Default Value |
 |-------------|---------------------------------------------------------------------|--------------|-----------------------------------------|---------------|
 | `image`     | Url of the image to be used when rendering the avatar               | Yes          | `string`                                | `undefined`   |
@@ -157,6 +160,7 @@ window.lumapps.customize(({ components, constants }) => {
 ```
 
 `Badge` options:
+
 | Option      | Description                                                         | Is required? | Option type                             | Default Value |
 |-------------|---------------------------------------------------------------------|--------------|-----------------------------------------|---------------|
 | `children`  | String that will be displayed as the content of the badge.          | Yes          | `string`                                | `undefined`   |
@@ -187,6 +191,7 @@ window.lumapps.customize(({ components, constants }) => {
 ```
 
 `Button` options:
+
 | Option          | Description                                                           | Is required? | Option type                                   | Default Value          |
 |-----------------|-----------------------------------------------------------------------|--------------|-----------------------------------------------|------------------------|
 | `children`      | String that will be displayed as the content of the button.           | Yes          | `string`                                      | `undefined`            |
@@ -235,6 +240,7 @@ window.lumapps.customize(({ components, constants }) => {
 ```
 
 `Chip` options:
+
 | Option          | Description                                                                   | Is required? | Option type                             | Default Value        |
 |-----------------|-------------------------------------------------------------------------------|--------------|-----------------------------------------|----------------------|
 | `children`      | String that will be displayed as the content of the Chip.                     | Yes          | `string`                                | `undefined`          |
@@ -287,6 +293,7 @@ window.lumapps.customize(({ targets, components, render, placement, constants })
 ```
 
 `ContextualAction` options:
+
 | Option            | Description                                                           | Is required? | Option type                                   | Default Value |
 |-------------------|-----------------------------------------------------------------------|--------------|-----------------------------------------------|---------------|
 | `labelKey`        | The action label.                                                     | Yes          | `string`                                      | `undefined`   |
@@ -322,6 +329,7 @@ window.lumapps.customize(({ components, constants }) => {
 ```
 
 `IconButton` options:
+
 | Option          | Description                                                           | Is required? | Option type                                   | Default Value          |
 |-----------------|-----------------------------------------------------------------------|--------------|-----------------------------------------------|------------------------|
 | `icon`          | Mdi icon id to be displayed.                                          | Yes          | [icon](#using-icons)                          | `undefined`            |
@@ -357,6 +365,7 @@ window.lumapps.customize(({ components, constants }) => {
 ```
 
 `Icon` options:
+
 | Option      | Description                                                                           | Is required? | Option type                             | Default Value          |
 |-------------|---------------------------------------------------------------------------------------|--------------|-----------------------------------------|------------------------|
 | `icon`      | Mdi icon id to be displayed.                                                          | Yes          | [icon](#using-icons)                    | `undefined`            |
@@ -386,6 +395,7 @@ window.lumapps.customize(({ components, constants }) => {
 ```
 
 `FlexBox` options:
+
 | Option        | Description                                                                                  | Is required? | Option type                             | Default Value |
 |---------------|----------------------------------------------------------------------------------------------|--------------|-----------------------------------------|---------------|
 | `children`    | Single component or list of components that will be rendered inside the `FlexBox` component. | Yes          | Component or Component[]                | `undefined`   |
@@ -433,7 +443,8 @@ window.lumapps.customize(({ components }) => {
 });
 ```
 
-`Dropdown` options
+`Dropdown` options:
+
 | Option             | Description                                                                                  | Is required? | Option type                             | Default Value |
 |--------------------|----------------------------------------------------------------------------------------------|--------------|-----------------------------------------|---------------|
 | `children`         | Single component or list of components that will be rendered inside the `Dropdown` component.| Yes          | Component or Component[]                | `undefined`   |
@@ -445,13 +456,15 @@ window.lumapps.customize(({ components }) => {
 | `closeOnClick`     | Boolean that determines whether to close the Dropdown when clicking in it or not.            | No           | `boolean`                               | `false`       |
 | `closeOnEscape`    | Boolean that determines whether an escape key press would close the Dropdown or not.         | No           | `boolean`                               | `false`       |
 
-`DropdownSection` options
+`DropdownSection` options:
+
 | Option     | Description                                                                                          | Is required? | Option type              | Default Value |
 |------------|------------------------------------------------------------------------------------------------------|--------------|--------------------------|---------------|
 | `children` | Single component or list of components that will be rendered inside the `DropdownSection` component. | Yes          | Component or Component[] | `undefined`   |
 | `header`   | Text that will be displayed as the title of the dropdown section.                                    | Yes          | `string`                 | `undefined`   |
 
-`DropdownItem` options
+`DropdownItem` options:
+
 | Option         | Description                                                                 | Is required? | Option type                             | Default Value |
 |----------------|-----------------------------------------------------------------------------|--------------|-----------------------------------------|---------------|
 | `title`        | Text to be displayed on the `DropdownItem` component.                       | Yes          | `string`                                | `undefined`   |
@@ -476,7 +489,8 @@ window.lumapps.customize(({ components }) => {
 });
 ```
 
-`Link` options
+`Link` options:
+
 | Option     | Description                                                        | Is required? | Option type                                   | Default Value          |
 |------------|--------------------------------------------------------------------|--------------|-----------------------------------------------|------------------------|
 | `children` | Text to be displayed on the `Link` component.                      | Yes          | `string`                                      | `undefined`            |
@@ -537,6 +551,7 @@ window.lumapps.customize(({ targets, components, constants }) => {
 ```
 
 `List` options:
+
 | Option      | Description                                                                               | Is required? | Option type                             | Default Value |
 |-------------|-------------------------------------------------------------------------------------------|--------------|-----------------------------------------|---------------|
 | `children`  | Single component or list of components that will be rendered inside the `List` component. | Yes          | Component or Component[]                | `undefined`   |
@@ -545,12 +560,14 @@ window.lumapps.customize(({ targets, components, constants }) => {
 `ListDivider` has no options.
 
 `ListSubheader` options:
+
 | Option      | Description                                                         | Is required? | Option type                             | Default Value |
 |-------------|---------------------------------------------------------------------|--------------|-----------------------------------------|---------------|
 | `children`  | Text that will be displayed inside the ListSubheader.               | Yes          | `string`                                | `undefined`   |
 | `className` | CSS class that will be applied directly into the wrapper container. | No           | `string` or [css classes](#css-classes) | `undefined`   |
 
 `ListItem` options:
+
 | Option           | Description                                                                 | Is required? | Option type                             | Default Value |
 |------------------|-----------------------------------------------------------------------------|--------------|-----------------------------------------|---------------|
 | `children`       | String that will be rendered inside the list item.                          | Yes          | `string`                                | `undefined`   |
@@ -582,6 +599,7 @@ window.lumapps.customize(({ components, constants }) => {
 ```
 
 `Message` options:
+
 | Option          | Description                                                                           | Is required? | Option type                             | Default Value |
 |-----------------|---------------------------------------------------------------------------------------|--------------|-----------------------------------------|---------------|
 | `children`      | String that will be rendered inside the message.                                      | Yes          | `string`                                | `undefined`   |
@@ -604,6 +622,7 @@ window.lumapps.customize(({ components }) => {
 ```
 
 `RawHTML` options:
+
 | Option      | Description                                                         | Is required? | Option type                             | Default Value |
 |-------------|---------------------------------------------------------------------|--------------|-----------------------------------------|---------------|
 | `html`      | HTML to render.                                                     | Yes          | `string`                                | `undefined`   |
@@ -627,6 +646,7 @@ window.lumapps.customize(({ components, constants }) => {
 ```
 
 `Thumbnail` options:
+
 | Option      | Description                                                         | Is required? | Option type                             | Default Value |
 |-------------|---------------------------------------------------------------------|--------------|-----------------------------------------|---------------|
 | `image`     | URL of the image to be displayed.                                   | Yes          | `string`                                | `undefined`   |
@@ -662,6 +682,7 @@ window.lumapps.customize(({ components }) => {
 ```
 
 `Dialog` options:
+
 | Option         | Description                                                                                              | Is required? | Option type              | Default Value |
 |----------------|----------------------------------------------------------------------------------------------------------|--------------|--------------------------|---------------|
 | `body`         | Single component or list of components that will be rendered inside the `Dialog` component.              | Yes          | Component or Component[] | `undefined`   |
@@ -767,6 +788,7 @@ window.lumapps.customize(({ constants }) => {
 ```
 
 `ColorPalette` is a key/value object that provides the possible colors for a component.
+
 | Option                   | Description                                                                                                            | Color                               |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------|-------------------------------------|
 | `ColorPalette.primary`   | Will use the primary color that has been set for your site.                                                            |                                     |
@@ -804,6 +826,7 @@ window.lumapps.customize(({ constants }) => {
 ```
 
 `Kind` is a key/value object that provides the possible kinds for a component. Mostly used for the `Message` component.
+
 | Option         | Description                                                            | Kind                                |
 |----------------|------------------------------------------------------------------------|-------------------------------------|
 | `Kind.info`    | Determines that the message should be displayed with the kind info.    | ![image](./assets/kind-info.png)    |
@@ -820,6 +843,7 @@ window.lumapps.customize(({ constants }) => {
 ```
 
 `Orientation` is a key/value object that provides the possible orientations for a component. Mostly used for the `FlexBox` component.
+
 | Option                   | Description                                                                                      | Orientation                                   |
 |--------------------------|--------------------------------------------------------------------------------------------------|-----------------------------------------------|
 | `Orientation.horizontal` | Determines that components on the flexbox will be displayed horizontally one next to each other. | ![image](./assets/orientation-horizontal.png) |
@@ -846,6 +870,7 @@ window.lumapps.customize(({ constants }) => {
 ```
 
 `ThumbnailVariant` is a key/value object that provides the possible variants for a thumbnail
+
 | Option                     | Description                                                   |
 |----------------------------|---------------------------------------------------------------|
 | `ThumbnailVariant.squared` | Determines that thumbnail is displayed with a square border.  |
@@ -883,6 +908,7 @@ window.lumapps.customize(({ targets, components, render, placement, constants })
 ```
 
 `render` is a function that allows rendering a component in a specific `target` and `placement`. The `render` function accepts an object with the following properties:
+
 | Option      | Description                                                                                  | Is required? | Option type              | Default Value |
 |-------------|----------------------------------------------------------------------------------------------|--------------|--------------------------|---------------|
 | `placement` | Where the custom component should be rendered at the specific target.                        | Yes          | [Placement](#placement)  | `undefined`   |
@@ -987,6 +1013,7 @@ Contains two `Promises`, one for the main navigation and another one for the sub
 | `session.navigations.getParent` | Retrieves a promise that fulfills with the information needed to render the parent navigation of the site. If the main navigation inheritance feature is activated and the site has a parent site, this promise will be defined. If that is not the case, then this promise will be `null` | `NavigationItem[]`  |
 
 `NavigationItem`
+
 | Option                          | Description                                                                                               | Option type              |
 |---------------------------------|-----------------------------------------------------------------------------------------------------------|--------------------------|
 | `navigationItem.id`             | Navigation item id, which is the ID entered in the administration page.                                   | `string`                 |

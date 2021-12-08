@@ -98,13 +98,15 @@ Target that allows customizing the surroundings of your LumApps application.
 
 #### Compatibility
 
-|               |                                             |
-| ------------- | -------------------------------------------------------- |
+|               |                                                          |
+|---------------|----------------------------------------------------------|
 | Target ID     | `app`                                                    |
 | Description   | Target that encapsulates the entire LumApps application. |
-| Placements    | Compatible with placements: `ABOVE`, `RIGHT`, `LEFT`. Using the `RIGHT` and `LEFT` placements will make the custom component display at either the left top hand side or the right hand side of the application with a `position: absolute;` and either `right: 0;` or `left: 0;`. Furthermore, components will be added as siblings of the main content of the application                                                                |
+| Placements    | Compatible with placements: `ABOVE`, `RIGHT`, `LEFT` *   |
 | Disable       | No compatibility                                         |
 | Changing text | No compatibility                                         |
+
+**Note:** Using the `RIGHT` and `LEFT` placements will make the custom component display at either the left top hand side or the right hand side of the application with a `position: absolute;` and either `right: 0;` or `left: 0;`. Furthermore, components will be added as siblings of the main content of the application
 
 #### Use cases
 
@@ -119,13 +121,13 @@ Target that allows customizing the bookmarks (also known as [App launcher](https
 
 #### Compatibility
 
-|               |                                                                                                     |
-| ------------- | --------------------------------------------------------------------------------------------------- |
-| Target ID     | `bookmarks`                                                                                         |
-| Description   | Target that focuses on the bookmarks (app launcher) icon on the top bar of your site                |
-| Placements    | No compatibility                                                                                    |
-| Disable       | Can be disabled. Disabling this component prevents the icon from being displayed on the top bar     |
-| Changing text | No compatibility                                                                                    |
+|               |                                                                                                 |
+|---------------|-------------------------------------------------------------------------------------------------|
+| Target ID     | `bookmarks`                                                                                     |
+| Description   | Target that focuses on the bookmarks (app launcher) icon on the top bar of your site            |
+| Placements    | No compatibility                                                                                |
+| Disable       | Can be disabled. Disabling this component prevents the icon from being displayed on the top bar |
+| Changing text | No compatibility                                                                                |
 
 #### Use cases
 
@@ -138,13 +140,15 @@ Target that allows customizing the surroundings of a [community](https://docs.lu
 ![Target Community](./assets/target-community.png "Target Community")
 
 #### Compatibility
-|               |                                                                                                     |
-| ------------- | --------------------------------------------------------------------------------------------------- |
-| Target ID     | `community`                                                                                         |
-| Description   | Target that focuses on the Community page. Adding a customization to this target would mean that ALL communities will display it.                                                                                                                   |
-| Placements    | Compatible with placements: `ABOVE`, `UNDER`. For `ABOVE`, the customization will appear between the header of the application and the main section of the community                                                                                                             |
-| Disable       | No compatibility                                                                                    |
-| Changing text | No compatibility                                                                                    |
+
+|               |                                                                                                                                                                      |
+|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Target ID     | `community`                                                                                                                                                          |
+| Description   | Target that focuses on the Community page. Adding a customization to this target would mean that ALL communities will display it.                                    |
+| Placements    | Compatible with placements: `ABOVE`, `UNDER`. For `ABOVE`, the customization will appear between the header of the application and the main section of the community |
+| Disable       | No compatibility                                                                                                                                                     |
+| Changing text | No compatibility                                                                                                                                                     |
+
 
 #### Use cases
 
@@ -157,13 +161,14 @@ Target that allows customizing the surroundings of a [Content](https://docs.luma
 ![Target Content](./assets/target-content.png "Target Content")
 
 #### Compatibility
-|               |                                                                                                     |
-| ------------- | --------------------------------------------------------------------------------------------------- |
-| Target ID     | `content`                                                                                           |
-| Description   | Target that focuses on the Content page. Adding a customization to this target would mean that ALL contents will display it.                                                                                                                   |
-| Placements    | Compatible with placements: `ABOVE`, `UNDER`. For `ABOVE`, the customization will appear between the header of the application and the main section of the content                                                                                                               |
-| Disable       | No compatibility                                                                                    |
-| Changing text | No compatibility                                                                                    |
+
+|               |                                                                                                                                                                    |
+|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Target ID     | `content`                                                                                                                                                          |
+| Description   | Target that focuses on the Content page. Adding a customization to this target would mean that ALL contents will display it.                                       |
+| Placements    | Compatible with placements: `ABOVE`, `UNDER`. For `ABOVE`, the customization will appear between the header of the application and the main section of the content |
+| Disable       | No compatibility                                                                                                                                                   |
+| Changing text | No compatibility                                                                                                                                                   |
 
 #### Use cases
 
@@ -176,17 +181,18 @@ Target that allows customizing the surroundings of the [contextual actions](http
 ![Target Contextual Actions](./assets/target-contextual-actions.png "Target Contextual Actions")
 
 #### Compatibility
-|               |                                                                                                     |
-| ------------- | --------------------------------------------------------------------------------------------------- |
-| Target ID     | `contextual-actions`                                                                                |
-| Description   | Target that focuses on the Contextual actions, adding new custom actions.                           |
-| Placements    | Compatible with placements: `ABOVE`, `UNDER`. Custom actions will be added as siblings of the out-of-the-box-actions                                                                                                |
-| Disable       | No compatibility                                                                                    |
-| Changing text | No compatibility                                                                                    |
+
+|               |                                                                                                                      |
+|---------------|----------------------------------------------------------------------------------------------------------------------|
+| Target ID     | `contextual-actions`                                                                                                 |
+| Description   | Target that focuses on the Contextual actions, adding new custom actions.                                            |
+| Placements    | Compatible with placements: `ABOVE`, `UNDER`. Custom actions will be added as siblings of the out-of-the-box-actions |
+| Disable       | No compatibility                                                                                                     |
+| Changing text | No compatibility                                                                                                     |
 
 #### Use cases
 
-- Create a "Copy Link to Content" action.
+- [Create a Copy Link to Content action](./use-cases#create-a-copy-link-to-content-action)
 
 ### Contribution button
 
@@ -195,6 +201,7 @@ Target that allows customizing the [contribution button](https://docs.lumapps.co
 ![Target Contribution Button](./assets/target-contribution-button.png "Target Contribution Button")
 
 #### Compatibility
+
 |               |                                                                                                               |
 | ------------- | ------------------------------------------------------------------------------------------------------------- |
 | Target ID     | `contribution-button`                                                                                         |
@@ -205,7 +212,7 @@ Target that allows customizing the [contribution button](https://docs.lumapps.co
 
 #### Use cases
 
-- Adding new actions on the top bar.
+- [Adding new actions on the top bar](#adding-new-actions-on-the-top-bar)
 
 ### Contribution menu
 
@@ -214,6 +221,7 @@ Target that allows customizing the [contribution menu](https://docs.lumapps.com/
 ![Target Contribution Menu](./assets/target-contribution-menu.png "Target Contribution Menu")
 
 #### Compatibility
+
 |               |                                                                                                                     |
 | ------------- | ------------------------------------------------------------------------------------------------------------------- |
 | Target ID     | `contribution-menu`                                                                                                 |
@@ -224,7 +232,7 @@ Target that allows customizing the [contribution menu](https://docs.lumapps.com/
 
 #### Use cases
 
-- Adding links to the contribution menu
+- [Adding links to the contribution menu](./use-cases#adding-links-to-the-contribution-menu)
 
 ### Favorites
 
@@ -233,13 +241,14 @@ Target that allows customizing the [favorites directories](https://docs.lumapps.
 ![Target Favorites](./assets/target-favorites.png "Target Favorites")
 
 #### Compatibility
-|               |                                                                                                     |
-| ------------- | --------------------------------------------------------------------------------------------------- |
-| Target ID     | `favorites`                                                                                         |
-| Description   | Target for the favorites directories displayed at the top bar.                                      |
-| Placements    | No compatibility                                                                                    |
-| Disable       | Can be disabled. Disabling this features hides ALL directories flagged as "Manage favorites".                                                                                                           |
-| Changing text | No compatibility                                                                                    |
+
+|               |                                                                                               |
+|---------------|-----------------------------------------------------------------------------------------------|
+| Target ID     | `favorites`                                                                                   |
+| Description   | Target for the favorites directories displayed at the top bar.                                |
+| Placements    | No compatibility                                                                              |
+| Disable       | Can be disabled. Disabling this features hides ALL directories flagged as "Manage favorites". |
+| Changing text | No compatibility                                                                              |
 
 ### Header
 
@@ -248,6 +257,7 @@ Target that allows customizing the entire header of the application, which englo
 ![Target Header](./assets/target-header.png "Target Header")
 
 #### Compatibility
+
 |               |                                                                                                     |
 | ------------- | --------------------------------------------------------------------------------------------------- |
 | Target ID     | `header`                                                                                            |
@@ -261,6 +271,7 @@ Target that allows customizing the entire header of the application, which englo
 Target that allows customizing the surroundings of the site's [logo](https://docs.lumapps.com/docs/explore-l08263938963294604/explore-l10172021770563788).
 
 #### Compatibility
+
 |               |                                                                                                     |
 | ------------- | --------------------------------------------------------------------------------------------------- |
 | Target ID     | `logo`                                                                                              |
@@ -271,8 +282,8 @@ Target that allows customizing the surroundings of the site's [logo](https://doc
 
 #### Use cases
 
-- Add an additional logo or badge depending on the current user.
-- Adding new actions on the top bar.
+- [Add an additional logo or badge depending on the current user](./use-cases#add-an-additional-logo-or-badge-depending-on-the-current-user)
+- [Adding new actions on the top bar](./use-cases#adding-new-actions-on-the-top-bar)
 
 ### Navigation
 
@@ -284,26 +295,30 @@ Target that allows customizing the [main navigation](https://docs.lumapps.com/do
 
 There are two targets that focus on the main navigation, each of them have a different end result.
 
-|               |                                                                                                                                  |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Target ID     | `navigation`                                                                                                                     |
-| Description   | Target for the entire main navigation feature of your site.                                                                      |
-| Placements    | Compatible with placements: `LEFT`, `RIGHT`. Customizations will be added as siblings of the other navigation items displayed.   |
-| Disable       | Can be disabled. Disabling this feature prevents the navigation from being displayed on the site, removing the entire section from your page and avoiding any XHR requests to retrieve the data. **Note:** Some additional CSS is needed in order to make this customization work as expected                                 |
-| Changing text | No compatibility                                                                                                                 |
+|               |                                                                                                                                |
+|---------------|--------------------------------------------------------------------------------------------------------------------------------|
+| Target ID     | `navigation`                                                                                                                   |
+| Description   | Target for the entire main navigation feature of your site.                                                                    |
+| Placements    | Compatible with placements: `LEFT`, `RIGHT`. Customizations will be added as siblings of the other navigation items displayed. |
+| Disable       | Can be disabled**.                                                                                                             |
+| Changing text | No compatibility                                                                                                               |
 
-|               |                                                                                                                                  |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Target ID     | `navigation-ui`                                                                                                                  |
-| Description   | Target for your site's main navigation interface.                                                                                |
-| Placements    | No compatibility                                                                                                                 |
-| Disable       | Can be disabled. Disabling this feature prevents the navigation from being displayed on the site, removing the entire section from your page, BUT the navigation is still fetched so it can be reused for rendering a custom navigation. **Note:** Some additional CSS is needed in order to make this customization work as expected  |
-| Changing text | No compatibility                                                                                                                 |
+**Note:**: Disabling this feature prevents the navigation from being displayed on the site, removing the entire section from your page and avoiding any XHR requests to retrieve the data. Some additional CSS is needed in order to make this customization work as expected 
+
+|               |                                                   |
+|---------------|---------------------------------------------------|
+| Target ID     | `navigation-ui`                                   |
+| Description   | Target for your site's main navigation interface. |
+| Placements    | No compatibility                                  |
+| Disable       | Can be disabled**                                 |
+| Changing text | No compatibility                                  |
+
+**Note:** Disabling this feature prevents the navigation from being displayed on the site, removing the entire section from your page, BUT the navigation is still fetched so it can be reused for rendering a custom navigation. Some additional CSS is needed in order to make this customization work as expected
 
 #### Use cases
 
-- Hide the entire navigation on your site.
-- Create a custom navigation for your site.
+- [Hide the entire navigation on your site](./use-cases#hide-the-entire-navigation-on-your-site)
+- [Create a custom navigation for your site](./use-cases#create-a-custom-navigation-for-your-site)
 
 ### Notifications button
 
@@ -312,6 +327,7 @@ Targets that allows customizing the [notifications center button](https://docs.l
 ![Target Notifications button](./assets/target-notifications-button.png "Target Notifications button")
 
 #### Compatibility
+
 |               |                                                                                                                     |
 | ------------- | ------------------------------------------------------------------------------------------------------------------- |
 | Target ID     | `notifications-button`                                                                                              |
@@ -322,24 +338,27 @@ Targets that allows customizing the [notifications center button](https://docs.l
 
 #### Use cases
 
-- Adding new actions on the top bar.
+- [Adding new actions on the top bar](./use-cases#adding-new-actions-on-the-top-bar)
 
 ### Page
 
 Target that allows customizing pages on your site. This specific target allows developers to display a customization on all pages no matter whether they are the search page, the user profile page or more dynamic pages like content pages and community pages.
 
 #### Compatibility
-|               |                                                                                                                                 |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Target ID     | `page`                                                                                                                          |
-| Description   | Target all pages of your site.                                                                                                  |
-| Placements    | Compatible with placements: `ABOVE`, `UNDER`. Customizations will be added as siblings of the current page. If there is another customization in place that targets more specific targets like [Content](#content) or [Community](#community), the page customization is displayed above and below these customizations.   |
-| Disable       | No compatibility                                                                                                                |
-| Changing text | No compatibility                                                                                                                |
+
+|               |                                                                                                              |
+|---------------|--------------------------------------------------------------------------------------------------------------|
+| Target ID     | `page`                                                                                                       |
+| Description   | Target all pages of your site.                                                                               |
+| Placements    | Compatible with placements: `ABOVE`, `UNDER`. Customizations will be added as siblings of the current page*. |
+| Disable       | No compatibility                                                                                             |
+| Changing text | No compatibility                                                                                             |
+
+**Note:** If there is another customization in place that targets more specific targets like [Content](#content) or [Community](#community), the page customization is displayed above and below these customizations.
 
 #### Use cases
 
-- Display a message across your entire site.
+- [Display a message across your entire site](./use-cases#display-a-message-accross-your-entire-site)
 - [Display a message above all pages of a certain type](./use-cases#display-a-message-above-all-pages-of-a-certain-type)
 
 ### User profile
@@ -349,13 +368,14 @@ Target that allows customizing the [user profile page](https://docs.lumapps.com/
 ![Target user profile](./assets/target-profile.png "Target user profile")
 
 #### Compatibility
-|               |                                                                                                                                 |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Target ID     | `profile`                                                                                                                       |
-| Description   | Target the user profile page.                                                                                                   |
-| Placements    | Compatible with placements: `ABOVE`, `UNDER`. Customizations will be added as siblings of the user profile page.                |
-| Disable       | No compatibility                                                                                                                |
-| Changing text | No compatibility                                                                                                                |
+
+|               |                                                                                                                  |
+|---------------|------------------------------------------------------------------------------------------------------------------|
+| Target ID     | `profile`                                                                                                        |
+| Description   | Target the user profile page.                                                                                    |
+| Placements    | Compatible with placements: `ABOVE`, `UNDER`. Customizations will be added as siblings of the user profile page. |
+| Disable       | No compatibility                                                                                                 |
+| Changing text | No compatibility                                                                                                 |
 
 #### Use cases
 
@@ -368,6 +388,7 @@ Target that allows customizing the [search page](https://docs.lumapps.com/docs/e
 ![Target search](./assets/target-search.png "Target search")
 
 #### Compatibility
+
 |               |                                                                                                              |
 | ------------- | -------------------------------------------------------------------------------------------------------------|
 | Target ID     | `search`                                                                                                     |
@@ -387,24 +408,26 @@ Target that allows customizing the [search box](https://docs.lumapps.com/docs/ex
 ![Target search box](./assets/target-search-box.png "Target search box")
 
 #### Compatibility
+
 |               |                                                                                                                         |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------|
 | Target ID     | `search-box`                                                                                                            |
 | Description   | Target the search box at the top bar.                                                                                   |
 | Placements    | Compatible with placements: `LEFT`, `RIGHT`. Customizations will be added as siblings of the search box.                |
-| Disable       | Can be disabled. Disabling this component hides the search box and all features related to search. The search page is still accessible, but in order to access it, access should be provided by another customization.                                                                                              |
+| Disable       | Can be disabled. Disabling this component hides the search box and all features related to search.                      |
 | Changing text | Can be changed. The text displayed on the search box placeholder can be changed by using the change text functionality. |
 
 #### Use cases
 
-- Disable the search box.
-- Adding new actions on the top bar.
+- [Disable the search box](./use-cases#disable-the-search-box)
+- [Adding new actions on the top bar](./use-cases#adding-new-actions-on-the-top-bar)
 
 ### Search custom metadata
 
 Target that allows customizing the search custom metadata.
 
 #### Compatibility
+
 |               |                                    |
 | ------------- | -----------------------------------|
 | Target ID     | `search-custom-metadata`           |
@@ -422,6 +445,7 @@ Target that allows customizing the settings icon displayed on the top bar.
 ![Target settings button](./assets/target-settings-button.png "Target settings button")
 
 #### Compatibility
+
 |               |                                                                                                              |
 | ------------- | -------------------------------------------------------------------------------------------------------------|
 | Target ID     | `settings-button`                                                                                            |
@@ -432,7 +456,7 @@ Target that allows customizing the settings icon displayed on the top bar.
 
 #### Use cases
 
-- Adding new actions on the top bar.
+- [Adding new actions on the top bar](./use-cases#adding-new-actions-on-the-top-bar)
 
 ### Settings dropdown
 
@@ -441,36 +465,43 @@ Target that allows customizing the settings links displayed on the dropdown trig
 ![Target settings dropdown](./assets/target-settings.png "Target settings dropdown")
 
 #### Compatibility
-|               |                                                                                                              |
-| ------------- | -------------------------------------------------------------------------------------------------------------|
-| Target ID     | `settings`                                                                                                   |
-| Description   | Target the settings dropdown on the top bar. Customizations added to this target will only be visible to those users that have access to one of the multiple settings displayed on the dropdown. If a user does not have access to this icon, the customizations will not be displayed               |
-| Placements    | Compatible with placements: `ABOVE`, `UNDER`. Customizations will be added as siblings of the other settings links displayed.  |
-| Disable       | No compatibility                                                                                             |
-| Changing text | No compatibility                                                                                             |
+
+|               |                                                                                                                  |
+|---------------|------------------------------------------------------------------------------------------------------------------|
+| Target ID     | `profile`                                                                                                        |
+| Description   | Target the user profile page.                                                                                    |
+| Placements    | Compatible with placements: `ABOVE`, `UNDER`. Customizations will be added as siblings of the user profile page. |
+| Disable       | No compatibility                                                                                                 |
+| Changing text | No compatibility                                                                                                 |
+
+
+**Note:** Customizations added to this target will only be visible to those users that have access to one of the multiple settings displayed on the dropdown. If a user does not have access to this icon, the customizations will not be displayed
 
 #### Use cases
 
-- Add links to other administration tools, either external or internal to LumApps.
+- [Add links to other administration tools](./use-cases#add-links-to-other-administration-tools)
 
 ### Sticky header
 
 Target that allows deactivating that your site's header has a sticky behaviour, meaning that it will stick to the top of your page while the user is scrolling.
 
-![Target Sticky header](./assets/target-sticky-header.png "Target sticky header")
+![Target Sticky header](./assets/target-sticky-header.gif "Target sticky header")
 
 #### Compatibility
-|               |                                                                                                              |
-| ------------- | -------------------------------------------------------------------------------------------------------------|
-| Target ID     | `sticky-header`                                                                                              |
-| Description   | Target that allows disabling the sticky header. **Note**: some extra CSS needs to be added in order to make this customization have the expected result |
-| Placements    | No compatibility                                                                                             |
-| Disable       | No compatibility                                                                                             |
-| Changing text | No compatibility                                                                                             |
+
+|               |                                                  |
+|---------------|--------------------------------------------------|
+| Target ID     | `sticky-header`                                  |
+| Description   | Target that allows disabling the sticky header * |
+| Placements    | No compatibility                                 |
+| Disable       | No compatibility                                 |
+| Changing text | No compatibility                                 |
+
+**Note**: some extra CSS needs to be added in order to make this customization have the expected result
 
 #### Use cases
 
-- Disable the sticky header
+- [Disable the sticky header](./use-cases#disable-the-sticky-header)
 
 ### Navigation
 
@@ -482,25 +513,30 @@ Target that allows customizing the [sub navigation](https://docs.lumapps.com/doc
 
 There are two targets that focus on the sub navigation, each of them have a different end result.
 
-|               |                                                                                                                                  |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Target ID     | `sub-navigation`                                                                                                                     |
-| Description   | Target for the entire sub navigation feature of your site.                                                                      |
-| Placements    | Compatible with placements: `LEFT`, `RIGHT`. Customizations will be added as siblings of the other navigation items displayed.   |
-| Disable       | Can be disabled. Disabling this feature prevents the navigation from being displayed on the site, removing the entire section from your page and avoiding any XHR requests to retrieve the data. **Note:** Some additional CSS is needed in order to make this customization work as expected                                 |
-| Changing text | No compatibility                                                                                                                 |
+|               |                                                                                                                                |
+|---------------|--------------------------------------------------------------------------------------------------------------------------------|
+| Target ID     | `sub-navigation`                                                                                                               |
+| Description   | Target for the entire sub navigation feature of your site *.                                                                   |
+| Placements    | Compatible with placements: `LEFT`, `RIGHT`. Customizations will be added as siblings of the other navigation items displayed. |
+| Disable       | Can be disabled.                                                                                                               |
+| Changing text | No compatibility                                                                                                               |
 
-|               |                                                                                                                                  |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Target ID     | `sub-navigation-ui`                                                                                                              |
-| Description   | Target for your site's sub navigation interface.                                                                                 |
-| Placements    | No compatibility                                                                                                                 |
-| Disable       | Can be disabled. Disabling this feature prevents the navigation from being displayed on the site, removing the entire section from your page, BUT the navigation is still fetched so it can be reused for rendering a custom navigation. **Note:** Some additional CSS is needed in order to make this customization work as expected  |
-| Changing text | No compatibility                                                                                                                 |
+**Note:** Disabling this feature prevents the navigation from being displayed on the site, removing the entire section from your page and avoiding any XHR requests to retrieve the data. Some additional CSS is needed in order to make this customization work as expected
+
+|               |                                                  |
+|---------------|--------------------------------------------------|
+| Target ID     | `sub-navigation-ui`                              |
+| Description   | Target for your site's sub navigation interface. |
+| Placements    | No compatibility                                 |
+| Disable       | Can be disabled. *                               |
+| Changing text | No compatibility                                 |
+
+**Note:** Disabling this feature prevents the navigation from being displayed on the site, removing the entire section from your page, BUT the navigation is still fetched so it can be reused for rendering a custom navigation. Some additional CSS is needed in order to make this customization work as expected
 
 #### Use cases
 
-- Create a custom sub navigation for your site.
+- [Hide the entire navigation on your site](./use-cases#hide-the-entire-navigation-on-your-site)
+- [Create a custom navigation for your site](./use-cases#create-a-custom-navigation-for-your-site)
 
 ### Widget
 
@@ -511,14 +547,19 @@ Dynamic target that allows customizing the surroundings of a [widget](https://do
 - This target should only be used for customizing an existing widget. For creating new custom widgets, please create an [extension](../../extensions/index.md)
 
 #### Compatibility
-|               |                                                                                                              |
-| ------------- | -------------------------------------------------------------------------------------------------------------|
-| Target ID     | `widget-{<id>}`. `id` can be retrieved by inspecting the HTML of your content and retrieving the id. Without the `id`, the target will be considered as invalid |
-| Description   | Dynamic target that allows customizing the surroundings of a [widget]                                        |
-| Placements    | Compatible with placements: `ABOVE`, `UNDER`. **Note:** additional CSS might be needed, depending on the nature of your customization and the layout of your content page                                                                                                                           |
-| Disable       | No compatibility                                                                                             |
-| Changing text | No compatibility                                                                                             |
+
+|               |                                                                       |
+|---------------|-----------------------------------------------------------------------|
+| Target ID     | `widget-{<id>}` *                                                     |
+| Description   | Dynamic target that allows customizing the surroundings of a [widget] |
+| Placements    | Compatible with placements: `ABOVE`, `UNDER` **                       |
+| Disable       | No compatibility                                                      |
+| Changing text | No compatibility                                                      |
+
+**Notes:**
+- `id` can be retrieved by inspecting the HTML of your content and retrieving the id. Without the `id`, the target will be considered as invalid
+- Additional CSS might be needed, depending on the nature of your customization and the layout of your content page   
 
 #### Use cases
 
-- Adding a custom header to a widget
+- [Adding a customization to a widget](./use-cases#adding-a-customization-to-a-widget)
