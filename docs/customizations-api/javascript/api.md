@@ -695,6 +695,9 @@ window.lumapps.customize(({ components }) => {
 | `onClose`      | Callback to be executed once the modal is closed.                                                        | No           | `function () => void`    | `undefined`   |
 | `size`         | Size of the component.                                                                                   | No           | [`Size`](#size)          | `Size.m`      |
 
+
+**IMPORTANT:** The Dialog component is meant to be used only one time during the life cycle of a user's session. Meaning that this Dialog will be displayed, the user will close it, and the Dialog will not display again during the user's session. Reusing a Dialog and displaying it multiple times once it has already been closed is not supported.
+
 #### Skeletons
 
 Skeleton are primitives shapes which mimic a piece of content in a recognizable way. It communicate loading states. There are three variants:
