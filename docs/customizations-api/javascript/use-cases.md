@@ -196,7 +196,7 @@ window.lumapps.customize(({ targets, components, render, placement, constants })
 ![Use case community](./assets/use-case-community.png "Use case community")
 
 **Use case limitations and best practices**
-- This customizations could be combined with `window.lumapps.getCurrentContent()` in order to render the message on just a few pages, by checking their ID. However, in those scenarios we recommend adding a widget to those pages rather than executing a customization.
+- This customization could be combined with `window.lumapps.getCurrentContent()` in order to render the message on just a few pages, by checking their ID. However, in those scenarios we recommend adding a widget to those pages rather than executing a customization.
 
 ## Create a Copy Link to Content action
 

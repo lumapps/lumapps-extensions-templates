@@ -14,15 +14,15 @@ In order to test these customizations, as well as making them available for your
 To add these customizations, we will need to have access to the administration UI for LumApps platform, and have access to the Style side navigation link:
 1. Go to the administration UI and click on the **Style** side navigation link.
 
-![image](../assets/deployment-style-side-nav.png)
+![image](./assets/deployment-style-side-nav.png)
 
 2. Click on the **Style** tab on the tabs displayed at the top left corner of the screen and then scroll down to the **Advanced** section.
 
-![image](../assets/deployment-advanced.png)
+![image](./assets/deployment-advanced.png)
 
 3. You will see two fields under **Advanced**, **Site theme** and **head tag (HTML)**.
 
-![image](../assets/deployment-head.png)
+![image](./assets/deployment-head.png)
 
 4. In the **Site theme** field paste your customization.
 
