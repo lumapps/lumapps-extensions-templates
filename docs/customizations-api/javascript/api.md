@@ -57,6 +57,7 @@ And `configuration` is an object that allows these properties:
 | `targets.CONTRIBUTION_MENU`      | Target id for the contribution menu.                                                | [Documentation](./capabilities#contribution-menu)      |
 | `targets.CONTRIBUTION_BUTTON`    | Target id for the contribution button.                                              | [Documentation](./capabilities#contribution-button)    |
 | `targets.FAVORITES`              | Target id for the favorite directories.                                             | [Documentation](./capabilities#favorites)              |
+| `targets.DIRECTORY`              | Target id for the directory.                                                        | [Documentation](./capabilities#directory)              |
 | `targets.HEADER`                 | Target id for the site's header.                                                    | [Documentation](./capabilities#header)                 |
 | `targets.LOGO`                   | Target id for the site's logo.                                                      | [Documentation](./capabilities#logo)                   |
 | `targets.NAVIGATION`             | Target id for the main navigation.                                                  | [Documentation](./capabilities#navigation)             |
@@ -75,6 +76,7 @@ And `configuration` is an object that allows these properties:
 | `targets.SUB_NAVIGATION`         | Target id for the sub navigation.                                                   | [Documentation](./capabilities#sub-navigation)         |
 | `targets.SUB_NAVIGATION_UI`      | Target id for the sub navigation's UI.                                              | [Documentation](./capabilities#sub-navigation-ui)      |
 | `targets.WIDGET`                 | Target id for a widget.                                                             | [Documentation](./capabilities#widget)                 |
+| `targets.USER_DIRECTORY`         | Target id for the user directory.                                                   | [Documentation](./capabilities#user-directory)         |
 | `targets.USER_PROFILE_ORG_CHART`      | Target id for the organization chart section in a user's profile.                                              | [Documentation](./capabilities#organization-chart)      |
 
 

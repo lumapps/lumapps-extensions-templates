@@ -26,7 +26,7 @@ As an example, inserting the following code in your LumApps site will display a 
 
 ```js
 window.lumapps.customize(({ targets, components, render, session, placement, constants }) => {
-    const { Message } = components; console.log(session);
+    const { Message } = components;
     const { Kind } = constants;
 
     render({
@@ -234,6 +234,26 @@ Target that allows customizing the [contribution menu](https://docs.lumapps.com/
 
 - [Adding links to the contribution menu](./use-cases#adding-links-to-the-contribution-menu)
 
+### Directory
+
+Target that allows customizing the [directory](https://docs.lumapps.com/docs/explore-l8658525737805197modules) page.
+
+![Target Directory](./assets/target-directory.png "Target Directory")
+
+#### Compatibility
+
+|               |                                                                                                                     |
+| ------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Target ID     | `directory`                                                                                                         |
+| Description   | Target that focuses on the Directory page.                                                                          |
+| Placements    | Compatible with placements: `ABOVE`, `UNDER`.                                                                       |
+| Disable       | No compatibility                                                                                                    |
+| Changing text | No compatibility                                                                                                    |
+
+#### Use cases
+
+- [Display a message above all pages of a certain type](./use-cases#display-a-message-above-all-pages-of-a-certain-type)
+
 ### Favorites
 
 Target that allows customizing the [favorites directories](https://docs.lumapps.com/docs/explore-l8658525737805197modules) displayed on the top bar.
@@ -400,6 +420,26 @@ Target that allows customizing the user organization chart.
 **Notes:**
 * The `User space` feature flag must be enabled in order to access the new user profile experience.
 * The displayed user's data can be retrieved using [context](./api#organization-chart-context).
+
+### User Directory
+
+Target that allows customizing the [user directory](https://docs.lumapps.com/docs/explore-l8658525737805197modules) page.
+
+![Target User Directory](./assets/target-user-directory.png "Target User Directory")
+
+#### Compatibility
+
+|               |                                                                                                                     |
+| ------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Target ID     | `user-directory`                                                                                                    |
+| Description   | Target that focuses on the User Directory page.                                                                     |
+| Placements    | Compatible with placements: `ABOVE`, `UNDER`.                                                                       |
+| Disable       | No compatibility                                                                                                    |
+| Changing text | No compatibility                                                                                                    |
+
+#### Use cases
+
+- [Display a message above all pages of a certain type](./use-cases#display-a-message-above-all-pages-of-a-certain-type)
 
 ### Search
 
