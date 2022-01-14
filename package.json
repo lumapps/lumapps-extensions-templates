@@ -2,7 +2,7 @@
     "name": "create-lumapps-extension",
     "version": "1.0.4",
     "description": "",
-    "author": "lab@lumapps.com",
+    "author": "marketplace@lumapps.com",
     "main": "index.js",
     "bin": {
         "create-lumapps-extension": "index.js",
