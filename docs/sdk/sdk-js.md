@@ -77,6 +77,7 @@ Use this hook to retrieve the context around the widget extension (when added in
  - contentId
  - instanceId
  - baseUrl
+ - environment ('production' or 'development')
 
 ```javascript
 import React, { FC, useMemo } from 'react';
@@ -84,12 +85,15 @@ import React, { FC, useMemo } from 'react';
 import { useContext } from 'lumapps-sdk-js';
 
 export const HelloWidget: FC = () => {
-    const { contentId, instanceId, baseUrl } = useContext();
+    const { contentId, instanceId, baseUrl, environment } = useContext();
 
     const welcomeMessage = useMemo(() => {
         return (
             <p>
                 This widget is used in {contentId} in the {instanceId} instance. The environment base URL is : {baseUrl}
+            </p>
+            <p>
+                The environment is {environment}
             </p>
         );
     }, [emaicontentIdl, contentId]);
