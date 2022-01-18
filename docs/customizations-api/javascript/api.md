@@ -75,6 +75,7 @@ And `configuration` is an object that allows these properties:
 | `targets.SUB_NAVIGATION`         | Target id for the sub navigation.                                                   | [Documentation](./capabilities#sub-navigation)         |
 | `targets.SUB_NAVIGATION_UI`      | Target id for the sub navigation's UI.                                              | [Documentation](./capabilities#sub-navigation-ui)      |
 | `targets.WIDGET`                 | Target id for a widget.                                                             | [Documentation](./capabilities#widget)                 |
+| `targets.USER_PROFILE_ORG_CHART`      | Target id for the organization chart section in a user's profile.                                              | [Documentation](./capabilities#organization-chart)      |
 
 
 **Note:** The Widget target needs to be used in combination with a widget id. The final target passed in into the `render` function should be `${targets.WIDGET}-${widget-id}`.
@@ -607,6 +608,34 @@ window.lumapps.customize(({ components, constants }) => {
 | `className`     | CSS class that will be applied directly into the wrapper container.                   | No           | `string` or [css classes](#css-classes) | `undefined`   |
 | `hasBackground` | Whether or not the button has a background color.                                     | No           | `boolean`                               | `false`       |
 
+#### Card
+
+The `Card` component is a simple layout component used to display content in a frame with a default background and padding.
+
+![Component Card](./assets/component-card.png "Component Card")
+
+```js
+window.lumapps.customize(({ components, constants }) => {
+    const { Card } = components;
+    const { Kind } = constants;
+
+    const component = Card({
+        className: 'general-card',
+        children: 'Card content',
+        as: 'section',
+    });
+
+});
+```
+
+`Card` options:
+
+| Option          | Description                                                                           | Is required? | Option type                             | Default Value |
+|-----------------|---------------------------------------------------------------------------------------|--------------|-----------------------------------------|---------------|
+| `children`    | Single component or list of components that will be rendered inside the `Card` component. | Yes          | Component or Component[]                | `undefined`   |
+| `className`     | CSS class that will be applied directly into the wrapper container.                   | No           | `string` or [css classes](#css-classes) | `undefined`   |
+| `as` | The element to use instead of `section`                                    | No           | `string`                               | `article`       |
+
 #### RawHTML
 
 RawHTML is a helper component that can be used when we need to render a specific HTML structure that cannot be achieved without using the out-of-the-box components of the Customizations API. It is definitely a powerful component, since it allows rendering any HTML whatsoever. However, since it does not use anything from the provided components, the HTML generated does not reuse any styles and does not maintain a visual coherence with the page and the other components displayed on it.
@@ -916,7 +945,63 @@ window.lumapps.customize(({ targets, components, render, placement, constants })
 |-------------|----------------------------------------------------------------------------------------------|--------------|--------------------------|---------------|
 | `placement` | Where the custom component should be rendered at the specific target.                        | Yes          | [Placement](#placement)  | `undefined`   |
 | `target`    | What section of the LumApps application is targeted by this customization.                   | Yes          | [Target](#targets)       | `undefined`   |
-| `toRender`  | Single component or list of components that will be rendered at the `target` and `placement. | Yes          | Component or Component[] | `undefined`   |
+| `toRender`  | Single component or list of components that will be rendered at the `target` and `placement`. | Only  if `toRenderWithContext` is `undefined`        | Component or Component[] | `undefined`   |
+| `toRenderWithContext`  | Same as `toRender` but expects a function that will receive additional context specific to the given `target`.  | Only if `toRender` is `undefined`          | Function | `undefined`   |
+
+### Context compatible targets
+If the target allows it, the `toRenderWithContext` properties allows to render a component using additionnal context.
+
+The `render` function can be executed in order to create components that will be displayed in a given placement and target.
+
+```js
+window.lumapps.customize(({ targets, components, render, placement, constants }) => {
+    const { Card, Message } = components;
+    const { Kind } = constants;
+
+    render({
+        placement: placement.ABOVE,
+        target: targets.USER_PROFILE_ORG_CHART,
+        /**
+         * The card can use the displayed user's data.
+         */
+        toRenderWithContext: (context) => {
+            return Card({
+                className: 'user-about-page__article',
+                children: [
+                    Message({
+                        kind: Kind.info,
+                        children: `Welcome to ${context.user.fullName}'s profile`,
+                        hasBackground: true,
+                    }),
+                ],
+            });
+        },
+    });
+});
+```
+
+Here are the compatible targets and their received context:
+
+#### [Organization chart context](./capabilities#organization-chart)
+
+
+| Option      | Description | Option type |
+|-------------| ----------- | ------------ |
+ `user`  |  The currently displayed user's data.| `object`
+
+ `user` options:
+
+ | Option      | Description | Option type |
+|-------------| ----------- | ------------ |
+ `id`  |  The user's id.| `string`
+ `primaryEmail`  |  The user's email.| `string`
+ `profilePictureUrl`  |  The user's profile picture.| `string`
+ `firstName`  |  The user's first name.| `string`
+ `lastName`  |  The user's last name.| `string`
+ `fullName`  |  The user's full name, formatted using the current user's locale.| `string`
+
+
+
 
 ### session
 
@@ -1008,7 +1093,7 @@ Contains information related to the current logged in user.
 
 #### session.navigations
 
-Contains two `Promises`, one for the main navigation and another one for the subnavigation, that allow to retrieve the navigation items displayed on the site. These promises are fulfilled once the data is retrieved by the LumApps web application. 
+Contains two `Promises`, one for the main navigation and another one for the subnavigation, that allow to retrieve the navigation items displayed on the site. These promises are fulfilled once the data is retrieved by the LumApps web application.
 
 | Promise                     | Description                                                   |    Returned type |
 |-----------------------------|---------------------------------------------------------------|-------------------|
@@ -1053,19 +1138,19 @@ window.lumapps.customize(({ onNavigation }) => {
 - `currentPage`: Id of the current page.
 
 **Limitations and best practices**
-- This specific function should be used for tracking purposes as well as triggering other external services. It should not be used in combination with the `render` function, since this is not intended to work by design. Targets and placement should already help in rendering customizations on specific pages. 
+- This specific function should be used for tracking purposes as well as triggering other external services. It should not be used in combination with the `render` function, since this is not intended to work by design. Targets and placement should already help in rendering customizations on specific pages.
 
 ### api
 
 ```js
 window.lumapps.customize(({ api }) => {
     api.get('...').then((response) => {
-        
+
     });
 });
 ```
 
-`api` is an [Axios](https://github.com/axios/axios) instance that allows executing XHR requests to both LumApps api's as well as external APIs. If you want to query LumApps's services, please take into consideration that URLs need to be relative rather than absolute. So for example, if your site's URL is `https://mysite.com` and you want to query the CONTENT API in order to retrieve a specific content, you will need to use `/_ah/api/lumsites/v1/content/get` rather than `https://mysite.com/_ah/api/lumsites/v1/content/get`. 
+`api` is an [Axios](https://github.com/axios/axios) instance that allows executing XHR requests to both LumApps api's as well as external APIs. If you want to query LumApps's services, please take into consideration that URLs need to be relative rather than absolute. So for example, if your site's URL is `https://mysite.com` and you want to query the CONTENT API in order to retrieve a specific content, you will need to use `/_ah/api/lumsites/v1/content/get` rather than `https://mysite.com/_ah/api/lumsites/v1/content/get`.
 
 If you want to know which API you can use on LumApps, please take a look at the [API](https://apiv1.lumapps.com) documentation site.
 

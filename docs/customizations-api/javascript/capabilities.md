@@ -303,7 +303,7 @@ There are two targets that focus on the main navigation, each of them have a dif
 | Disable       | Can be disabled**.                                                                                                             |
 | Changing text | No compatibility                                                                                                               |
 
-**Note:**: Disabling this feature prevents the navigation from being displayed on the site, removing the entire section from your page and avoiding any XHR requests to retrieve the data. Some additional CSS is needed in order to make this customization work as expected 
+**Note:**: Disabling this feature prevents the navigation from being displayed on the site, removing the entire section from your page and avoiding any XHR requests to retrieve the data. Some additional CSS is needed in order to make this customization work as expected
 
 |               |                                                   |
 |---------------|---------------------------------------------------|
@@ -380,6 +380,26 @@ Target that allows customizing the [user profile page](https://docs.lumapps.com/
 #### Use cases
 
 - [Display a message above all pages of a certain type](./use-cases#display-a-message-above-all-pages-of-a-certain-type)
+
+### Organization chart
+
+Target that allows customizing the user organization chart.
+
+![Target user organization chart](./assets/target-organization-chart.png "Target user organization chart")
+
+#### Compatibility
+
+|               |                                                                                                                  |
+|---------------|------------------------------------------------------------------------------------------------------------------|
+| Target ID     | `user-profile-org-chart`                                                                                                        |
+| Description   | Target the organization chart section of a user's profile.                                                                                    |
+| Placements    | Compatible with placements: `ABOVE`, `UNDER`. Customizations will be added as siblings of the displayed user's organization chart. |
+| Disable       | No compatibility                                                                                                 |
+| Changing text | No compatibility                                                                                                 |
+
+**Notes:**
+* The `User space` feature flag must be enabled in order to access the new user profile experience.
+* The displayed user's data can be retrieved using [context](./api#organization-chart-context).
 
 ### Search
 
@@ -558,7 +578,7 @@ Dynamic target that allows customizing the surroundings of a [widget](https://do
 
 **Notes:**
 - `id` can be retrieved by inspecting the HTML of your content and retrieving the id. Without the `id`, the target will be considered as invalid
-- Additional CSS might be needed, depending on the nature of your customization and the layout of your content page   
+- Additional CSS might be needed, depending on the nature of your customization and the layout of your content page
 
 #### Use cases
 
