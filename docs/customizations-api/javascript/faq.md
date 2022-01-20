@@ -47,6 +47,20 @@ As we have mentioned on the [use cases documentation](./use-cases), some customi
 - Customizations like disabling the navigation have a server side rendered component, which is, as of today, impossible to customize using just JS. In order to disable the navigation, a small JS snippet needs to be added as well as some CSS in order to hide the pre-rendered navigation that our backend service returns for displaying the application.
 - Depending on where you are hosting your JS script code, there might be a moment when the feature that you want to disable is still visible in the application while your code is downloading. In order to avoid this scenario, we ask developers to ensure that they will be correctly disabling their features with adding some CSS code in order to hide those components while the actual disabling code is being loaded.
 
-# Responsive navigation and customizations
+## Responsive navigation and customizations
 
 We currently do not support any changes whatsoever when it comes to the responsive navigation of your web application. This means that using the target `NAVIGATION` and adding a customization does not have any impact whatsoever when it comes to the responsive version.
+
+## How to remove a customization?
+
+In order to remove a customization you can render a `null` for a given target and placement:
+
+```js
+window.lumapps.customize(({ targets, placement }) => {
+    render({
+        placement: placement.ABOVE,
+        target: targets.PAGE,
+        toRender: null,
+    });
+});
+```
