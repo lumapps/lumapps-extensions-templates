@@ -319,7 +319,7 @@ There are two targets that focus on the main navigation, each of them have a dif
 |---------------|--------------------------------------------------------------------------------------------------------------------------------|
 | Target ID     | `navigation`                                                                                                                   |
 | Description   | Target for the entire main navigation feature of your site.                                                                    |
-| Placements    | Compatible with placements: `LEFT`, `RIGHT`. Customizations will be added as siblings of the other navigation items displayed. |
+| Placements    | Compatible with placements: `LEFT`, `RIGHT` (customizations will be added as siblings of the other navigation items displayed) and `ABOVE`, `UNDER` ( Customizations will be added as siblings of the navigation itself) |
 | Disable       | Can be disabled**.                                                                                                             |
 | Changing text | No compatibility                                                                                                               |
 
@@ -563,7 +563,7 @@ Target that allows deactivating that your site's header has a sticky behaviour, 
 
 - [Disable the sticky header](./use-cases#disable-the-sticky-header)
 
-### Navigation
+### Sub Navigation
 
 Target that allows customizing the [sub navigation](https://docs.lumapps.com/docs/explore-l0914183586055497inheritance) of your site, which is the second navigation displayed on your top bar when your site has a parent site and the navigation inheritance feature is activated
 
@@ -577,7 +577,7 @@ There are two targets that focus on the sub navigation, each of them have a diff
 |---------------|--------------------------------------------------------------------------------------------------------------------------------|
 | Target ID     | `sub-navigation`                                                                                                               |
 | Description   | Target for the entire sub navigation feature of your site *.                                                                   |
-| Placements    | Compatible with placements: `LEFT`, `RIGHT`. Customizations will be added as siblings of the other navigation items displayed. |
+| Placements    | Compatible with placements: `LEFT`, `RIGHT` (customizations will be added as siblings of the other navigation items displayed) and `ABOVE`, `UNDER` ( customizations will be added as siblings of the navigation itself) |
 | Disable       | Can be disabled.                                                                                                               |
 | Changing text | No compatibility                                                                                                               |
 
