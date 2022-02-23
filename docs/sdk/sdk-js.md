@@ -117,6 +117,7 @@ With this hook you can access:
  - thumbnail photo URL
  - token
  - apiProfile
+ - accountType
 
 ```javascript
 import React, { FC, useMemo } from 'react';
@@ -125,7 +126,7 @@ import React, { FC, useMemo } from 'react';
 import { useCurrentUser } from 'lumapps-sdk-js';
 
 export const HelloWidget: FC = () => {
-    const { email, fullName, thumbnailPhotoUrl, apiProfile } = useCurrentUser();
+    const { email, fullName, thumbnailPhotoUrl, apiProfile, accountType } = useCurrentUser();
 
     const welcomeMessage = useMemo(() => {
         return (
@@ -202,6 +203,34 @@ export const HelloWidget: FC = () => {
     return (
         <>
             {welcomeMessage}
+        </>
+    );
+};
+```
+
+### useFeatureEnabled
+This hook tells you if a lumapps feature is enabled or not: 
+
+```javascript
+import React, { FC, useMemo } from 'react';
+
+
+import { useFeatureEnabled } from 'lumapps-sdk-js';
+
+export const HelloWidget: FC = () => {
+    const isCommunityAvailable = useFeatureEnabled('community');
+
+    const message = useMemo(() => {
+        return (
+            <p>
+                is community feature is enabled : {isCommunityAvailable ? 'Yes' : 'No'}.
+            </p>
+        );
+    }, [isCommunityAvailable]);
+
+    return (
+        <>
+            {message}
         </>
     );
 };
