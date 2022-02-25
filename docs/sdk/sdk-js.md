@@ -218,15 +218,15 @@ import React, { FC, useMemo } from 'react';
 import { useFeatureEnabled } from 'lumapps-sdk-js';
 
 export const HelloWidget: FC = () => {
-    const isCommunityAvailable = useFeatureEnabled('community');
+    const isCommunityEnabled = useFeatureEnabled('community');
 
     const message = useMemo(() => {
         return (
             <p>
-                is community feature is enabled : {isCommunityAvailable ? 'Yes' : 'No'}.
+                Community feature enabled : {isCommunityEnabled ? 'Yes' : 'No'}.
             </p>
         );
-    }, [isCommunityAvailable]);
+    }, [isCommunityEnabled]);
 
     return (
         <>
