@@ -7,4 +7,4 @@ has_children: false
 
 # LumApps API
 
-The LumApps API documentation is available [here](https://api.lumapps.com/docs/start) 
+The LumApps API documentation is available [here](https://apiv1.lumapps.com) 
