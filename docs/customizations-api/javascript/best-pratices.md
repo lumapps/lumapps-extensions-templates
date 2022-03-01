@@ -98,6 +98,55 @@ Furthermore, not using the Customizations API in order to change the markup of t
 
 As of right now, we do not provide support for executing the `render` function from a callback, for example, after the user has clicked on a button and the `onClick` function was called. As for now, we only support executing `render` on the application's start up.
 
+## Executing code after an HTML customization has rendered
+
+Consider the use case where you want to execute a JS code that manipulates the DOM of a certain HTML that you have rendered on LumApps using the customizations API:
+
+```js
+window.lumapps.customize(({ targets, components, render, placement, constants, session }) => {
+    const { RawHTML } = components;
+
+    render({
+        placement: placement.RIGHT,
+        target: targets.LOGO,
+        toRender: RawHTML({
+            className: 'raw_html',
+            html: '<input id="input" />'
+        }),
+    });
+
+    const input = document.getElementById('input');
+
+    console.log(input);
+});
+```
+
+That code won't print 100% of the times an actual reference to the input, as we mentioned before, the Customizations API renders the customizations in a very specific way, tapping into LumApps internal rendering process. This means that when `document.getElementById` is executed, the `input` might have not yet been rendered on the page.
+
+In this scenario, it is best to execute your code with a small delay, by using `window.setTimeout` for example:
+```js
+window.lumapps.customize(({ targets, components, render, placement, constants, session }) => {
+    const { RawHTML } = components;
+
+    render({
+        placement: placement.RIGHT,
+        target: targets.LOGO,
+        toRender: RawHTML({
+            className: 'raw_html',
+            html: '<input id="input" />'
+        }),
+    });
+
+    window.setTimeout(() => {
+        const input = document.getElementById('input');
+
+        console.log(input);
+    }); // Consider adding some miliseconds to this callback if the contents that you are rendering take a significant time to render.
+});
+```
+
+**IMPORTANT**: This will only work while using the `RawHTML` component, using this snippet with other components is not supported.
+
 ## No need to use DOMContentLoaded
 
 In order to execute your customizations, there is no need to execute them inside an event listener for `DOMContentLoaded`. This is already taken care of by the customizations API, and it might result on displaying your customizations after the first paint of the page is executed, which can not be the best user experience.
