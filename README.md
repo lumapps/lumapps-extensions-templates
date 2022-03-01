@@ -4,7 +4,7 @@ A set of templates to kick-start your LumApps extensions development
 To create an extension from a template
 
 ```bash
-  yarn create lumapps-extension <project-name>
+  npx create-lumapps-extension <project-name>
   cd <project-name>
   yarn
   yarn start  
@@ -22,7 +22,7 @@ Available templates:
 To scaffold with specific template:
 
 ```bash
-$ yarn create lumapps-extension my-lumapps-extension-project --template widget-extension
+$ npx create-lumapps-extension my-lumapps-extension-project --template widget-extension
 ```
 
 ## Documentation

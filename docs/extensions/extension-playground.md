@@ -33,12 +33,10 @@ You use the playground to create and run an extension project, using either your
 2. Use the latest LTS version of [NodeJS releases](https://nodejs.org/en/about/releases/), you can use tools like [n](https://github.com/tj/n) or [nvm](https://github.com/nvm-sh/nvm) to easily manage your NodeJS versions.
 
 ### Use the CLI
-1. Install the LumApps extension template, a library to kick-start your extensions: 
-   - [https://github.com/lumapps/lumapps-extensions-templates](https://github.com/lumapps/lumapps-extensions-templates)
-2. Then you can run the following commands to create, initiate and launch your extension:
+You can run the following commands to create, initiate and launch your extension:
 
 ```shell
-yarn create lumapps-extension <extension-name>
+npx create-lumapps-extension <extension-name>
 cd <extension-name>
 yarn 
 yarn start
@@ -85,7 +83,7 @@ If you are logged in, you can access a back office interface. You can access thi
 
 #### Extensions manager
 
-![Playground Back Office- Extensions manager](./playground-bo-extlist.png "Playground Back Office- Extensions manager")
+![Playground Back Office- Extensions manager](playground-bo-extlist.png "Playground Back Office- Extensions manager")
 
 In this view, you will find all the extensions you already deployed on you LumApps test platform.
 
