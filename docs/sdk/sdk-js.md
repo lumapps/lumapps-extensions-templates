@@ -75,6 +75,7 @@ The SDK also embeds some helpers:
 ### useContext
 Use this hook to retrieve the context around the widget extension (when added in a LumApps content): 
  - contentId
+ - isDesignerMode
  - instanceId
  - baseUrl
  - environment ('production' or 'development')
@@ -85,7 +86,7 @@ import React, { FC, useMemo } from 'react';
 import { useContext } from 'lumapps-sdk-js';
 
 export const HelloWidget: FC = () => {
-    const { contentId, instanceId, baseUrl, environment } = useContext();
+    const { contentId, instanceId, baseUrl, environment, isDesignerMode } = useContext();
 
     const welcomeMessage = useMemo(() => {
         return (
@@ -94,6 +95,9 @@ export const HelloWidget: FC = () => {
             </p>
             <p>
                 The environment is {environment}
+            </p>
+            <p>
+                You are on designer mode : {isDesignerMode ? `True`: `False`}
             </p>
         );
     }, [emaicontentIdl, contentId]);
