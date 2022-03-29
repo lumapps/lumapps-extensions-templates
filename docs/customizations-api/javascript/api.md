@@ -407,7 +407,7 @@ window.lumapps.customize(({ components, constants }) => {
 | `fillSpace`   | Boolean that determines whether the "content filling space" is enabled or not.               | No           | `boolean`                               | `false`       |
 | `noShrink`    | Boolean that determines whether the "content shrink" is disabled or not.                     | No           | `boolean`                               | `false`       |
 | `wrap`        | Boolean that determines whether the "flex wrap" is enabled or not.                           | No           | `boolean`                               | `false`       |
-| `gapSize`     | Boolean that determines whether the "flex wrap" is enabled or not.                           | No           | boolean`                                | `undefined`   |
+| `gapSize`     | Boolean that determines whether the "flex wrap" is enabled or not.                           | No           | `boolean`                               | `undefined`   |
 | `hAlign`      | Flex horizontal alignment.                                                                   | No           | [Alignment](#alignment)                 | `undefined`   |
 | `vAlign`      | Flex vertical alignment.                                                                     | No           | [Alignment](#alignment)                 | `undefined`   |
 
@@ -642,12 +642,14 @@ window.lumapps.customize(({ components, constants }) => {
 
 RawHTML is a helper component that can be used when we need to render a specific HTML structure that cannot be achieved without using the out-of-the-box components of the Customizations API. It is definitely a powerful component, since it allows rendering any HTML whatsoever. However, since it does not use anything from the provided components, the HTML generated does not reuse any styles and does not maintain a visual coherence with the page and the other components displayed on it.
 
+If you are looking for a component to render simple text HTML tags like `span`, `p` or `h1`, please take a look at the [Text](#text) component.
+
 ```js
 window.lumapps.customize(({ components }) => {
     const { RawHTML } = components;
 
     const component = RawHTML({
-        html: '<span>This is a custom HTML</span>'
+        html: '<div>This is a custom HTML</div>'
     });
 });
 ```
@@ -658,6 +660,32 @@ window.lumapps.customize(({ components }) => {
 |-------------|---------------------------------------------------------------------|--------------|-----------------------------------------|---------------|
 | `html`      | HTML to render.                                                     | Yes          | `string`                                | `undefined`   |
 | `className` | CSS class that will be applied directly into the wrapper container. | No           | `string` or [css classes](#css-classes) | `undefined`   |
+
+#### Text
+
+```js
+window.lumapps.customize(({ components, constants }) => {
+    const { Text } = components;
+    const { ColorPalette, Typography } = constants;
+
+    const component = Text({
+        children: 'Hello!',
+        color: ColorPalette.blue,
+        textAs: 'h2',
+    });
+});
+```
+
+`Text` options:
+
+| Option       | Description                                                         | Is required? | Option type                             | Default Value |
+|--------------|---------------------------------------------------------------------|--------------|-----------------------------------------|---------------|
+| `children`   | Text to be displayed.                                               | Yes          | `string`                                | `undefined`   |
+| `children`   | Text to be displayed.                                               | Yes          | `string`                                | `undefined`   |
+| `textAs`     | HTML tag to use for the displayed text.                             | No           | `span`, `p`, `h1, h2, h3, h4..`, 'label'| `undefined`   |
+| `className`  | CSS class that will be applied directly into the wrapper container. | No           | `string` or [css classes](#css-classes) | `undefined`   |
+| `color`      | Color to be used for the button component.                          | No           | [`ColorPalette`](#color-palette)        | `ColorPalette.primary` |
+| `typography` | Typography variant.                                                 | No           | [`Typography`](#typography)             | `Typography.body1`   |
 
 #### Thumbnail
 
@@ -947,6 +975,7 @@ window.lumapps.customize(({ targets, components, render, placement, constants })
 |-------------|----------------------------------------------------------------------------------------------|--------------|--------------------------|---------------|
 | `placement` | Where the custom component should be rendered at the specific target.                        | Yes          | [Placement](#placement)  | `undefined`   |
 | `target`    | What section of the LumApps application is targeted by this customization.                   | Yes          | [Target](#targets)       | `undefined`   |
+| `targets`   | What sections of the LumApps application are targeted by this customization.                 | No           | List of [Target](#targets)   | `undefined`   |
 | `toRender`  | Single component or list of components that will be rendered at the `target` and `placement`. | Only  if `toRenderWithContext` is `undefined`        | Component or Component[] | `undefined`   |
 | `toRenderWithContext`  | Same as `toRender` but expects a function that will receive additional context specific to the given `target`.  | Only if `toRender` is `undefined`          | Function | `undefined`   |
 
