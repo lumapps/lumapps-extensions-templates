@@ -612,10 +612,10 @@ window.lumapps.disable('sticky-header');
 The following customization adds an HTML block at the top of the given widget.
 
 ```js
-window.lumapps.customize(({ components, placement }) => {
+window.lumapps.customize(({ components, placement, render }) => {
     const { RawHTML } = components;
 
-    props.render({
+    render({
         placement: placement.ABOVE,
         // ID retrieved from inspecting the HTML of the page and focusing on the `article` tag that surrounds the widget.`
         target: 'widget-b14fc167-f5e3-4cbb-a215-7111103eeafb',
@@ -626,9 +626,33 @@ window.lumapps.customize(({ components, placement }) => {
 });
 ```
 
+In the scenario where you want to display a customization on a widget on both the Next Gen Interface as well as the Legacy interface, you can use the `targets` property
+to render the same customization on both interfaces.
+
+```js
+window.lumapps.customize(({ components, placement }) => {
+    const { RawHTML } = components;
+
+    props.render({
+        placement: placement.ABOVE,
+        targets: 
+            [
+                // ID retrieved from inspecting the HTML of the page and focusing on the `article` tag that surrounds the widget
+                // The attribute to retrieve is `id`
+                'widget-b14fc167-f5e3-4cbb-a215-7111103eeafb',
+                // ID retrieved from inspecting the HTML of the page and focusing on the `div` tag that surrounds the widget
+                // The attribute to retrieve is `id`
+                'widget-744017b8-a61e-11ec-be8f-bdc334d7377c-5086421325447168',
+            ],
+        toRender: RawHTML({
+            html: 'widget customization!',
+        }),
+    });
+});
+```
+
 **Use case limitations and best practices**
 - This use case should only be used when the other customization options for a widget are not enough.
-- This will only work on widgets displayed using the Next Gen Interface
 
 ## Adding components to the main navigation
 

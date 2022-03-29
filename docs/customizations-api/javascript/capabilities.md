@@ -598,12 +598,13 @@ There are two targets that focus on the sub navigation, each of them have a diff
 - [Hide the entire navigation on your site](./use-cases#hide-the-entire-navigation-on-your-site)
 - [Create a custom navigation for your site](./use-cases#create-a-custom-navigation-for-your-site)
 
-### Widget
+### Widget - NGI
 
-Dynamic target that allows customizing the surroundings of a [widget](https://docs.lumapps.com/docs/explore-l8845750598632305)
+Dynamic target that allows customizing the surroundings of a [widget](https://docs.lumapps.com/docs/explore-l8845750598632305) in the Next Gen Interface.
 
 **IMPORTANT:**
 - This is only compatible with pages rendered in the Next Gen Interface.
+- This is only compatible with HTML widgets
 - This target should only be used for customizing an existing widget. For creating new custom widgets, please create an [extension](../../extensions/index.md)
 
 #### Compatibility
@@ -618,6 +619,39 @@ Dynamic target that allows customizing the surroundings of a [widget](https://do
 
 **Notes:**
 - `id` can be retrieved by inspecting the HTML of your content and retrieving the id. Without the `id`, the target will be considered as invalid
+
+![Target Widget NGI](./assets/target-widget-ngi.png "Target Widget NGI")
+
+- Additional CSS might be needed, depending on the nature of your customization and the layout of your content page
+
+#### Use cases
+
+- [Adding a customization to a widget](./use-cases#adding-a-customization-to-a-widget)
+
+### Widget - Legacy Interface
+
+Dynamic target that allows customizing the surroundings of a [widget](https://docs.lumapps.com/docs/explore-l8845750598632305) in the Legacy Interface
+
+**IMPORTANT:**
+- This is only compatible with pages rendered in the Legacy interface.
+- This is only compatible with HTML widgets
+- This target should only be used for customizing an existing widget. For creating new custom widgets, please create an [extension](../../extensions/index.md)
+
+#### Compatibility
+
+|               |                                                                       |
+|---------------|-----------------------------------------------------------------------|
+| Target ID     | `widget-{<id>}` *                                                     |
+| Description   | Dynamic target that allows customizing the surroundings of a [widget] |
+| Placements    | Compatible with placements: `ABOVE`, `UNDER` **                       |
+| Disable       | No compatibility                                                      |
+| Changing text | No compatibility                                                      |
+
+**Notes:**
+- `id` can be retrieved by inspecting the HTML of your widget and retrieving the id from the surrounding container of the widget. Without the `id`, the target will be considered as invalid
+
+![Target Widget Legacy](./assets/target-widget-legacy.png "Target Widget Legacy")
+
 - Additional CSS might be needed, depending on the nature of your customization and the layout of your content page
 
 #### Use cases
