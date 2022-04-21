@@ -250,7 +250,7 @@ This helper ease the ReactJS useState usage for boolean values.
 import React, { FC, useMemo } from 'react';
 import { ExpansionPanel } from '@lumx/react';
 
-import { useBooleanState } from 'lumapps-sdk-js/helpers';
+import { useBooleanState } from 'lumapps-sdk-js';
 
 export const HelloWidget: FC = () => {
     const [isPanelOpen, togglePanel, closePanel] = useBooleanState(!parameters.isCollapsed);
@@ -277,7 +277,7 @@ import React, { FC, useMemo } from 'react';
 import { ExpansionPanel } from '@lumx/react';
 import { callAPI } from './api';
 
-import { useDebounce } from 'lumapps-sdk-js/helpers';
+import { useDebounce } from 'lumapps-sdk-js';
 
 export const HelloWidget: FC = () => {
     const [value, setValue] = useState();
@@ -325,7 +325,7 @@ import React, { FC, useMemo } from 'react';
 import { ExpansionPanel } from '@lumx/react';
 import { callAPI } from './api';
 
-import { useDebounce, useExportProps } from 'lumapps-sdk-js/helpers';
+import { useDebounce, useExportProps } from 'lumapps-sdk-js';
 
 export const HelloWidget: FC = ({ properties = {}, exportProp }: any) => {
     const [value, setValue] = useState();
