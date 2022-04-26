@@ -696,26 +696,17 @@ window.lumapps.customize(({ targets, components, render, placement }) => {
 
 ## Querying an external service
 
-Sometimes in order to customize your site, you will need to execute an XHR request in order to obtain data from an external service. For example, let's say that you want to display the current weather in Paris on all your pages. For that, we can use an external service like [AccuWeather](https://developer.accuweather.com/) in order to retrieve that data, and then display it using the Customizations API.
+Sometimes in order to customize your site, you will need to execute an XHR request in order to obtain data from an external service. For example, let's say that you want to display the current weather in Paris on all your pages. For that, we can use an external service like [Open Weather map](https://openweathermap.org/) in order to retrieve that data, and then display it using the Customizations API.
 
 ```js
 window.lumapps.customize(({ api, components, render, constants, placement, targets }) => {
     const { FlexBox, RawHTML } = components;
     const { Orientation } = constants;
 
-    /**
-     * api is an axios instance that allows you to execute external and internal XHR requests. Please take a look at the specific documentation for this in the detailed API section.
-     */
-    api.get('https://dataservice.accuweather.com/currentconditions/v1/623?apikey=<YOUR API KEY FOR ACCUWEATHER>', {
-        headers: {
-            'Sec-Fetch-Mode': 'cors',
-            'Sec-Fetch-Site': 'cross-site',
-            'Sec-Fetch-Dest': 'empty',
-        },
-    }).then((response) => {
-        const { data } = response;
-
-        const currentWeather = `<span>Weather in Paris: ${data[0].WeatherText} (${data[0].Temperature.Metric.Value} C)</span>`;
+    fetch('https://api.openweathermap.org/data/2.5/weather?lat=48.8563223&lon=2.3159289&units=metric&appid=<YOUR APP ID>')
+    .then((response) => response.json())
+    .then((data) => {
+        const currentWeather = `<span>Weather in Paris: ${data.weather[0].main} (${data.main.temp} C)</span>`;
 
         render({
             placement: placement.ABOVE,
@@ -747,7 +738,7 @@ window.lumapps.customize(({ api, components, render, constants, placement, targe
     const { Orientation } = constants;
 
     /**
-     * api is an axios instance that allows you to execute external and internal XHR requests. Please take a look at the specific documentation for this in the detailed API section.
+     * api is an axios instance that allows you to execute internal XHR requests only. Please take a look at the   specific documentation for this in the detailed API section.
      */
     api.get('/_ah/api/lumsites/v1/stockexchange/get?symbol=STOCK').then((response) => {
         const { data } = response;
