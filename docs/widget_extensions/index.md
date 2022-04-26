@@ -90,9 +90,10 @@ Within the LumApps platform, your extension widget components will receive diffe
 | --------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------- |
 | **value**       | Content                    | JSON object with the value of the settings define in the Settings component.                                        |
 | **globalValue** | Content                    | JSON Object with the value settings defined in the Global Settings component.                                       |
-| **Theme**       | Content                    | LumApps Design System type to indicates the current them apply to your component (`Theme.Light` or `Theme.Dark`). |
+| **Theme**       | Content                    | LumApps Design System type to indicates the current them apply to your component (`Theme.Light` or `Theme.Dark`).   |
 | **properties**  | Settings / Global Settings | JSON object containing the value of the settings defined by the user.                                               |
 | **exportProps** | Settings / Global Settings | Function used to export the values of the settings and refresh the content component with the new settings values.  |
+| **extensionId** | All                        | The extension ID                                                                                                    |
 
 
 

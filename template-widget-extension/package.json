@@ -39,7 +39,7 @@
     "@lumx/react": "^2.2.3",
     "axios": "0.21.4",
     "lodash": "4.17.21",
-    "lumapps-sdk-js": "^1.8.0",
+    "lumapps-sdk-js": "^1.9.0",
     "moment": "^2.29.1",
     "moment-range": "^4.0.2",
     "react": "^16.13.1",
@@ -49,7 +49,7 @@
     "reselect": "4.0.0"
   },
   "devDependencies": {
-    "@lumapps-extensions-playground/devenv": "^1.14.0",
+    "@lumapps-extensions-playground/devenv": "^1.15.0",
     "@lumapps-extensions/shipping-server": "^1.5.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
