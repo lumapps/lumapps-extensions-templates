@@ -1,48 +1,69 @@
 ---
 layout: default
-title: Partner
+title: Enroll as a Partner
 nav_order: 2
 has_children: false
 ---
 
-# Partner management
+# Become a Marketplace Partner
 
 <h6>Table of Contents</h6>
 
-- [Partner management](#partner-management)
-  - [Registering and managing partner organization](#registering-and-managing-partner-organization)
-    - [How to register an organization](#how-to-register-an-organization)
-    - [Why my request to enter LumApps Market may be rejected?](#why-my-request-to-enter-lumapps-market-may-be-rejected)
-  - [Manage my partner organization](#manage-my-partner-organization)
+- [Become a Marketplace Partner](#become-a-marketplace-partner)
+  - [Enroll in the Developer program](#enroll-in-the-developer-program)
+    - [Rejected requests](#rejected-requests)
+  - [Register your Partner organization](#register-your-partner-organization)
+  - [Manage your partner organization](#manage-your-partner-organization)
 
-This guide explains how to register a developer organization, which enables you to manage and build extensions for the LumApps marketplace. 
+## Enroll in the Developer program
 
+Before you can start creating extensions, you need to be part of the LumApps Developer Program. If this is not yet done, [request to enroll in the LumApps developer program](https://developer.lumapps.com/register). Once you have filled out and submitted the form, if your request is accepted, you will receive an email. Inside this email, you need to click the link asking to create your secure and private development environment. This is where you will register your partner organization.
 
-## Registering and managing partner organization
-Before you start developing for the LumApps Marketplace you need a declared partner organization.
-A partner organization is a set of information to identify the owner of an extension, to give us and the customer a way to contact you.
+### Rejected requests
 
-### How to register an organization
-After requesting access to the LumApps marketplace program, if your request is accepted we will contact you to have information about your organization. 
-The following information will be used by LumApps to register your partner organization in the LumApps Marketplace and to generate your LumApps test platform.
-You'll receive all needed information to start working on your extension as soon as your environment is set up on LumApps.
+We may reject your request to enter the LumApps developer program for several reasons:
 
-Needed information : 
+-   Your project cannot be done with the LumApps Marketplace.
+-   We could not verify the information you set (company website not found, company name and website do not match, etc.).
+-   The email domain does not match the company URL provided.
 
-| Information        | Description                                                                                                                                                |
-| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Organization name  | The name of your organization.                                                                                                                             |
-| Organization URL   | URL of your organization’s website. The organization URL domain must match the contact email domain. We may reject your registration if it does not match. |
-| Organization email | Your support email address used to be contacted by LumApps or customers for support.                                                                        |
-| Phone Number       | A phone number to reach your support. This information is not mandatory.                                                                                   |
+## Register your Partner organization
 
-### Why my request to enter LumApps Market may be rejected?
-We may reject your request to enter the LumApps marketplace program for several reasons: 
- - The organization name is too similar to an existing organization
- - We could not verify the information you set (organization website not found, organization name and website does not match, etc.)
- - The email domain does not match the organization URL provided
- - The project is not possible with the LumApps marketplace
+Once you are enrolled in the developer program, you need to create a partner organization. A partner organization is your identity on the LumApps Marketplace. The partner organization is listed as the owner of the extensions you create.
 
-## Manage my partner organization
-Your partner information are available in the LumApps extension playground, in the back office interface.
-As for now you cannot edit your partner information by yourself. You need to contact the LumApps marketplace support if you want to edit any of your partner organization information.   
+There are two steps to register your partner organization:
+
+-   Create your private GitHub repository dedicated your marketplace extensions.
+-   Create your a platform dedicated to test your marketplace extensions.
+
+For the GitHub repository, we need several pieces of information:
+
+| Information        | Description                                                               |
+| ------------------ | ------------------------------------------------------------------------- |
+| Organization name  | The name your want to give your partner organization.  We recommend that you use the name of your company.     |
+| Developer name     | First and last name of the main (or first) developer for the marketplace extensions. |
+| Developer email    | Email address of the main (or first) developer for the marketplace extensions.       |
+| GitHub login       | The GitHub identity of the main developer for the Marketplace extensions. |
+
+>**Note:** You will be able to add more developers later on.
+
+For the Marketplace test platform, we need several pieces of information:
+
+| Information        | Description                                                                              |
+| ------------------ | ---------------------------------------------------------------------------------------- |
+| Datacenter  | Choose where your information is hosted: Europe or USA.       |
+| Company's website  | Link to your company's website.                                                          |
+| Company's name | Name of your company.                                                                        |
+| Company's contact | Your support email address to be contacted by LumApps or customers for support.           |
+| Icon for your company  | URL to the logo of your company.                                                     |
+| Description of your company  | Describe what your company does in a few words.                                |
+| Platform administrator name  | First and last name of your first global administrator for this test platform. |
+| Platform administrator email | Email of your first global administrator for this test platform.               |
+
+>**Note:** You will be able to add more global administrators later on.
+
+LumApps uses the information to register your partner organization in the LumApps Marketplace and to generate your test platform. Once the form submitted, we will send an email with all the necessary information to start working on your extensions.
+
+## Manage your partner organization
+
+Your partner organization information are available in the LumApps extension playground, in the back office interface. As for now you cannot edit your partner information by yourself. You need to contact the LumApps marketplace support team if you want to edit any of your partner organization information.   
