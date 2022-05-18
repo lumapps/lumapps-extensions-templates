@@ -46,8 +46,7 @@ async function init() {
 		const choices = [
 			{key: 1, name: 'Widget Extension', value: 'widget-extension'},
 			{key: 2, name: 'Share Extension', value: 'share-extension'},
-			{key: 3, name: 'Empty Extension', value: 'empty-extension'},
-			{key: 4, name: 'Search Extension - BETA', value: 'search-extension'}
+			{key: 3, name: 'Empty Extension', value: 'empty-extension'}
 		];
 		
 		choice = await inquirer.prompt({

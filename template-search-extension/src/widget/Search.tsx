@@ -1,1 +1,0 @@
-export { searchFunction as Search } from './Search/index';
