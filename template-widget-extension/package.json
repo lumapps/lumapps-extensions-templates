@@ -1,6 +1,6 @@
 {
   "name": "template-react-ts",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "private": true,
   "scripts": {
     "check": "tsc --noEmit",
@@ -49,8 +49,8 @@
     "reselect": "4.0.0"
   },
   "devDependencies": {
-    "@lumapps-extensions-playground/devenv": "^1.16.0",
-    "@lumapps-extensions/shipping-server": "^1.6.0",
+    "@lumapps-extensions-playground/devenv": "^1.17.0",
+    "@lumapps-extensions/shipping-server": "^1.7.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
