@@ -1,6 +1,6 @@
-import { ExtensionInput, ExtensionOutput, LOADING_STATUS } from '../../types';
+import { SearchExtensionInput, SearchExtensionOutput, LOADING_STATUS } from 'lumapps-sdk-js';
 
-export const searchFunction = async ({ query, page, pageSize }: ExtensionInput): Promise<ExtensionOutput> => {
+export const searchFunction = async ({ query, page, pageSize }: SearchExtensionInput): Promise<SearchExtensionOutput> => {
     // Search functionnality ....
     return {
         results: [],
