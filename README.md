@@ -7,7 +7,7 @@ To create an extension from a template
   npx create-lumapps-extension <project-name>
   cd <project-name>
   yarn
-  yarn start  
+  yarn start
 ```
 
 ## Templates
@@ -17,6 +17,7 @@ Available templates:
 - `widget-extension`
 - `share-extension`
 - `empty-extension`
+- `search-extension`
 
 
 To scaffold with specific template:
