@@ -1,11 +1,11 @@
-import { SearchExtensionInput, SearchExtensionOutput, RESULT_STATUS } from 'lumapps-sdk-js';
+import { SearchExtensionInput, RESULT_STATUS, SearchExtensionOutput } from 'lumapps-sdk-js';
 
-export const searchFunction = async ({ query, page, pageSize }: SearchExtensionInput): Promise<SearchExtensionOutput> => {
+export const searchFunction = ({ query, page, pageSize }: SearchExtensionInput): SearchExtensionOutput => {
     // Search functionnality ....
-    return {
+    return Promise.resolve({
         results: [],
         totalCount: 0,
         hasMore: false,
         status: RESULT_STATUS.FETCHED,
-    }
+    })
 }
