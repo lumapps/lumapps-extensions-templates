@@ -21,9 +21,6 @@ The playground also lets you connect your extension with your LumApps test platf
     -   [Playground interfaces](#playground-interfaces)
         -   [Local test](#local-test)
         -   [Login](#login)
-        -   [Deployment manager](#deployment-manager)
-        -   [Back Office interface](#back-office-interface)
-            -   [Extensions manager](#extensions-manager)
 
 ## Prerequisites
 
@@ -52,15 +49,16 @@ You are redirected to the playground interface. Our playground offers multiple f
 
 Sign in to the playground with your LumApps test platform credentials. When you are logged in, your account is used by the SDK to emulate the current connected user. The login feature also gives you access to administration feature within the playground.
 
-
 ### Mocked data
 
 With the Playground, we mock the information you can retrieve with the LumApps JavaScript SDK, if you want to use real data, you can log in to the playground with your LumApps test account. It will replace the following mocked information:
- -  **Current connected user** - The SDK will use your user as the current connected user for your extension.
- -  **Instance ID** - The instance ID will be your LumApps Test Platform ID
+
+-   **Current connected user** - The SDK will use your user as the current connected user for your extension.
+-   **Instance ID** - The instance ID will be your LumApps Test Platform ID
 
 Another solution to edit mocked data is to use the playground settings dialog. You can set up the following information:
- - **Base URL** - By editing the HTTP Origin field
- - **Content ID** - You can define a specific content ID to be used by the LumApps JavaScript SDK
+
+-   **Base URL** - By editing the HTTP Origin field
+-   **Content ID** - You can define a specific content ID to be used by the LumApps JavaScript SDK
 
 The last possibility is to edit the language field in the Quick actions section of the left panel to set a specific language and test the translations of your extension.
