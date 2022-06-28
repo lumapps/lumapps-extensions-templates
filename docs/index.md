@@ -9,18 +9,19 @@ has_children: false
 
 <h6>Table of Contents</h6>
 
-- [Get started with building LumApps extensions](#get-started-with-building-lumapps-extensions)
-  - [Terminology](#terminology)
-  - [Marketplace](#marketplace)
-  - [Type of extensions](#type-of-extensions)
-  - [Lifecycle of an extension](#lifecycle-of-an-extension)
+-   [Get started with building LumApps extensions](#get-started-with-building-lumapps-extensions)
+    -   [Terminology](#terminology)
+    -   [Marketplace](#marketplace)
+    -   [Type of extensions](#type-of-extensions)
+    -   [Lifecycle of an extension](#lifecycle-of-an-extension)
 
 ## Terminology
 
 -   **Marketplace**: The marketplace is a place where you can install extensions built either by LumApps or by partner organizations.
 -   **Extension**: An extension is a program which offers additional capabilities to your platform. Extensions can be public or private.
--   **Playground**: The playground is the place where you can build and preview extensions.
 -   **Partner Organization**: A partner organization is a contributor to the Marketplace. If you are building extensions, you are a partner organization.
+-   **Developer Portal**: The developer portal is the administration where you can manage your extensions.
+-   **Playground**: The playground is the place where you can build and preview extensions.
 -   **Test platform**: The test platform is a platform parallel to your production platform on which you can test your extensions.
 
 ## Marketplace

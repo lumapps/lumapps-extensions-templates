@@ -9,41 +9,39 @@ has_children: false
 
 <h6>Table of Contents</h6>
 
-- [Get to know your tools](#get-to-know-your-tools)
-  - [Playground](#playground)
-    - [Settings (opt.)](#settings-opt)
-    - [Current state](#current-state)
-    - [Quick actions](#quick-actions)
-    - [Extension preview](#extension-preview)
-    - [Playground settings](#playground-settings)
-    - [Back Office interface](#back-office-interface)
-      - [Extensions manager](#extensions-manager)
-  - [Templates](#templates)
-    - [Widget extensions](#widget-extensions)
-      - [Widget - file structure](#widget---file-structure)
-      - [Widget - Translations](#widget---translations)
-      - [Widget - Props received](#widget---props-received)
-      - [Make API calls to LumApps](#make-api-calls-to-lumapps)
-    - [Share To extensions](#share-to-extensions)
-      - [Share To - file structure](#share-to---file-structure)
-      - [Share To - Translations](#share-to---translations)
-      - [Share To - Props received](#share-to---props-received)
-  - [LumApps SDK](#lumapps-sdk)
-    - [Python SDK](#python-sdk)
-    - [JavaScript SDK](#javascript-sdk)
-      - [Quick start](#quick-start)
-      - [React hooks](#react-hooks)
-        - [useContext](#usecontext)
-        - [useCurrentUser](#usecurrentuser)
-        - [useLanguage](#uselanguage)
-        - [useOrganization](#useorganization)
-        - [useFeatureEnabled](#usefeatureenabled)
-        - [useRequest](#userequest)
-        - [useBooleanState](#usebooleanstate)
-        - [useDebounce](#usedebounce)
-        - [useExportProps](#useexportprops)
-  - [LumApps API](#lumapps-api)
-  - [LumApps Design system](#lumapps-design-system)
+-   [Get to know your tools](#get-to-know-your-tools)
+    -   [Playground](#playground)
+        -   [Settings (opt.)](#settings-opt)
+        -   [Current state](#current-state)
+        -   [Quick actions](#quick-actions)
+        -   [Extension preview](#extension-preview)
+        -   [Playground settings](#playground-settings)
+    -   [Templates](#templates)
+        -   [Widget extensions](#widget-extensions)
+            -   [Widget - file structure](#widget---file-structure)
+            -   [Widget - Translations](#widget---translations)
+            -   [Widget - Props received](#widget---props-received)
+            -   [Make API calls to LumApps](#make-api-calls-to-lumapps)
+        -   [Share To extensions](#share-to-extensions)
+            -   [Share To - file structure](#share-to---file-structure)
+            -   [Share To - Translations](#share-to---translations)
+            -   [Share To - Props received](#share-to---props-received)
+    -   [LumApps SDK](#lumapps-sdk)
+        -   [Python SDK](#python-sdk)
+        -   [JavaScript SDK](#javascript-sdk)
+            -   [Quick start](#quick-start)
+            -   [React hooks](#react-hooks)
+                -   [useContext](#usecontext)
+                -   [useCurrentUser](#usecurrentuser)
+                -   [useLanguage](#uselanguage)
+                -   [useOrganization](#useorganization)
+                -   [useFeatureEnabled](#usefeatureenabled)
+                -   [useRequest](#userequest)
+                -   [useBooleanState](#usebooleanstate)
+                -   [useDebounce](#usedebounce)
+                -   [useExportProps](#useexportprops)
+    -   [LumApps API](#lumapps-api)
+    -   [LumApps Design system](#lumapps-design-system)
 
 ## Playground
 
@@ -72,12 +70,6 @@ When you are logged in, your information is updated.
 -   LumApps token: are you logged in your LumApps test platform?
     -   OK - you are logged in.
     -   Invalid - you are not logged in. See the `Log in` button.
--   Partner ID: are you identified as a partner organization?
-    -   Partner organization ID number - yes.
-    -   Unset - no.
--   Extension ID: have you claimed an ID for your extension? (when you are ready to deploy in your LumApps test platform or ask for a review by LumApps)
-    -   Unset - no. Your extension cannot be deployed.
-    -   Extension ID number - yes. Your extension can be deployed.
 
 ### Quick actions
 
@@ -95,24 +87,16 @@ Get a preview of what your extension looks like.
 
 ### Playground settings
 
-LumApps context:
-Request extension ID:
-Build and deploy: deploy in test platform.
+![Playground Settings](playground-settings.png)
 
--   Bump: major - minor - bump version
--   HTTP Server
+Clicking Playground settings opens a modal with two tabs.
 
-
-### Back Office interface
-
-If you are logged in, you can access a back office interface. You can access this interface by clicking on your name and selecting **Back office** on the menu.
-
-#### Extensions manager
-
-![Playground Back Office- Extensions manager](playground-bo-extlist.png "Playground Back Office- Extensions manager")
-
-In this view, you will find all the extensions you already deployed on you LumApps test platform.
-
+-   LumApps context:
+    -   LumApps user token: this is your token. When you are logged in, the information is already filled in.
+    -   HTTP origin: this is your environment. When you are logged in, the information is already filled in.
+    -   LumApps content ID: if you want to emulate a real context, you can pull information from a specific content using its ID.
+    -   LumApps Haussmann Cell URL: if you want to use our API, you need to fill out this field. The information is available in your Advanced Debug Info administration.
+-   Build: create a .zip of your extension. You can upload the .zip in your developer portal.
 
 ## Templates
 
