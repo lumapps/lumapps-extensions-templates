@@ -9,7 +9,7 @@ has_children: true
 
 <h6>Table of Contents</h6>
 
-- [Playground](#playground): 
+- [Playground](#playground)
 - [Developer portal](#developer-portal)
 - [Templates](#templates)
   - [Widget extensions](#widget-extensions)

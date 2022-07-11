@@ -7,15 +7,17 @@ has_children: false
 ---
 
 <h6>Table of Contents</h6>
--   [Developer Portal](#developer-Portal)
+
+- [Developer Portal](#developer-portal)
+- [Login](#login)
 
 # Developer Portal
 
-The developer portal is where you can manage your all of your extensions and their versions.
+The developer portal is where you can manage all of your extensions and their versions.
 
 ![Developer Portal](dev-portal.png)
 
 
 ## Login
 
-To log in to the developer portal, you need to use the credentials for the test platform. If you are adding people to this test platform, these people can also access the developer portal.
+To log in to the developer portal, you need to use the credentials of your test platform. As a reminder, your test platform is created when you [enroll as a partner](/partner/index). If you are adding user accounts to your test platform, these accounts can also log in to the developer portal.
