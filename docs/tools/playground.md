@@ -6,16 +6,6 @@ parent: Tools
 has_children: false
 ---
 
-# Get to know your tools
-
-<h6>Table of Contents</h6>
--   [Playground](#playground)
-    -   [Settings (opt.)](#settings-opt)
-    -   [Current state](#current-state)
-    -   [Quick actions](#quick-actions)
-    -   [Extension preview](#extension-preview)
-    -   [Playground settings](#playground-settings)
-
 # Playground
 
 The playground offers multiple features to help you develop, test, and interact with the LumApps Marketplace environment.

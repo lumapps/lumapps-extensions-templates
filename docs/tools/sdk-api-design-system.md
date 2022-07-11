@@ -6,28 +6,6 @@ parent: Tools
 has_children: false
 ---
 
-# Get to know your tools
-
-<h6>Table of Contents</h6>
-
-- [LumApps SDK](#lumapps-sdk)
-  - [Python SDK](#python-sdk)
-  - [JavaScript SDK](#javascript-sdk)
-    - [Quick start](#quick-start)
-    - [React hooks](#react-hooks)
-      - [useContext](#usecontext)
-      - [useCurrentUser](#usecurrentuser)
-      - [useLanguage](#uselanguage)
-      - [useOrganization](#useorganization)
-      - [useFeatureEnabled](#usefeatureenabled)
-      - [useRequest](#userequest)
-      - [useBooleanState](#usebooleanstate)
-      - [useDebounce](#usedebounce)
-      - [useExportProps](#useexportprops)
-- [LumApps API](#lumapps-api)
-- [LumApps Design system](#lumapps-design-system)
-
-
 # LumApps SDK
 
 -   [LumApps SDK](#lumapps-sdk)

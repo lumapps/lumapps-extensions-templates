@@ -6,7 +6,7 @@ parent: Tools
 has_children: false
 ---
 
-# Get to know your tools
+# Templates
 
 <h6>Table of Contents</h6>
 
@@ -21,8 +21,6 @@ has_children: false
     - [Share To - Translations](#share-to---translations)
     - [Share To - Props received](#share-to---props-received)
 
-
-# Templates
 
 ## Widget extensions
 
