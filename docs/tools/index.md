@@ -14,4 +14,4 @@ has_children: true
 - [Templates](./templates.md)
   - [Widget extensions](./templates.md#widget-extensions)
   - [Share To extensions](./templates.md#share-to-extensions)
-- [LumApps SDK, API, and Design System](./sdk-aoi-design-system.md)
+- [LumApps SDK, API, and Design System](./sdk-api-design-system.md)
