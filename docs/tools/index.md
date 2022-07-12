@@ -9,9 +9,9 @@ has_children: true
 
 <h6>Table of Contents</h6>
 
-- [Playground](#playground)
-- [Developer portal](#developer-portal)
-- [Templates](#templates)
-  - [Widget extensions](#widget-extensions)
-  - [Share To extensions](#share-to-extensions)
-- [LumApps SDK, API, and Design System](#lumapps-sdk)
+- [Playground](./playground.md)
+- [Developer portal](./developer-portal.md)
+- [Templates](./templates.md)
+  - [Widget extensions](./templates.md#widget-extensions)
+  - [Share To extensions](./templates.md#share-to-extensions)
+- [LumApps SDK, API, and Design System](./sdk-aoi-design-system.md)
