@@ -12,11 +12,11 @@ The playground offers multiple features to help you develop, test, and interact 
 
 ![Playground](extension-playground.png)
 
-1.  [Settings](#Settings)  
-2.  [Current State](#CurrentState)
-3.  [Quick actions](#QuickActions)
-4.  [Extension preview](#ExtensionPreview)
-5.  [Playground settings](#PlaygroundSettings)
+1.  [Settings](#settings-opt)  
+2.  [Current State](#current-state)
+3.  [Quick actions](#quick-actions)
+4.  [Extension preview](#extension-preview)
+5.  [Playground settings](#playground-settings)
 
 ## Settings (opt.)
 
