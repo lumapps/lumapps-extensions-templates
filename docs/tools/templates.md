@@ -125,9 +125,9 @@ In the LumApps playground, the SDK uses the current user logged in the playgroun
 
 ## Share To extensions
 
--   [Share To - file structure](#share-to-file-structure)
--   [Share To - Translations](#share-to-translations)
--   [Share To - Props received](#share-to-props-received)
+-   [Share To - file structure](#share-to---file-structure)
+-   [Share To - Translations](#share-to---translations)
+-   [Share To - Props received](#share-to---props-received)
 
 ### Share To - file structure
 
