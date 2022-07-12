@@ -24,9 +24,9 @@ has_children: false
 
 ## Widget extensions
 
--   [Widget - file structure](#widget-file-structure)
--   [Widget - Translations](#widget-translations)
--   [Widget - Props received](#widget-props-received)
+-   [Widget - file structure](#widget---file-structure)
+-   [Widget - Translations](#widget-t--ranslations)
+-   [Widget - Props received](#widget---props-received)
 -   [Make API calls to LumApps](#make-api-calls-to-lumapps)
 
 ### Widget - file structure
