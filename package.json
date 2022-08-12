@@ -40,6 +40,7 @@
     "homepage": "https://github.com/lumapps/create-lumapps-extensions-templates#readme",
     "devDependencies": {
         "docsify": "^4.12.1",
-        "docsify-cli": "^4.4.3"
+        "docsify-cli": "^4.4.3",
+        "prettier": "^2.6.2"
     }
 }
