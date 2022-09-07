@@ -33,10 +33,11 @@ has_children: false
             -   [React hooks](#react-hooks)
                 -   [useContext](#usecontext)
                 -   [useCurrentUser](#usecurrentuser)
+                -   [useFeatureEnabled](#usefeatureenabled)
                 -   [useLanguage](#uselanguage)
                 -   [useOrganization](#useorganization)
-                -   [useFeatureEnabled](#usefeatureenabled)
                 -   [useRequest](#userequest)
+                -   [useWidgetEmptyState](#usewidgetemptystate)
                 -   [useBooleanState](#usebooleanstate)
                 -   [useDebounce](#usedebounce)
                 -   [useExportProps](#useexportprops)
@@ -319,7 +320,7 @@ $ npm install --save lumapps-sdk-js
 
 Import LumApps hooks to use them:
 
-```javascript
+```tsx
 import React, { FC, useMemo } from 'react';
 
 import { useCurrentUser, useLanguage } from 'lumapps-sdk-js';
@@ -353,6 +354,7 @@ To access data from the customer LumApps platform, we provide React hooks in the
 -   [useLanguage](#uselanguage)
 -   [useOrganization](#useorganization)
 -   [useRequest](#userequest)
+-   [useWidgetEmptyState](#usewidgetemptystate)
 
 The SDK also embeds some helpers:
 
@@ -369,7 +371,7 @@ Use this hook to retrieve the context around the widget extension (when added in
 -   baseUrl
 -   environment ('production' or 'development')
 
-```javascript
+```tsx
 import React, { FC, useMemo } from 'react';
 
 import { useContext } from 'lumapps-sdk-js';
@@ -379,15 +381,19 @@ export const HelloWidget: FC = () => {
 
     const welcomeMessage = useMemo(() => {
         return (
-            <p>
-                This widget is used in {contentId} in the {instanceId} instance. The environment base URL is : {baseUrl}
-            </p>
-            <p>
-                The environment is {environment}
-            </p>
-            <p>
-                You are on designer mode : {isDesignerMode ? `True`: `False`}
-            </p>
+            <>
+                <p>
+                  This widget is used in {contentId} in the {instanceId} instance. The environment base URL is : {baseUrl}
+                </p>
+
+                <p>
+                  The environment is {environment}
+                </p>
+
+                <p>
+                  You are on designer mode : {isDesignerMode ? `True`: `False`}
+                </p>
+            </>
         );
     }, [emaicontentIdl, contentId]);
 
@@ -413,9 +419,8 @@ With this hook you can access:
 -   apiProfile
 -   accountType
 
-```javascript
+```tsx
 import React, { FC, useMemo } from 'react';
-
 
 import { useCurrentUser } from 'lumapps-sdk-js';
 
@@ -426,6 +431,7 @@ export const HelloWidget: FC = () => {
         return (
             <div>
                 <img src={thumbnailPhotoUrl} alt="User Profil Picture">
+
                 <p>
                     Hello {fullName}, your email is {email}.
                 </p>
@@ -441,6 +447,34 @@ export const HelloWidget: FC = () => {
 };
 ```
 
+##### useFeatureEnabled
+
+This hook tells you if a lumapps feature is enabled or not:
+
+```tsx
+import React, { FC, useMemo } from 'react';
+
+import { useFeatureEnabled } from 'lumapps-sdk-js';
+
+export const HelloWidget: FC = () => {
+    const isCommunityEnabled = useFeatureEnabled('community');
+
+    const message = useMemo(() => {
+        return (
+            <p>
+                Community feature enabled : {isCommunityEnabled ? 'Yes' : 'No'}.
+            </p>
+        );
+    }, [isCommunityEnabled]);
+
+    return (
+        <>
+            {message}
+        </>
+    );
+};
+```
+
 ##### useLanguage
 
 This hook is used to get the user languages. It's useful to translate your extensions.
@@ -449,9 +483,8 @@ You have access to:
 -   displayLanguage
 -   inputLanguage
 
-```javascript
+```tsx
 import React, { FC, useMemo } from 'react';
-
 
 import { useLanguage } from 'lumapps-sdk-js';
 
@@ -481,7 +514,7 @@ This hook gives you access to the organization identifier:
 -   id
 -   slug
 
-```javascript
+```tsx
 import React, { FC, useMemo } from 'react';
 
 
@@ -506,38 +539,37 @@ export const HelloWidget: FC = () => {
 };
 ```
 
-##### useFeatureEnabled
-
-This hook tells you if a lumapps feature is enabled or not:
-
-```javascript
-import React, { FC, useMemo } from 'react';
-
-
-import { useFeatureEnabled } from 'lumapps-sdk-js';
-
-export const HelloWidget: FC = () => {
-    const isCommunityEnabled = useFeatureEnabled('community');
-
-    const message = useMemo(() => {
-        return (
-            <p>
-                Community feature enabled : {isCommunityEnabled ? 'Yes' : 'No'}.
-            </p>
-        );
-    }, [isCommunityEnabled]);
-
-    return (
-        <>
-            {message}
-        </>
-    );
-};
-```
-
 ##### useRequest
 
 This hook is used to contact an OAuth application.
+
+##### useWidgetEmptyState
+
+Sometimes you might want to hide your extension, for example if a query you make returns no results, and doesn't require any display.
+This hook allows you to define your widget as « empty » and as such will be hide from the page.
+
+To use this hook you will need to pass the widget wrapper Ref as parameter.
+
+```tsx
+import React, { useEffect } from 'react';
+import { ExpansionPanel } from '@lumx/react';
+
+import { ContentComponent, useWidgetEmptyState } from 'lumapps-sdk-js';
+
+const Widget: ContentComponent = ({ wrapperRef }) => {
+    const [isWidgetEmpty, setIsWidgetEmpty] = useWidgetEmptyState(wrapperRef);
+    const results = useMyResults();
+    
+    useEffect(() => {
+        // Boolean true or false
+        setIsWidgetEmpty(results.length === 0);
+    }, [results]);
+    
+    return (
+        <div>{results}</div>
+    );
+};
+```
 
 ##### useBooleanState
 
@@ -573,9 +605,10 @@ The `useDebounce` helper allows you to debounce any fast changing value.
 ```tsx
 import React, { FC, useMemo } from 'react';
 import { ExpansionPanel } from '@lumx/react';
-import { callAPI } from './api';
 
 import { useDebounce } from 'lumapps-sdk-js';
+
+import { callAPI } from './api';
 
 export const HelloWidget: FC = () => {
     const [value, setValue] = useState();
