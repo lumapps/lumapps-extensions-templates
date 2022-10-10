@@ -15,12 +15,15 @@ type WidgetGlobalSettings = import('lumapps-sdk-js').GlobalSettingsComponent<any
  * @param {Object} props The settings component properties.
  */
 const IntlWidgetGlobalSettings: WidgetGlobalSettings = ({ properties = {}, exportProp }) => {
-    const contactMail = '';
-    const subjectMail = '';
+    const contactMail = 'contact@mail.com';
+    const subjectMail = 'Extension activation';
 
     return (
         <div>
-            <p className="lumx-typography-body2"><FormattedMessage id="GLOBAL_SETTINGS.CONTACT"/>: <Link target="_blank" href="mailto:contact@mail.com">mailto:contact@mail.com</Link></p>
+            <p className="lumx-typography-body2">
+                <FormattedMessage id="GLOBAL_SETTINGS.CONTACT"/>: 
+                <Link target="_blank" href={`mailto:${contactMail}?subject=${subjectMail}`}>{contactMail}</Link>
+            </p>
         </div>
     );
 };
