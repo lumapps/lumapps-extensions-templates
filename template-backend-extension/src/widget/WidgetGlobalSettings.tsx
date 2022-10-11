@@ -10,7 +10,7 @@ import messagesFr from '../translations/fr.json';
 type WidgetGlobalSettings = import('lumapps-sdk-js').GlobalSettingsComponent<any>;
 
 /**
- * Render the widget Picsum settings form.
+ * Render the widget global settings component.
  *
  * @param {Object} props The settings component properties.
  */
