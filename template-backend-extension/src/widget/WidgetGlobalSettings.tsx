@@ -21,8 +21,10 @@ const IntlWidgetGlobalSettings: WidgetGlobalSettings = ({ properties = {}, expor
     return (
         <div>
             <p className="lumx-typography-body2">
-                <FormattedMessage id="GLOBAL_SETTINGS.CONTACT"/>: 
-                <Link target="_blank" href={`mailto:${contactMail}?subject=${subjectMail}`}>{contactMail}</Link>
+                <FormattedMessage id="GLOBAL_SETTINGS.CONTACT" />:
+                <Link target="_blank" href={`mailto:${contactMail}?subject=${subjectMail}`}>
+                    {contactMail}
+                </Link>
             </p>
         </div>
     );
@@ -49,4 +51,3 @@ export const WidgetGlobalSettings: WidgetGlobalSettings = (props) => {
         </IntlProvider>
     );
 };
-
