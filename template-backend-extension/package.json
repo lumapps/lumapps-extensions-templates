@@ -1,6 +1,6 @@
 {
   "name": "backend-tpl",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "private": true,
   "scripts": {
     "check": "tsc --noEmit",
