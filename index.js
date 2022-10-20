@@ -47,7 +47,8 @@ async function init() {
 			{key: 1, name: 'Widget Extension', value: 'widget-extension'},
 			{key: 2, name: 'Share Extension', value: 'share-extension'},
 			{key: 3, name: 'Empty Extension', value: 'empty-extension'},
-			{key: 4, name: 'Search Extension - BETA', value: 'search-extension'}
+			{key: 4, name: 'Search Extension - BETA', value: 'search-extension'},
+			{key: 5, name: 'Backend Extension - BETA', value: 'backend-extension'}
 		];
 		
 		choice = await inquirer.prompt({
