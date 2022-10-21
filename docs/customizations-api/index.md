@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Customizations API
-nav_order: 8
+nav_order: 5
 has_children: true
 ---
 
