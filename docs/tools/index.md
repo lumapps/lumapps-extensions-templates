@@ -27,6 +27,7 @@ has_children: false
         - [useExportProps](#useexportprops)
   - [LumApps API](#lumapps-api)
   - [LumApps Design system](#lumapps-design-system)
+
 ## LumApps SDK
 
 -   [LumApps SDK](#lumapps-sdk)
@@ -40,14 +41,14 @@ Each SDK can be used depending on your needs.
 
 ![LumApps Extensions Playground](sdk-schema.png "LumApps Extensions Playground")
 
-In this schema, the extension is composed of a Frontend and a Backend part. The Frontend part is connected to the Backend part.
+In this schema, the extension is composed of a frontend and a backend part. The frontend part is connected to the backend part.
 
--   The Frontend of the extension integrate the JavaScript SDK to have access to contextual information around the extension in LumApps (the connected user, the search engine for example).
--   The Backend part reaches an external provider to authenticate the user (with OAuth protocol for example), and use the Python SDK to access the LumApps API.
+-   The frontend integrates the JavaScript SDK to have access to contextual information around the extension in LumApps (the connected user, the search engine for example).
+-   The backend reaches an external provider to authenticate the user (with OAuth protocol for example), and uses the Python SDK to access the LumApps API.
 
 ### Python SDK
 
-The Python SDK is currently in beta. tTe feature provided can change in future releases.
+The Python SDK is currently in beta. The features provided can change in future releases.
 This SDK is mainly used to connect your extension to the LumApps API.
 
 You can read more in the [Python SDK](https://lumapps.github.io/lumapps-sdk/) documentation.
@@ -55,7 +56,7 @@ You can read more in the [Python SDK](https://lumapps.github.io/lumapps-sdk/) do
 ### JavaScript SDK
 
 The JavaScript SDK is used for extensions connected to the LumApps user interface such as widget extensions.
-With this SDK you can have access to some contextual information, the connected user, the content where your widget is used, etc.
+With this SDK, you can have access to some contextual information, the connected user, the content where your widget is used, etc.
 
 The LumApps JavaScript SDK is a lightweight interface to LumApps for your React components.
 
@@ -444,6 +445,6 @@ export const HelloWidget: FC = ({ properties = {}, exportProp }: any) => {
 
 Everything you need to know about the LumApps API is available on our [API Portal](https://apiv1.lumapps.com).
 
-## LumApps Design system
+## LumApps design system
 
-We encourage you to use the LumApps Design System, you can check the [Design System documentation site](https://design.lumapps.com) to find all the component you can import and how to use them.
+We encourage you to use the LumApps design system for interface coherence. You can check the [Design System documentation site](https://design.lumapps.com) to find all the component you can import and how to use them.
