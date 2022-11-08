@@ -1,6 +1,6 @@
 {
   "name": "backend-tpl",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "private": true,
   "scripts": {
     "check": "tsc --noEmit",
@@ -39,7 +39,7 @@
     "@lumx/react": "^3.0.2",
     "axios": "0.21.4",
     "lodash": "4.17.21",
-    "lumapps-sdk-js": "^1.13.0",
+    "lumapps-sdk-js": "^1.15.0",
     "moment": "^2.29.1",
     "moment-range": "^4.0.2",
     "react": "^16.13.1",
