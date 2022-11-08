@@ -1,6 +1,6 @@
 {
   "name": "template-react-ts",
-  "version": "1.2.3",
+  "version": "1.2.5",
   "private": true,
   "scripts": {
     "check": "tsc --noEmit",
