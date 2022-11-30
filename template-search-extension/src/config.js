@@ -62,7 +62,7 @@ const links = {
  * 'settings' : For your widget settings
  * 'globalSettings' : For global settings used by platform admin.
  */
-const components = ['content'];
+const components = ['content', 'settings'];
 
 // Whether the extension is public or not in the marketplace.
 const isPublic = true;
@@ -78,7 +78,7 @@ const whitelist = [];
 // do not change the following unless you know what you are doing
 const config = {
     availability,
-    category: 'search',
+    category: 'widget',
     components,
     description,
     extensionId,
