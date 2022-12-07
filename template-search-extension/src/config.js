@@ -59,10 +59,10 @@ const links = {
 /**
  * The components available for your extensions
  * 'content' : For the Widget content itself (required)
- * 'settings' : For your widget settings
+ * 'settings' : For your search settings that will be used in a Tab context
  * 'globalSettings' : For global settings used by platform admin.
  */
-const components = ['content', 'settings'];
+const components = ['content', 'settings', 'global_settings'];
 
 // Whether the extension is public or not in the marketplace.
 const isPublic = true;
