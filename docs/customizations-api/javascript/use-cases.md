@@ -204,7 +204,7 @@ The contextual actions menu displays a set of actions that can be executed on th
 
 ```js
 window.lumapps.customize(({ targets, components, render, placement, constants }) => {
-    const { ListItem, Icon } = components;
+    const { ContextualAction, ListItem, Icon } = components;
     const { Size } = constants;
 
     const onClick = () => {
