@@ -53,7 +53,7 @@ const availability = 'marketplace';
  * The documentation's url of the extension.
  */
 const links = {
-    documentation: null,
+    documentation: '',
 };
 
 /**
