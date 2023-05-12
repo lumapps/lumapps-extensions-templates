@@ -8,7 +8,8 @@
     "start": "run-p start:playground start:shipping-server",
     "start:playground": "react-scripts start",
     "start:shipping-server": "lumapps-shipping-server",
-    "test": "react-scripts test --coverage"
+    "test": "react-scripts test --coverage",
+    "build": "yarn start:shipping-server bundle"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,7 +40,7 @@
     "@lumx/react": "^3.0.2",
     "axios": "0.21.4",
     "lodash": "4.17.21",
-    "lumapps-sdk-js": "^1.21.0",
+    "lumapps-sdk-js": "1.24.1",
     "moment": "^2.29.1",
     "moment-range": "^4.0.2",
     "react": "^16.13.1",
