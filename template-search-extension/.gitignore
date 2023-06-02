@@ -25,3 +25,5 @@ yarn-error.log*
 
 *.lum
 build/
+bundle.zip
+config.trans.js
