@@ -27,7 +27,7 @@ We may reject your request to enter the LumApps developer program for several re
 -   We could not verify the information you set (company website not found, company name and website do not match, etc.).
 -   The email domain does not match the company URL provided.
 
-## Register as a publisher
+## Register as a Marketplace Publisher
 
 When you are enrolled in the developer program, you need to create a publisher. A publisher account is your identity on the LumApps Marketplace. The publisher is the entity listed as the owner of the extensions you create.
 
@@ -41,13 +41,11 @@ To register as a publisher, you must create a platform dedicated to test your ma
 | Company's contact            | Your support email address to be contacted by LumApps or customers for support.  |
 | Icon for your company        | URL to the logo of your company.                                                 |
 | Description of your company  | Describe what your company does in a few words.                                  |
-| Platform administrator name  | First and last name of your first global administrator for this sandbox platform.|
-| Platform administrator email | Email of your first global administrator for this test platform.                 |
 
-> **Note:** You will be able to add more global administrators later on.
+> **Note:** You must agree to the LumApps terms of use.
 
 LumApps uses the information to register you as a publisher in the LumApps Marketplace and to generate your marketplace sandbox platform. When the form submitted, LumApps will send an email with all the necessary information to start working on your extensions.
 
-## Manage your publisher account
+## Manage your Marketplace Publisher account
 
 You need to contact the LumApps Marketplace support team if you want to edit any of your publisher information.   
