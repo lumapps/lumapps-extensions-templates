@@ -12,8 +12,8 @@ has_children: false
 -   [Become a Marketplace Publisher](#become-a-marketplace-publisher)
     -   [Enroll in the Developer program](#enroll-in-the-developer-program)
         -   [Rejected requests](#rejected-requests)
-    -   [Register as a publisher](#register-as-a-publisher)
-    -   [Manage your publisher account](#manage-your-publisher-account)
+    -   [Register as a Marketplace Publisher](#register-as-a-marketplace-publisher)
+    -   [Manage your Marketplace Publisher account](#manage-your-marketplace-publisher-account)
 
 ## Enroll in the Developer program
 
