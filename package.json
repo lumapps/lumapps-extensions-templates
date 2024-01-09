@@ -5,8 +5,8 @@
     "author": "marketplace@lumapps.com",
     "main": "index.js",
     "bin": {
-        "create-lumapps-extension": "index.js",
-        "cha": "index.js"
+        "cha": "index.js",
+        "create-lumapps-extension": "index.js"
     },
     "files": [
         "index.js",
