@@ -102,6 +102,7 @@ const Share: import('lumapps-sdk-js').ContentComponent<undefined, ShareProps> = 
 
                             <Button
                                 onClick={() => {
+                                    // eslint-disable-next-line no-alert
                                     alert(`Share content ${uid}`);
                                 }}
                                 emphasis={Emphasis.high}

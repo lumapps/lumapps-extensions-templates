@@ -54,6 +54,7 @@ const Widget: Widget = ({ theme = Theme.light }) => {
         notifySuccess(
             'Notification from a widget !!',
             'Click me',
+            // eslint-disable-next-line no-alert
             () => alert("I'm a notification action callback"),
             10000,
         );
