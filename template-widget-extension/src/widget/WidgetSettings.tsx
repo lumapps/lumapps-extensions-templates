@@ -59,7 +59,7 @@ const WithIntlSettings: React.FC = () => {
     );
 };
 
-export const WidgetSettings: SettingsProps = (props) => {
+export const WidgetSettings: SettingsProps = () => {
     const { displayLanguage } = useLanguage();
 
     const messages = useMemo(
@@ -78,7 +78,7 @@ export const WidgetSettings: SettingsProps = (props) => {
     return (
         <IntlProvider locale={lang} messages={messages[lang as keyof typeof messages]}>
             <PredefinedErrorBoundary>
-                <WithIntlSettings {...props} />
+                <WithIntlSettings />
             </PredefinedErrorBoundary>
         </IntlProvider>
     );
