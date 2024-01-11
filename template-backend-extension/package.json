@@ -5,6 +5,7 @@
   "scripts": {
     "check": "tsc --noEmit",
     "check:typing": "yarn run check",
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --fix",
     "start": "run-p start:playground start:shipping-server",
     "start:playground": "react-scripts start",
     "start:shipping-server": "lumapps-shipping-server",
@@ -26,9 +27,6 @@
     ]
   },
   "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
     "transformIgnorePatterns": [
       "node_modules/(?!@lumx/icons|@lumx/react)"
     ]
@@ -54,8 +52,6 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "@types/enzyme": "^3.10.10",
-    "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^24.9.1",
     "@types/lodash": "^4.14.178",
     "@types/node": "^12.0.0",
@@ -63,9 +59,6 @@
     "@types/react-dom": "^16.9.0",
     "@typescript-eslint/eslint-plugin": "^2.18.0",
     "@typescript-eslint/parser": "^2.18.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.6",
-    "enzyme-to-json": "^3.6.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^6.10.0",
