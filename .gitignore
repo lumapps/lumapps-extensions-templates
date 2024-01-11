@@ -2,7 +2,9 @@ node_modules
 .DS_Store
 dist
 template-*/yarn.lock
+template-*/bundle.zip
 *.lum
+*.tgz
 build
 rollup.config.js
 _site
@@ -10,4 +12,4 @@ _site
 versionBump.json
 config.trans.js
 .idea
-template-search-extension/bundle.zip
+.vscode
