@@ -34,9 +34,9 @@
     ]
   },
   "dependencies": {
-    "@lumx/core": "latest",
-    "@lumx/icons": "latest",
-    "@lumx/react": "latest",
+    "@lumx/core": "^3.6.1",
+    "@lumx/icons": "^3.6.1",
+    "@lumx/react": "^3.6.1",
     "axios": "0.21.4",
     "lodash": "4.17.21",
     "lumapps-sdk-js": "^1.31.1",
