@@ -89,6 +89,7 @@ const config = {
     partnerId,
     public: isPublic,
     whitelist,
+    topics: [],
 };
 
 export default config;
