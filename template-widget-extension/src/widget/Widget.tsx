@@ -46,7 +46,7 @@ const Widget: Widget = ({ theme = Theme.light }) => {
         link = useBlur && blur !== undefined ? `${link}=${blur}` : link;
 
         setUrl(link);
-    }, [blur, imageId, useBlur, useGreyScale, url, globalProperties?.baseUrl]);
+    }, [blur, imageId, useBlur, useGreyScale, url, globalProperties]);
 
     const { notifySuccess } = useNotifications();
 

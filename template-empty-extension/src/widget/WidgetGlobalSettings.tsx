@@ -7,6 +7,6 @@ type WidgetGlobalSettings = import('lumapps-sdk-js').GlobalSettingsComponent<any
  *
  * @param {Object} props The settings component properties.
  */
-export const WidgetGlobalSettings: WidgetGlobalSettings = ({ properties = {}, exportProp }) => {
+export const WidgetGlobalSettings: WidgetGlobalSettings = () => {
     return <></>;
 };

@@ -11,7 +11,7 @@ import { WidgetSettings } from './widget/WidgetSettings';
 import { WidgetGlobalSettings } from './widget/WidgetGlobalSettings';
 
 // eslint-disable-next-line import/extensions
-import config from './config.js';
+import config from './config';
 
 ReactDOM.render(
     <React.StrictMode>

@@ -14,7 +14,7 @@ type WidgetGlobalSettings = import('lumapps-sdk-js').GlobalSettingsComponent<any
  *
  * @param {Object} props The settings component properties.
  */
-const IntlWidgetGlobalSettings: WidgetGlobalSettings = ({ properties = {}, exportProp }) => {
+const IntlWidgetGlobalSettings: WidgetGlobalSettings = () => {
     const contactMail = 'contact@mail.com';
     const subjectMail = 'Extension activation';
 
@@ -32,17 +32,21 @@ const IntlWidgetGlobalSettings: WidgetGlobalSettings = ({ properties = {}, expor
 
 export const WidgetGlobalSettings: WidgetGlobalSettings = (props) => {
     const { displayLanguage } = useLanguage();
-    const messages: Record<string, Record<string, string>> = {
-        en: messagesEn,
-        fr: messagesFr,
-    };
+    const messages = useMemo(
+        () => ({
+            en: messagesEn,
+            fr: messagesFr,
+        }),
+        [],
+    );
+
     const lang = useMemo(() => (Object.keys(messages).includes(displayLanguage) ? displayLanguage : 'en'), [
         displayLanguage,
         messages,
     ]);
 
     return (
-        <IntlProvider locale={lang} messages={messages[lang]}>
+        <IntlProvider locale={lang} messages={messages[lang as keyof typeof messages]}>
             <NotificationsProvider>
                 <PredefinedErrorBoundary>
                     <IntlWidgetGlobalSettings {...props} />
