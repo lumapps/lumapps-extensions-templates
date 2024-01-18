@@ -3,6 +3,7 @@
   "version": "1.3.0",
   "private": true,
   "scripts": {
+    "build": "yarn start:shipping-server bundle",
     "check": "tsc --noEmit",
     "check:typing": "yarn run check",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --fix",

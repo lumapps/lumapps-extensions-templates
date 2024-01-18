@@ -3,14 +3,14 @@
   "version": "1.3.0",
   "private": true,
   "scripts": {
+    "build": "yarn start:shipping-server bundle",
     "check": "tsc --noEmit",
     "check:typing": "yarn run check",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --fix",
     "start": "run-p start:playground start:shipping-server",
     "start:playground": "react-scripts start",
     "start:shipping-server": "lumapps-shipping-server",
-    "test": "react-scripts test --coverage",
-    "build": "yarn start:shipping-server bundle"
+    "test": "react-scripts test --coverage"
   },
   "eslintConfig": {
     "extends": "react-app"
