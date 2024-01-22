@@ -48,8 +48,8 @@
     "reselect": "^4.1.5"
   },
   "devDependencies": {
-    "@lumapps-extensions-playground/devenv": "^1.25.0",
-    "@lumapps-extensions/shipping-server": "^1.9.0",
+    "@lumapps-extensions-playground/devenv": "^1.26.0",
+    "@lumapps-extensions/shipping-server": "^1.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
