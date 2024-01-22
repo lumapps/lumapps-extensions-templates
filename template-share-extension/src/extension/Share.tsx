@@ -102,6 +102,7 @@ const Share: import('lumapps-sdk-js').ContentComponent<undefined, ShareProps> = 
 
                             <Button
                                 onClick={() => {
+                                    // eslint-disable-next-line no-alert
                                     alert(`Share content ${uid}`);
                                 }}
                                 emphasis={Emphasis.high}
@@ -119,17 +120,21 @@ const Share: import('lumapps-sdk-js').ContentComponent<undefined, ShareProps> = 
 
 const NotificationAwareContent: typeof Share = (props) => {
     const { displayLanguage } = useLanguage();
-    const messages: Record<string, Record<string, string>> = {
-        en: messagesEn,
-        fr: messagesFr,
-    };
+    const messages = useMemo(
+        () => ({
+            en: messagesEn,
+            fr: messagesFr,
+        }),
+        [],
+    );
+
     const lang = useMemo(() => (Object.keys(messages).includes(displayLanguage) ? displayLanguage : 'en'), [
         displayLanguage,
         messages,
     ]);
 
     return (
-        <IntlProvider locale={lang} messages={messages[lang]}>
+        <IntlProvider locale={lang} messages={messages[lang as keyof typeof messages]}>
             <NotificationsProvider>
                 <PredefinedErrorBoundary>
                     <Share {...props} />

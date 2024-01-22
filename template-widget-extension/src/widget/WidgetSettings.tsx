@@ -1,30 +1,29 @@
 import React, { useMemo, useState } from 'react';
 import { FormattedMessage, IntlProvider, useIntl } from 'react-intl';
 import { Slider, Switch, TextField } from '@lumx/react';
-import { PredefinedErrorBoundary, useDebounce, useExportProps, useLanguage } from 'lumapps-sdk-js';
+import { PredefinedErrorBoundary, useDebounce, useLanguage, useProperties } from 'lumapps-sdk-js';
 
 import messagesEn from '../translations/en.json';
 import messagesFr from '../translations/fr.json';
+import { SampleAppGlobalParams, SampleAppParams } from './types';
 
-type WidgetSettings = import('lumapps-sdk-js').SettingsComponent<
-    import('./types').SampleAppGlobalParams,
-    import('./types').SampleAppParams
->;
+type SettingsProps = import('lumapps-sdk-js').SettingsComponent<SampleAppGlobalParams, SampleAppParams>;
 
-const WithIntlSettings: WidgetSettings = ({ properties = {}, exportProp }) => {
+const WithIntlSettings: React.FC = () => {
     const intl = useIntl();
 
-    const [imageId, setImageId] = useState(properties.imageId);
+    const { properties, save } = useProperties<SampleAppGlobalParams, SampleAppParams>();
+
+    const [imageId, setImageId] = useState(properties.imageId ?? '');
     const [useGreyScale, setUseGreyScale] = useState<boolean>(properties.useGreyScale || false);
     const [useBlur, setUseBlur] = useState<boolean>(properties.useBlur || false);
     const [blur, setBlur] = useState(properties.blur || 1);
 
     const debouncedImageId = useDebounce(imageId, 800);
 
-    useExportProps(debouncedImageId, 'imageId', properties, exportProp);
-    useExportProps(useGreyScale, 'useGreyScale', properties, exportProp);
-    useExportProps(useBlur, 'useBlur', properties, exportProp);
-    useExportProps(blur, 'blur', properties, exportProp);
+    React.useEffect(() => {
+        save({ imageId: debouncedImageId, useGreyScale, useBlur, blur });
+    }, [blur, debouncedImageId, save, useBlur, useGreyScale]);
 
     return (
         <>
@@ -60,21 +59,26 @@ const WithIntlSettings: WidgetSettings = ({ properties = {}, exportProp }) => {
     );
 };
 
-export const WidgetSettings: WidgetSettings = (props) => {
+export const WidgetSettings: SettingsProps = () => {
     const { displayLanguage } = useLanguage();
-    const messages: Record<string, Record<string, string>> = {
-        en: messagesEn,
-        fr: messagesFr,
-    };
+
+    const messages = useMemo(
+        () => ({
+            en: messagesEn,
+            fr: messagesFr,
+        }),
+        [],
+    );
+
     const lang = useMemo(() => (Object.keys(messages).includes(displayLanguage) ? displayLanguage : 'en'), [
         displayLanguage,
         messages,
     ]);
 
     return (
-        <IntlProvider locale={lang} messages={messages[lang]}>
+        <IntlProvider locale={lang} messages={messages[lang as keyof typeof messages]}>
             <PredefinedErrorBoundary>
-                <WithIntlSettings {...props} />
+                <WithIntlSettings />
             </PredefinedErrorBoundary>
         </IntlProvider>
     );
