@@ -27,7 +27,8 @@ async function init() {
 	const cwd = process.cwd()
 	const root = path.join(cwd, targetDir)
 	const renameFiles = {
-		_gitignore: '.gitignore'
+		_gitignore: '.gitignore',
+		_yarnrc_yml: '.yarnrc.yml'
 	}
 
 	const { help, h, template, t, version, v } = argv
