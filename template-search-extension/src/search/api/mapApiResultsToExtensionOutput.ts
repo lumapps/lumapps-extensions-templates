@@ -8,8 +8,8 @@ import { ApiResult, ApiResultItem } from '../../types';
  * @param  Api results
  * @returns LumApps formatted results
  */
-const mapApiResultItemsToSearchItems = (results: ApiResultItem[]): ExtensionSearchResult[] => {
-    return results.map(({ id, title, url, description, metadata, image }, index) => ({
+const mapApiResultItemsToSearchItems = (results: ApiResultItem[]): ExtensionSearchResult[] =>
+    results.map(({ id, title, url, description, metadata, image }, index) => ({
         extensionSearchResultKey: id,
         id,
         title,
@@ -28,7 +28,6 @@ const mapApiResultItemsToSearchItems = (results: ApiResultItem[]): ExtensionSear
                   }
                 : undefined,
     }));
-};
 
 /**
  * Map the entire Api response to fit to search extension output

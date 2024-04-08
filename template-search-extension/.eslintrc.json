@@ -12,9 +12,7 @@
         "airbnb/hooks",
         "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended",
-        "prettier",
-        "prettier/react",
-        "prettier/@typescript-eslint"
+        "prettier"
     ],
     "plugins": [
         "@typescript-eslint/eslint-plugin",
@@ -29,7 +27,12 @@
         "react/jsx-filename-extension": [
             2,
             {
-                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+                "extensions": [
+                    ".js",
+                    ".jsx",
+                    ".ts",
+                    ".tsx"
+                ]
             }
         ],
         "no-plusplus": [
@@ -38,7 +41,12 @@
                 "allowForLoopAfterthoughts": true
             }
         ],
-        "no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"],
+        "no-restricted-syntax": [
+            "error",
+            "ForInStatement",
+            "LabeledStatement",
+            "WithStatement"
+        ],
         "import/extensions": [
             "error",
             "never",
@@ -64,6 +72,7 @@
         ],
         "react/prop-types": "off",
         "react/jsx-props-no-spreading": "off",
+        "react/function-component-definition": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/explicit-function-return-type": "off"
     },
@@ -75,9 +84,21 @@
     "settings": {
         "import/resolver": {
             "node": {
-                "extensions": [".js", ".ts", ".jsx", ".tsx", ".json"]
+                "extensions": [
+                    ".js",
+                    ".ts",
+                    ".jsx",
+                    ".tsx",
+                    ".json"
+                ]
             }
         },
-        "import/extensions": [".js", ".ts", ".mjs", ".jsx", ".tsx"]
+        "import/extensions": [
+            ".js",
+            ".ts",
+            ".mjs",
+            ".jsx",
+            ".tsx"
+        ]
     }
 }

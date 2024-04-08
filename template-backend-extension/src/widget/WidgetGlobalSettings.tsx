@@ -40,10 +40,10 @@ export const WidgetGlobalSettings: WidgetGlobalSettings = (props) => {
         [],
     );
 
-    const lang = useMemo(() => (Object.keys(messages).includes(displayLanguage) ? displayLanguage : 'en'), [
-        displayLanguage,
-        messages,
-    ]);
+    const lang = useMemo(
+        () => (Object.keys(messages).includes(displayLanguage) ? displayLanguage : 'en'),
+        [displayLanguage, messages],
+    );
 
     return (
         <IntlProvider locale={lang} messages={messages[lang as keyof typeof messages]}>
