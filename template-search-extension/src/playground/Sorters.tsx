@@ -51,19 +51,17 @@ export const Sorters = ({ choices, onChange, value }: SortersProps) => {
             </Button>
             <Dropdown id="sorts" isOpen={isOpen} onClose={toggleOpen} anchorRef={anchorRef}>
                 <List role="menu" aria-label="sorts">
-                    {choices.map((option) => {
-                        return (
-                            <ListItem
-                                key={option.value}
-                                role="menuitem"
-                                size={Size.tiny}
-                                isSelected={value === option}
-                                onItemSelected={() => handleOnChange(option)}
-                            >
-                                {option.label.default}
-                            </ListItem>
-                        );
-                    })}
+                    {choices.map((option) => (
+                        <ListItem
+                            key={option.value}
+                            role="menuitem"
+                            size={Size.tiny}
+                            isSelected={value === option}
+                            onItemSelected={() => handleOnChange(option)}
+                        >
+                            {option.label.default}
+                        </ListItem>
+                    ))}
                 </List>
             </Dropdown>
         </FlexBox>

@@ -36,12 +36,10 @@ export const useSearch = (props: UseSearchParams): ExtensionSearchOutput => {
 
                 const shouldMergeResults = props.page && props.page > 0;
                 const output = mapApiResultsToExtensionOutput(apiResult);
-                setData((prev) => {
-                    return {
-                        ...output,
-                        results: shouldMergeResults ? [...prev.results, ...output.results] : output.results,
-                    };
-                });
+                setData((prev) => ({
+                    ...output,
+                    results: shouldMergeResults ? [...prev.results, ...output.results] : output.results,
+                }));
                 setStatus(RESULT_STATUS.FETCHED);
             } catch (error) {
                 setStatus(RESULT_STATUS.ERROR);

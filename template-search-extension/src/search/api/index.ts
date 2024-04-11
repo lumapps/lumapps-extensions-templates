@@ -12,10 +12,10 @@ export type FetchResultsParams = Pick<ExtensionSearchInput, 'query' | 'page' | '
  * @returns Promise of ApiResult
  */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const fetchMocks = async (props: FetchResultsParams, token: string): Promise<ApiResult> => {
-    return new Promise((resolve) => {
-        return setTimeout(() => {
+export const fetchMocks = async (props: FetchResultsParams, token: string): Promise<ApiResult> =>
+    new Promise((resolve) =>
+        // eslint-disable-next-line no-promise-executor-return
+        setTimeout(() => {
             resolve(results);
-        }, 500);
-    });
-};
+        }, 500),
+    );

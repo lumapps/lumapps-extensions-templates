@@ -13,3 +13,5 @@ versionBump.json
 config.trans.js
 .idea
 .vscode
+*.cjs
+*.mjs
