@@ -4,7 +4,6 @@ const fs = require("fs-extra");
 const argv = require("minimist")(process.argv.slice(2));
 const inquirer = require("inquirer");
 const chalk = require("chalk");
-const pkg = require(path.join(process.cwd(), `package.json`));
 
 const { execSync } = require("child_process");
 
@@ -46,6 +45,8 @@ function getDependencies(refDependencies, optional = false) {
 
    for (package in refDependencies) {
       if (optional) {
+         const pkg = require(path.join(process.cwd(), `package.json`));
+
          if (pkg.dependencies[package] || pkg.devDependencies[package]) {
             dependencies.push(`${package}@${refDependencies[package]}`);
          }
@@ -73,7 +74,7 @@ async function updateExtension() {
             const {
                forcedDependencies,
                optionalDependencies,
-            } = require("./updatePackages");
+            } = require("./updateFiles/updatePackages");
 
             // FORCED DEP
             const dependencies = getDependencies(
