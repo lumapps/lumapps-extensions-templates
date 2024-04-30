@@ -10,7 +10,7 @@ module.exports = {
       },
       devDependencies: {
          "@lumapps-extensions-playground/devenv": "1.27.0",
-         "@lumapps-extensions/shipping-server": "1.9.2",
+         "@lumapps-extensions/shipping-server": "1.9.3-rc.1",
          "@types/react": "17.0.2",
          "@types/react-dom": "17.0.2",
       },

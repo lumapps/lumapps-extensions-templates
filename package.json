@@ -1,6 +1,6 @@
 {
    "name": "create-lumapps-extension",
-   "version": "1.4.0",
+   "version": "1.4.1-rc.1",
    "description": "",
    "author": "marketplace@lumapps.com",
    "main": "index.js",
