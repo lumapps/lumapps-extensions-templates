@@ -70,6 +70,25 @@ async function updateExtension() {
          },
       ])
       .then(async (answers) => {
+         await inquirer
+            .prompt([
+               {
+                  type: "confirm",
+                  name: "confirmYarnRC",
+                  message:
+                     "➤ You need to add nodeLinker: node-modules to your .yarnrc.yml file. Do you want to update it ? (the old one will be backed up)",
+                  default: true,
+               },
+            ])
+            .then(async (answers) => {
+               if (answers.confirmTsConfig) {
+                  await backAndCopyFile(".yarnrc.yml");
+                  console.log(
+                     chalk.green("➤ .yarnrc.yml file updated successfully !")
+                  );
+               }
+            });
+
          if (answers.confirmUpdate) {
             const {
                forcedDependencies,
