@@ -1,6 +1,6 @@
 {
     "name": "template-react-ts",
-    "version": "1.4.1-rc.1",
+    "version": "1.4.1-rc.2",
     "private": true,
     "scripts": {
         "build": "yarn start:shipping-server bundle",
