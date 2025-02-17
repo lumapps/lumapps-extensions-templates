@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { FormattedMessage, IntlProvider } from 'react-intl';
+import { FormattedMessage, IntlProvider, useIntl } from 'react-intl';
 import {
     Chip,
     ChipGroup,
@@ -31,6 +31,7 @@ type Widget = import('lumapps-sdk-js').ContentComponent<SampleAppGlobalParams, S
 const Widget: Widget = ({ theme = Theme.light }) => {
     const [url, setUrl] = useState<string | undefined>();
     const [error, setError] = useState<string>();
+    const intl = useIntl();
 
     const { properties, globalProperties } = useProperties<SampleAppGlobalParams, SampleAppParams>();
 
@@ -72,26 +73,29 @@ const Widget: Widget = ({ theme = Theme.light }) => {
                     onActionClick={() => setError(undefined)}
                 />
             )}
+
             <ImageBlock
                 alt=""
                 captionPosition={ImageBlockCaptionPosition.over}
-                description={(<FormattedMessage id="description" />) as any}
+                description={intl.formatMessage({ id: 'description' })}
                 tags={
                     <ChipGroup>
                         <Chip size={Size.s} theme={theme}>
                             Marketplace
                         </Chip>
+
                         <Chip size={Size.s} theme={theme}>
                             Widgets
                         </Chip>
+
                         <Chip size={Size.s} theme={theme}>
                             LumApps
                         </Chip>
                     </ChipGroup>
                 }
                 theme={theme}
-                title={(<FormattedMessage id="sub_title" />) as any}
-                image={url as string}
+                title={intl.formatMessage({ id: 'sub_title' })}
+                image={url ?? ''}
                 thumbnailProps={{
                     aspectRatio: AspectRatio.horizontal,
                 }}

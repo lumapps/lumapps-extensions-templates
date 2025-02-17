@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { FormattedMessage, IntlProvider, useIntl } from 'react-intl';
+import { IntlProvider, useIntl } from 'react-intl';
 import { Slider, Switch, TextField } from '@lumx/react';
 import { PredefinedErrorBoundary, useDebounce, useLanguage, useProperties } from 'lumapps-sdk-js';
 
@@ -29,7 +29,7 @@ const WithIntlSettings: React.FC = () => {
         <>
             <TextField
                 className="mt0 ml lumx-spacing-margin-vertical-big"
-                label={(<FormattedMessage id="settings.image_id" />) as any}
+                label={intl.formatMessage({ id: 'settings.image_id' })}
                 value={imageId}
                 onChange={setImageId}
             />
@@ -47,8 +47,8 @@ const WithIntlSettings: React.FC = () => {
 
             {useBlur && (
                 <Slider
-                    label={(<FormattedMessage id="settings.blur_value_title" />) as any}
-                    helper={(<FormattedMessage id="settings.blur_value_desc" />) as any}
+                    label={intl.formatMessage({ id: 'settings.blur_value_title' })}
+                    helper={intl.formatMessage({ id: 'settings.blur_value_desc' })}
                     max={10}
                     min={1}
                     value={blur}
