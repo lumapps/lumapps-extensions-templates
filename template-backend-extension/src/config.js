@@ -2,7 +2,7 @@ const extensionId = '';
 
 const config = {
     extensionId,
-    category: 'widget',
+    category: 'backend',
 };
 
-export default config;
+export default config;    

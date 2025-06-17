@@ -1,11 +1,15 @@
 #!/usr/bin/env node
-const path = require("path");
-const fs = require("fs-extra");
-const argv = require("minimist")(process.argv.slice(2));
-const inquirer = require("inquirer");
-const chalk = require("chalk");
+import { join, basename, relative } from "path";
+import fs from "fs-extra";
+import minimist from "minimist";
+import inquirer from "inquirer";
+import chalk from "chalk";
 
-const { execSync } = require("child_process");
+import packageJson from "./package.json" assert { type: "json" };
+
+import updateExtension from "./utils/updateExtension.js";
+import { getDirname } from "./utils/getDirname.js";
+import updateConfigFile from "./utils/updateConfigFile.js";
 
 function logHelp() {
    console.log(`
@@ -21,192 +25,11 @@ function logHelp() {
  `);
 }
 
-async function backAndCopyFile(fileName) {
-   const tsConfigExtension = path.join(process.cwd(), fileName);
+console.log(chalk.cyan(`create-lumapps-extension v${packageJson.version}`));
 
-   if (fs.existsSync(tsConfigExtension)) {
-      fs.renameSync(
-         tsConfigExtension,
-         path.join(process.cwd(), `${fileName}.old`),
-         function (err) {
-            if (err) console.log("ERROR: " + err);
-         }
-      );
-   }
+const init = async () => {
+   const argv = minimist(process.argv.slice(2));
 
-   await fs.copy(
-      path.join(__dirname, "updateFiles", fileName),
-      tsConfigExtension
-   );
-}
-
-function getDependencies(refDependencies, optional = false) {
-   const dependencies = [];
-
-   for (package in refDependencies) {
-      if (optional) {
-         const pkg = require(path.join(process.cwd(), `package.json`));
-
-         if (pkg.dependencies[package] || pkg.devDependencies[package]) {
-            dependencies.push(`${package}@${refDependencies[package]}`);
-         }
-      } else {
-         dependencies.push(`${package}@${refDependencies[package]}`);
-      }
-   }
-
-   return dependencies.join(" ");
-}
-
-async function updateExtension() {
-   await inquirer
-      .prompt([
-         {
-            type: "confirm",
-            name: "confirmUpdate",
-            message:
-               "➤ This will update your extension dependencies, do you want to continue ?",
-            default: true,
-         },
-      ])
-      .then(async (answers) => {
-         if (answers.confirmUpdate) {
-            const {
-               forcedDependencies,
-               optionalDependencies,
-            } = require("./updateFiles/updatePackages");
-
-            // FORCED DEP
-            const dependencies = getDependencies(
-               forcedDependencies.dependencies
-            );
-
-            console.log(
-               chalk.blue("➤ Installing/Updating mandatory dependencies")
-            );
-            try {
-               execSync(`yarn add ${dependencies}`, { stdio: "inherit" });
-            } catch (error) {
-               console.log(
-                  chalk.red(`An error occured while installing the dependencies.
-You should check the yarn logs.
-Some of your dependencies might not be available with this version of node.
-Try to fix this issues before launching the update again.`)
-               );
-               return;
-            }
-
-            console.log(chalk.green("➤ Mandatory dependencies installed !"));
-            console.log("-------------------------------------------------");
-
-            // FORCED DEV DEP
-            const devDependencies = getDependencies(
-               forcedDependencies.devDependencies
-            );
-
-            console.log(
-               chalk.blue("➤ Installing/Updating mandatory devDependecies")
-            );
-            try {
-               execSync(
-                  `yarn add -D ${devDependencies}`,
-                  { stdio: "inherit" },
-                  (err) => {
-                     if (err) {
-                        console.log(err);
-                        return;
-                     }
-                  }
-               );
-            } catch (error) {
-               console.log(error);
-            }
-
-            console.log(chalk.green("➤ Mandatory devDependencies installed !"));
-            console.log("-------------------------------------------------");
-
-            // OPTIONAL
-            const optDependencies = getDependencies(optionalDependencies, true);
-
-            console.log(chalk.blue("➤ Updating optional dependencies"));
-
-            try {
-               execSync(
-                  `yarn up ${optDependencies}`,
-                  { stdio: "inherit" },
-                  (err) => {
-                     if (err) {
-                        console.log(err);
-                        return;
-                     }
-                  }
-               );
-            } catch (error) {
-               console.log(error);
-            }
-
-            console.log(chalk.green("➤ Optional dependencies updated !"));
-            console.log("-------------------------------------------------");
-
-            await inquirer
-               .prompt([
-                  {
-                     type: "confirm",
-                     name: "confirmElsintUpdate",
-                     message:
-                        "➤ Do you want to update your .eslint.json file ? (the old one will be backed up)",
-                     default: true,
-                  },
-               ])
-               .then(async (answers) => {
-                  if (answers.confirmElsintUpdate) {
-                     await backAndCopyFile(".eslintrc.json");
-                     console.log(
-                        chalk.green(
-                           "➤ .eslint.json file updated successfully !"
-                        )
-                     );
-                  }
-               });
-
-            await inquirer
-               .prompt([
-                  {
-                     type: "confirm",
-                     name: "confirmTsConfig",
-                     message:
-                        "➤ Do you want to update your tsconfig.json file ? (the old one will be backed up)",
-                     default: true,
-                  },
-               ])
-               .then(async (answers) => {
-                  if (answers.confirmTsConfig) {
-                     await backAndCopyFile("tsconfig.json");
-                     console.log(
-                        chalk.green(
-                           "➤ tsconfig.json file updated successfully !"
-                        )
-                     );
-                  }
-               });
-
-            console.log(
-               chalk.green(`
--------------------------------------------------
-➤ Your extension has been updated, successfully !
-➤ You can launch it using yarn start.
-➤ You might encounter some lint issues, you can try to use the command "npx eslint . --fix" to fix it automatically
--------------------------------------------------`)
-            );
-         }
-      });
-}
-
-console.log(
-   chalk.cyan(`create-lumapps-extension v${require("./package.json").version}`)
-);
-
-async function init() {
    const targetDir = argv._[0];
    const { help, h, template, t, version, v, update, u } = argv;
 
@@ -232,7 +55,7 @@ async function init() {
       process.exit(1);
    }
    const cwd = process.cwd();
-   const root = path.join(cwd, targetDir);
+   const root = join(cwd, targetDir);
    const renameFiles = {
       _gitignore: ".gitignore",
       _yarnrc_yml: ".yarnrc.yml",
@@ -261,7 +84,7 @@ async function init() {
          },
       ];
 
-      choice = await inquirer.prompt({
+      const choice = await inquirer.prompt({
          type: "list",
          message: "Choose a template",
          name: "template",
@@ -275,15 +98,15 @@ async function init() {
 
    await fs.ensureDir(root);
 
-   const templateDir = path.join(__dirname, `template-${choosedTemplate}`);
+   const templateDir = join(getDirname(), "..", `template-${choosedTemplate}`);
    const write = async (file, content) => {
       const targetPath = renameFiles[file]
-         ? path.join(root, renameFiles[file])
-         : path.join(root, file);
+         ? join(root, renameFiles[file])
+         : join(root, file);
       if (content) {
          await fs.writeFile(targetPath, content);
       } else {
-         await fs.copy(path.join(templateDir, file), targetPath);
+         await fs.copy(join(templateDir, file), targetPath);
       }
    };
 
@@ -292,20 +115,23 @@ async function init() {
       await write(file);
    }
 
-   const pkg = require(path.join(templateDir, `package.json`));
-   pkg.name = path.basename(root);
+   const pkg = JSON.parse(
+      await fs.readFile(join(templateDir, `package.json`), "utf-8")
+   );
+
+   pkg.name = basename(root);
    await write("package.json", JSON.stringify(pkg, null, 2));
 
    console.log(`\n${chalk.green("Done")}. Now run:\n`);
    console.log(
       chalk.cyan(` 
-	${root !== cwd && `cd ${path.relative(cwd, root)}`}
+	${root !== cwd && `cd ${relative(cwd, root)}`}
 	npm install (or \`yarn\`)
 	npm run start (or \`yarn start\`)
 	`)
    );
    console.log();
-}
+};
 
 init().catch((e) => {
    console.error(e);

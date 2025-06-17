@@ -1,6 +1,6 @@
 {
    "name": "create-lumapps-extension",
-   "version": "1.5.0",
+   "version": "2.0.1",
    "description": "",
    "author": "marketplace@lumapps.com",
    "main": "index.js",
@@ -12,8 +12,10 @@
       "index.js",
       "src",
       "template-*",
-      "updateFiles"
+      "updateFiles",
+      "utils"
    ],
+   "type": "module",
    "scripts": {
       "run": "node index.js",
       "prepublishOnly": "rm -f template-*/yarn.lock && rm -rf template-*/node_modules",
