@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { ExtensionConfig } from 'lumapps-sdk-js';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Playground, store } from '@lumapps-extensions-playground/devenv';
 
@@ -11,15 +10,16 @@ import config from './config';
 import { SearchSettings } from './index.settings';
 import { SearchPagePreview } from './playground/SearchPagePreview';
 
-ReactDOM.render(
-    <React.StrictMode>
-        <Provider store={store}>
-            <Playground
-                config={config as ExtensionConfig}
-                ContentComponent={SearchPagePreview}
-                SettingsComponent={SearchSettings}
-            />
-        </Provider>
-    </React.StrictMode>,
-    document.getElementById('root'),
+const container = document.getElementById('root') as Element;
+
+const root = createRoot(container);
+
+root.render(
+    <Provider store={store}>
+        <Playground
+            config={config as Pick<import('lumapps-sdk-js').ExtensionConfig, 'category' | 'extensionId'>}
+            ContentComponent={SearchPagePreview}
+            SettingsComponent={SearchSettings}
+        />
+    </Provider>,
 );
