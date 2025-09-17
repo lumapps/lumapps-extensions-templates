@@ -22,7 +22,7 @@ const WithIntlSettings: React.FC = () => {
     const debouncedImageId = useDebounce(imageId, 800);
 
     React.useEffect(() => {
-        save({ imageId: debouncedImageId, useGreyScale, useBlur, blur });
+        save((currentProperties) => ({ ...currentProperties, imageId: debouncedImageId, useGreyScale, useBlur, blur }));
     }, [blur, debouncedImageId, save, useBlur, useGreyScale]);
 
     return (
@@ -83,3 +83,4 @@ export const WidgetSettings: SettingsProps = () => {
         </IntlProvider>
     );
 };
+
